@@ -1,0 +1,58 @@
+[
+  {
+    "id": 12345,
+    "name": "The Legend of Adventure",
+    "summary": "The Legend of Adventure is an epic action-adventure game...",
+    "release_date": "2022-07-15",
+    "platforms": [
+      {
+        "id": 1,
+        "name": "PlayStation 5"
+      },
+      {
+        "id": 2,
+        "name": "Xbox Series X"
+      },
+      {
+        "id": 3,
+        "name": "PC"
+      }
+    ],
+    "genres": [
+      {
+        "id": 4,
+        "name": "Action"
+      },
+      {
+        "id": 7,
+        "name": "Adventure"
+      }
+    ],
+    "cover": {
+      "id": 54321,
+      "url": "https://example.com/covers/the-legend-of-adventure.jpg"
+    },
+    "screenshots": [
+      {
+        "id": 1111,
+        "url": "https://example.com/screenshots/screenshot1.jpg"
+      },
+      {
+        "id": 2222,
+        "url": "https://example.com/screenshots/screenshot2.jpg"
+      }
+    ],
+    "rating": 9.2,
+    "total_rating_count": 1234,
+    "websites": [
+      {
+        "category": 1,
+        "url": "https://example.com/game/the-legend-of-adventure"
+      },
+      {
+        "category": 2,
+        "url": "https://example.com/reviews/the-legend-of-adventure"
+      }
+    ]
+  }
+]
