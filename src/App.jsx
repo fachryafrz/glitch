@@ -1,15 +1,17 @@
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./sections/Sidebar";
+import TopNav from "./sections/TopNav";
 
 function App() {
   return (
     <div className="flex">
       {/* Sidebar */}
       <Sidebar />
-      {/* Sidebar */}
 
       {/* Main Contents */}
-      <main className="h-[200vh]"></main>
-      {/* Main Contents */}
+      <main className="h-[200vh] w-full">
+        {/* TopNav */}
+        <TopNav />
+      </main>
     </div>
   );
 }
