@@ -4,10 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: {
-          "dark-gray": "#141415",
-        },
         primary: {
+          "dark-gray": "#141415",
           red: "#df040a",
           orange: "#ff6b27",
         },

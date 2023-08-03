@@ -1,8 +1,16 @@
+import Sidebar from "./components/Sidebar";
+
 function App() {
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <div className="flex">
+      {/* Sidebar */}
+      <Sidebar />
+      {/* Sidebar */}
+
+      {/* Main Contents */}
+      <main className="h-[200vh]"></main>
+      {/* Main Contents */}
+    </div>
   );
 }
 

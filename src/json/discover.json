@@ -1,58 +1,324 @@
 [
   {
-    "id": 12345,
-    "name": "The Legend of Adventure",
-    "summary": "The Legend of Adventure is an epic action-adventure game...",
-    "release_date": "2022-07-15",
-    "platforms": [
-      {
-        "id": 1,
-        "name": "PlayStation 5"
-      },
-      {
-        "id": 2,
-        "name": "Xbox Series X"
-      },
-      {
-        "id": 3,
-        "name": "PC"
-      }
+    "id": 246925,
+    "artworks": [106548],
+    "category": 0,
+    "cover": 315867,
+    "created_at": 1682389596,
+    "external_games": [2695892, 2696193],
+    "first_release_date": 1682640000,
+    "game_modes": [1],
+    "genres": [31, 32],
+    "name": "Stickman and the Sword of Legends",
+    "platforms": [6],
+    "release_dates": [472368, 494226],
+    "screenshots": [1037461, 1037463, 1037466, 1037470, 1037473],
+    "similar_games": [
+      25646, 28309, 29783, 30245, 68271, 96217, 106987, 111130, 113360, 113895
     ],
-    "genres": [
-      {
-        "id": 4,
-        "name": "Action"
-      },
-      {
-        "id": 7,
-        "name": "Adventure"
-      }
+    "slug": "stickman-and-the-sword-of-legends",
+    "status": 4,
+    "summary": "Stickman needs to get the Sword of Legends to be able to leave his planet that is about to explode.",
+    "tags": [1, 268435487, 268435488],
+    "themes": [1],
+    "updated_at": 1689797564,
+    "url": "https://www.igdb.com/games/stickman-and-the-sword-of-legends",
+    "websites": [546814],
+    "checksum": "9370836b-a579-a67b-2899-e0e45a94b6fa",
+    "language_supports": [678670, 678671, 678672]
+  },
+  {
+    "id": 89616,
+    "category": 0,
+    "cover": 192106,
+    "created_at": 1519986874,
+    "external_games": [269608, 1949905],
+    "game_modes": [1],
+    "genres": [9, 33],
+    "hypes": 1,
+    "involved_companies": [154613],
+    "name": "Bubble Whirl Shooter",
+    "platforms": [34, 39],
+    "similar_games": [
+      18115, 19222, 25905, 41349, 85804, 87170, 87507, 90788, 90965, 95776
     ],
-    "cover": {
-      "id": 54321,
-      "url": "https://example.com/covers/the-legend-of-adventure.jpg"
-    },
+    "slug": "bubble-whirl-shooter",
+    "status": 8,
+    "summary": "Shoot bubbles and match colors to pop your way up to victory in this bubble shooting adventure, win magic keys to unlock more secret colorful bubble world, it’s time to enjoy the endless bubble shooting fun!",
+    "tags": [268435465, 268435489],
+    "updated_at": 1678800343,
+    "url": "https://www.igdb.com/games/bubble-whirl-shooter",
+    "websites": [407422],
+    "checksum": "970708ae-528c-7915-8f18-8786a4120376"
+  },
+  {
+    "id": 5340,
+    "age_ratings": [87809],
+    "alternative_names": [3670],
+    "category": 3,
+    "collection": 6718,
+    "cover": 210515,
+    "created_at": 1392154435,
+    "external_games": [30397, 143967],
+    "first_release_date": 683683200,
+    "game_modes": [1, 2],
+    "genres": [5, 8, 10, 31, 33],
+    "involved_companies": [204122],
+    "keywords": [
+      6, 164, 274, 328, 558, 947, 960, 1395, 1478, 1821, 4328, 4329, 4472, 4500,
+      4990, 5441, 5806, 12970, 26906
+    ],
+    "multiplayer_modes": [22872],
+    "name": "Action 52",
+    "platforms": [18],
+    "player_perspectives": [3, 4],
+    "release_dates": [465760],
+    "screenshots": [1083777, 1083778, 1083779, 1083787],
+    "similar_games": [
+      1877, 24426, 25901, 55038, 55190, 56033, 103292, 105049, 105269, 110503
+    ],
+    "slug": "action-52",
+    "summary": "Get 52 \"New and Original\" exciting games for play on your Nintendo System. Try to get Billy Bob out of the Dungeon where he is imprisoned, to save MARYLOU. Go along with the ACTION GAMEMASTER as he changes into one of the fearsome CHEETAHMEN to try to defeat all of the ACTION 52 evil attackers. These two games plus an additional 50 games on this one \"Multi-GamePak\" will keep you entertained for a long time.",
+    "tags": [
+      1, 268435461, 268435464, 268435466, 268435487, 268435489, 536870918,
+      536871076, 536871186, 536871240, 536871470, 536871859, 536871872,
+      536872307, 536872390, 536872733, 536875240, 536875241, 536875384,
+      536875412, 536875902, 536876353, 536876718, 536883882, 536897818
+    ],
+    "themes": [1],
+    "updated_at": 1688649570,
+    "url": "https://www.igdb.com/games/action-52",
+    "videos": [87460],
+    "websites": [94873, 335180, 542222],
+    "checksum": "18975175-70eb-82ea-ac38-19226d22e4a1",
+    "ports": [245623],
+    "language_supports": [674097]
+  },
+  {
+    "id": 199243,
+    "artworks": [75087],
+    "category": 0,
+    "cover": 255543,
+    "created_at": 1651484438,
+    "external_games": [2434499, 2436319],
+    "game_modes": [1],
+    "genres": [31],
+    "hypes": 1,
+    "name": "Escape Jump",
+    "screenshots": [783010, 783011, 783012, 783013, 783014],
+    "similar_games": [
+      25646, 55199, 76253, 81249, 87622, 96217, 103292, 106987, 111130, 115280
+    ],
+    "slug": "escape-jump",
+    "summary": "Escape Jump is a precision platformer where you and your funny companion jump and fall, rage-quit and fall, flip your table, destroy your computer, put it back together and then you fall.",
+    "tags": [1, 268435487],
+    "themes": [1],
+    "updated_at": 1683552503,
+    "url": "https://www.igdb.com/games/escape-jump",
+    "websites": [279698, 489997],
+    "checksum": "544b8ef7-84c5-d4cf-ddf0-75a85f2ad83a",
+    "language_supports": [234846, 234847, 234848]
+  },
+  {
+    "id": 71632,
+    "category": 0,
+    "collection": 2449,
+    "cover": 42594,
+    "created_at": 1506675676,
+    "external_games": [152876, 1868210],
+    "franchises": [872, 874],
+    "genres": [15],
+    "keywords": [78, 394, 960, 1033, 2458],
+    "name": "Ganbare Goemon: Mononoke Sugoroku",
+    "similar_games": [
+      6985, 18623, 19164, 19404, 23345, 35371, 36553, 79134, 102163, 119156
+    ],
+    "slug": "ganbare-goemon-mononoke-sugoroku",
+    "summary": "A compilation of the first two Super Famicom Goemon games.",
+    "tags": [
+      17, 22, 27, 268435471, 536870990, 536871306, 536871872, 536871945,
+      536873370
+    ],
+    "themes": [17, 22, 27],
+    "updated_at": 1686031007,
+    "url": "https://www.igdb.com/games/ganbare-goemon-mononoke-sugoroku",
+    "websites": [355140],
+    "checksum": "1233acb0-25b4-4fc9-a802-341d3f2aab8b"
+  },
+  {
+    "id": 202243,
+    "category": 0,
+    "cover": 222716,
+    "created_at": 1653065045,
+    "external_games": [2441659],
+    "first_release_date": 1478563200,
+    "game_engines": [765],
+    "game_modes": [1],
+    "genres": [31],
+    "keywords": [27825],
+    "name": "Corallo",
+    "platforms": [6],
+    "player_perspectives": [3],
+    "release_dates": [360244],
+    "screenshots": [797974, 797975, 797976],
+    "similar_games": [
+      229743, 229744, 229745, 229747, 229751, 229752, 229755, 229759, 251061,
+      251063
+    ],
+    "slug": "corallo",
+    "summary": "Corallo is a Yume Nikki fangame. The main focus is exploring \"dreams\" and collecting \"effects\", which can be purely cosmetic or make the character perform certain actions.\n\nCorallo focuses on Maya, a young woman stuck on a wheelchair and locked in a room. She can only stare at the ocean in front of her window and daydream.\nBy interacting with her mind, the player can learn more about her and her past, and what lead her to be stuck in her current room.",
+    "tags": [268435487, 536898737],
+    "updated_at": 1671014204,
+    "url": "https://www.igdb.com/games/corallo",
+    "websites": [285029, 492286],
+    "checksum": "dab1a2bc-d3cb-e3e1-67f8-40afbe3401c3"
+  },
+  {
+    "id": 203546,
+    "artworks": [77689],
+    "category": 0,
+    "cover": 260350,
+    "created_at": 1654531440,
+    "external_games": [2443744, 2446156],
+    "first_release_date": 1654560000,
+    "genres": [31, 32],
+    "name": "Meat & Greed",
+    "platforms": [6],
+    "release_dates": [375099],
+    "screenshots": [803747, 803748, 803749, 803750, 803751],
+    "similar_games": [
+      13189, 25222, 28277, 55282, 75948, 87975, 96217, 106992, 111130, 121217
+    ],
+    "slug": "meat-and-greed",
+    "summary": "In the atmospheric puzzle-platformer Meat & Greed, you will experience the horrors of a slaughterhouse from the perspective of different animals. Solve riddles and collaborate with other animals to try and escape this ill-fated factory.",
+    "tags": [268435487, 268435488],
+    "updated_at": 1685738158,
+    "url": "https://www.igdb.com/games/meat-and-greed",
+    "websites": [287410, 493202],
+    "checksum": "5cd74666-263f-f8ec-6979-0349185a680a",
+    "language_supports": [318552, 318553, 318554]
+  },
+  {
+    "id": 210798,
+    "alternative_names": [97245, 115658],
+    "category": 0,
+    "collection": 8136,
+    "cover": 234190,
+    "created_at": 1659366458,
+    "external_games": [2526299],
+    "first_release_date": 1338076800,
+    "game_modes": [1],
+    "genres": [12, 32],
+    "involved_companies": [181317],
+    "keywords": [
+      147, 211, 226, 415, 669, 789, 902, 1065, 1119, 1151, 1181, 1228, 1288,
+      1567, 1710, 1834, 1902, 2564, 2978, 3034, 3143, 3347, 3380, 4074, 4329,
+      4353, 4368, 6463, 6541, 7461, 7530, 11680, 17598, 17655, 19649, 23097,
+      24124, 24875, 30337, 33313, 34318, 34406, 34609, 34661, 34775
+    ],
+    "name": "Touhou Soujinengi Zansho: The Genius of Sappheiros - Shuumatsu",
+    "platforms": [6],
+    "player_perspectives": [3],
+    "release_dates": [377013],
     "screenshots": [
-      {
-        "id": 1111,
-        "url": "https://example.com/screenshots/screenshot1.jpg"
-      },
-      {
-        "id": 2222,
-        "url": "https://example.com/screenshots/screenshot2.jpg"
-      }
+      839044, 839045, 839046, 839047, 839048, 839049, 839050, 839051, 839052,
+      839053, 839054, 839055
     ],
-    "rating": 9.2,
-    "total_rating_count": 1234,
-    "websites": [
-      {
-        "category": 1,
-        "url": "https://example.com/game/the-legend-of-adventure"
-      },
-      {
-        "category": 2,
-        "url": "https://example.com/reviews/the-legend-of-adventure"
-      }
-    ]
+    "similar_games": [
+      46722, 105121, 105447, 165726, 206935, 206946, 210552, 211530, 212096,
+      212442
+    ],
+    "slug": "touhou-soujinengi-zansho-the-genius-of-sappheiros-shuumatsu",
+    "storyline": "It's a normal day in Gensokyo when Reimu Hakurei notices a strange fog rolling in. All across Gensokyo, residents witness this fog weakening and killing a great many lesser youkai. At the behest of Yukari Yakumo, she joins forces with Marisa Kirisame, Sanae Kochiya, and Aya Shameimaru to investigate the fog's appearance...",
+    "summary": "Shuumatsu (Weekend) features a heavy rebalancing of the rates for dropped items and Satori's Learning, changes some of the recipes (with the most notable one being the recipe for the Kusanagi, which now only requires 5 Iron as opposed to 30), removes the feature that made you lose all of your \"unsaved\" items after getting wiped out in a dungeon, and adds a few new things such as a mini-map and an easy mode you can toggle on or off whenever you want. On easy mode, you deal more damage, take less damage, your status effects have a higher chance to work and the experience penalty on killing enemies at a lower level is reduced. You can also now refight the final boss whenever you want during the expansion, which means that Kagami's Hyper Fang Crush is no longer permanently missable and can be learned by Satori whenever you want.",
+    "tags": [
+      1, 17, 268435468, 268435488, 536871059, 536871123, 536871138, 536871327,
+      536871581, 536871701, 536871814, 536871977, 536872031, 536872063,
+      536872093, 536872140, 536872200, 536872479, 536872622, 536872746,
+      536872814, 536873476, 536873890, 536873946, 536874055, 536874259,
+      536874292, 536874986, 536875241, 536875265, 536875280, 536877375,
+      536877453, 536878373, 536878442, 536882592, 536888510, 536888567,
+      536890561, 536894009, 536895036, 536895787, 536901249, 536904225,
+      536905230, 536905318, 536905521, 536905573, 536905687
+    ],
+    "themes": [1, 17],
+    "updated_at": 1686037668,
+    "url": "https://www.igdb.com/games/touhou-soujinengi-zansho-the-genius-of-sappheiros-shuumatsu",
+    "websites": [299584, 299585, 498368],
+    "checksum": "09aa164a-2b7e-0e7f-66c5-f77285cfaa1a",
+    "game_localizations": [17826]
+  },
+  {
+    "id": 33515,
+    "category": 0,
+    "cover": 69444,
+    "created_at": 1495748862,
+    "external_games": [5905, 1952854],
+    "first_release_date": 1462406400,
+    "follows": 1,
+    "game_modes": [1, 3],
+    "genres": [8, 24, 32, 33],
+    "involved_companies": [71648],
+    "keywords": [770, 23359],
+    "name": "Chicku",
+    "platforms": [6],
+    "player_perspectives": [4],
+    "rating": 70.0,
+    "rating_count": 0,
+    "release_dates": [78135],
+    "screenshots": [60012, 60013, 60014, 60015, 60016],
+    "similar_games": [
+      20342, 24426, 26574, 43367, 55042, 55190, 56033, 81183, 110503, 113895
+    ],
+    "slug": "chicku",
+    "summary": "Chicku is a nail bitingly hard platformer in which the player has to escape the evil Barrington farm. You'll be forced to dodge saws, spikes and many other deadly traps in order to save your brethren and rise against the evil Dr. Barrington.",
+    "tags": [
+      1, 21, 27, 268435464, 268435480, 268435488, 268435489, 536871682,
+      536872961, 536894271
+    ],
+    "themes": [1, 21, 27],
+    "total_rating": 70.0,
+    "total_rating_count": 0,
+    "updated_at": 1685752358,
+    "url": "https://www.igdb.com/games/chicku",
+    "videos": [23268, 23269],
+    "websites": [33925, 33926, 94366, 94367],
+    "checksum": "cc43cbb2-3214-2283-d65a-cce171c506b7",
+    "language_supports": [104084, 104085, 104086]
+  },
+  {
+    "id": 236664,
+    "age_ratings": [120501],
+    "artworks": [101120],
+    "category": 0,
+    "collection": 3281,
+    "cover": 288666,
+    "created_at": 1675895895,
+    "external_games": [2666934],
+    "first_release_date": 1703980800,
+    "game_modes": [1],
+    "genres": [12, 13],
+    "hypes": 2,
+    "involved_companies": [203290],
+    "keywords": [1103],
+    "name": "Fantasy Life i: The Girl Who Steals Time",
+    "platforms": [130],
+    "player_perspectives": [2],
+    "release_dates": [465960],
+    "screenshots": [988173, 988174, 988176, 988177, 988178],
+    "similar_games": [
+      25311, 25636, 26574, 35994, 54775, 55199, 87485, 96217, 106987, 113636
+    ],
+    "slug": "fantasy-life-i-the-girl-who-steals-time",
+    "storyline": "A new chapter of Fantasy Life that transcends time!\n\nBegin a fantastic life on a ruined island, and embark on a great adventure into the past! Gather friends, craft, and build your own city!",
+    "summary": "Fantasy Life i: The Girl Who Steals Time is an RPG life-sim game and the long-awaited sequel to the 3DS classic Fantasy Life. This game will expand on what the original did, blending simulation with traditional action RPG combat mechanics.",
+    "tags": [1, 268435468, 268435469, 536872015],
+    "themes": [1],
+    "updated_at": 1690554892,
+    "url": "https://www.igdb.com/games/fantasy-life-i-the-girl-who-steals-time",
+    "videos": [83955, 86252],
+    "websites": [528863],
+    "checksum": "cce20a0a-1a5e-234b-019a-9927faf73f9a",
+    "game_localizations": [24811]
   }
 ]
