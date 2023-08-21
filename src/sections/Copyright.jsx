@@ -10,7 +10,7 @@ export default function Copyright() {
       >
         Dmitry Reshetnikov
       </a>{" "}
-      & Developed by{" "}
+      <br className={`sm:hidden`} />& Developed by{" "}
       <a
         href="https://fachryafrz.vercel.app"
         target="_blank"
