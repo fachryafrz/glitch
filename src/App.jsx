@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./sections/Navbar";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
@@ -8,8 +9,9 @@ export default function App() {
       <Navbar />
 
       <main>
+        <h1 className={`sr-only`}>GameCove</h1>
         <Routes>
-          <Route path={`/`} element={<h1>Home</h1>} />
+          <Route path={`/`} element={<Home />} />
           <Route path={`/detail`} element={<h1>Detail</h1>} />
           <Route path={`/search`} element={<h1>Search</h1>} />
         </Routes>

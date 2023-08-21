@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import data from "../json/navbar.json";
-import logo from "../assets/logo.svg";
 
 export default function Navbar() {
   return (
-    <nav className={`container mx-auto flex items-center p-4 gap-8`}>
+    <nav className={`max-w-7xl mx-auto flex items-center p-4 gap-8`}>
       <Link to={"/"}>
-        <img src={logo} alt={`GameCove`} />
+        <img src={`/logo.svg`} alt={`GameCove`} />
       </Link>
 
       <ul className={`flex items-center gap-12 text-sm`}>
