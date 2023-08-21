@@ -3,7 +3,7 @@ import data from "../json/navbar.json";
 
 export default function Navbar() {
   return (
-    <nav className={`max-w-7xl mx-auto flex items-center p-4 gap-8`}>
+    <nav className={`container mx-auto flex items-center p-4 px-6 gap-8`}>
       <Link to={"/"}>
         <img src={`/logo.svg`} alt={`GameCove`} />
       </Link>
