@@ -6,7 +6,7 @@ export default function App() {
   return (
     <Router>
       {/* Navbar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main>
         <h1 className={`sr-only`}>GameCove</h1>

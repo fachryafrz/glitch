@@ -31,7 +31,7 @@ export default function HomeSlider() {
       >
         {data.map((item, i) => {
           return (
-            <SwiperSlide key={i} className={`flex`}>
+            <SwiperSlide key={i} className={`h-auto flex flex-col lg:flex-row`}>
               <figure className={`flex-1`}>
                 <img
                   src={item.backdrop}
@@ -40,21 +40,25 @@ export default function HomeSlider() {
                 />
               </figure>
               <div
-                className={`relative w-[30%] p-8 pt-0 bg-primary-secondary flex flex-col gap-4`}
+                className={`relative lg:w-[40%] xl:w-[30%] p-8 pt-0 bg-primary-secondary flex flex-col gap-4`}
               >
                 <span
                   className={`capitalize text-sm text-neutral-400 bg-white bg-opacity-10 p-1 px-4 max-w-fit`}
                 >
                   New
                 </span>
-                <h2 className={`text-4xl font-bold line-clamp-2 leading-snug`}>
+                <h2
+                  className={`text-3xl sm:text-4xl font-bold line-clamp-2 leading-snug`}
+                >
                   {item.title}
                 </h2>
                 <p className={`line-clamp-4 opacity-50`}>{item.summary}</p>
-                <div className={`mt-auto flex items-center justify-between`}>
+                <div
+                  className={`mt-auto pt-4 flex flex-col gap-4 items-center xs:flex-row xs:items-end xs:justify-between`}
+                >
                   <Link
                     to={`/`}
-                    className={`p-3 px-8 bg-white bg-opacity-10 rounded hocus:bg-opacity-20`}
+                    className={`p-3 px-8 bg-white bg-opacity-10 rounded hocus:bg-opacity-20 text-center`}
                   >
                     View details
                   </Link>

@@ -16,7 +16,15 @@ export default function Slider(prop) {
 
       <Swiper
         spaceBetween={16}
-        slidesPerView={5}
+        slidesPerView={2}
+        breakpoints={{
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+        }}
         modules={[Navigation]}
         effect={`fade`}
         navigation={{
