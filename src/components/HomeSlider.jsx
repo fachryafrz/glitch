@@ -25,6 +25,9 @@ export default function HomeSlider() {
           prevEl: "#prev",
           nextEl: "#next",
         }}
+        allowSlideNext={true}
+        allowSlidePrev={true}
+        allowTouchMove={false}
       >
         {data.map((item, i) => {
           return (
@@ -36,10 +39,15 @@ export default function HomeSlider() {
                   className={`object-center`}
                 />
               </figure>
-              <div className={`w-[30%] p-8 bg-primary-secondary flex flex-col`}>
-                <h2
-                  className={`text-4xl mb-4 font-bold line-clamp-2 leading-snug`}
+              <div
+                className={`relative w-[30%] p-8 pt-0 bg-primary-secondary flex flex-col gap-4`}
+              >
+                <span
+                  className={`capitalize text-sm text-gray-400 bg-white bg-opacity-10 p-1 px-4 max-w-fit`}
                 >
+                  New
+                </span>
+                <h2 className={`text-4xl font-bold line-clamp-2 leading-snug`}>
                   {item.title}
                 </h2>
                 <p className={`line-clamp-4 opacity-50`}>{item.summary}</p>
