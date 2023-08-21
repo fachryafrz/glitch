@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./sections/Navbar";
 import Home from "./pages/Home";
+import Footer from "./sections/Footer";
+import Copyright from "./sections/Copyright";
 
 export default function App() {
   return (
@@ -18,9 +20,10 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer></footer>
+      <Footer />
 
       {/* Copyright */}
+      <Copyright />
     </Router>
   );
 }

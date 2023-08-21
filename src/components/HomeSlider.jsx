@@ -40,10 +40,10 @@ export default function HomeSlider() {
                 />
               </figure>
               <div
-                className={`relative lg:w-[40%] xl:w-[30%] p-8 pt-0 bg-primary-secondary flex flex-col gap-4`}
+                className={`relative lg:w-[40%] xl:w-[35%] p-8 xl:p-12 !pt-0 bg-primary-secondary flex flex-col gap-4`}
               >
                 <span
-                  className={`capitalize text-sm text-neutral-400 bg-white bg-opacity-10 p-1 px-4 max-w-fit`}
+                  className={`capitalize text-sm text-neutral-400 bg-white bg-opacity-10 p-1 px-4 max-w-fit lg:mb-4`}
                 >
                   New
                 </span>

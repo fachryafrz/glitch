@@ -4,7 +4,7 @@ export default function Card(prop) {
   return (
     <article>
       <Link to={"/"} className={`flex flex-col gap-2`}>
-        <figure className={`aspect-[2/3]`}>
+        <figure className={`aspect-cover`}>
           <img src={prop.cover} alt={prop.title} />
         </figure>
         <div>

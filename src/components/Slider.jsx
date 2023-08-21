@@ -4,7 +4,6 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import data from "../json/slider.json";
 import Card from "./Card";
 import { IonIcon } from "@ionic/react";
 import { arrowBack, arrowForward } from "ionicons/icons";
@@ -35,9 +34,9 @@ export default function Slider(prop) {
         allowSlideNext={true}
         allowSlidePrev={true}
         allowTouchMove={true}
-        className={`relative py-12`}
+        className={`relative pt-12`}
       >
-        {data.map((item, i) => {
+        {prop.games.map((item, i) => {
           return (
             <SwiperSlide key={i}>
               <Card
