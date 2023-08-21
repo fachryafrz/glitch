@@ -5,7 +5,7 @@ import { searchOutline } from "ionicons/icons";
 
 export default function HomeFilters() {
   return (
-    <section name={`filters`} className={`grid grid-cols-3 gap-8 text-sm`}>
+    <section name={`filters`} className={`grid grid-cols-3 gap-8`}>
       {data.map((item, i) => {
         return (
           <div

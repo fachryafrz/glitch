@@ -16,18 +16,18 @@ export default function HomeSlider() {
   return (
     <section name={`Home Slider`}>
       <Swiper
-        spaceBetween={50}
+        spaceBetween={16}
         slidesPerView={1}
         modules={[EffectFade, Navigation]}
         effect={`fade`}
         navigation={{
           enabled: true,
-          prevEl: "#prev",
-          nextEl: "#next",
+          prevEl: "#homePrev",
+          nextEl: "#homeNext",
         }}
         allowSlideNext={true}
         allowSlidePrev={true}
-        allowTouchMove={false}
+        allowTouchMove={true}
       >
         {data.map((item, i) => {
           return (
@@ -43,7 +43,7 @@ export default function HomeSlider() {
                 className={`relative w-[30%] p-8 pt-0 bg-primary-secondary flex flex-col gap-4`}
               >
                 <span
-                  className={`capitalize text-sm text-gray-400 bg-white bg-opacity-10 p-1 px-4 max-w-fit`}
+                  className={`capitalize text-sm text-neutral-400 bg-white bg-opacity-10 p-1 px-4 max-w-fit`}
                 >
                   New
                 </span>
@@ -59,10 +59,10 @@ export default function HomeSlider() {
                     View details
                   </Link>
                   <div name={`navigation`} className={`text-2xl flex gap-4`}>
-                    <button id={`prev`}>
+                    <button id={`homePrev`}>
                       <IonIcon icon={arrowBack} />
                     </button>
-                    <button id={`next`}>
+                    <button id={`homeNext`}>
                       <IonIcon icon={arrowForward} />
                     </button>
                   </div>
