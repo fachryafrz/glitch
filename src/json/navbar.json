@@ -16,5 +16,15 @@
       "url": "/",
       "icon": "pricetagsOutline"
     }
+  ],
+  "socials": [
+    {
+      "url": "https://instagram.com/fachryafrz",
+      "icon": "logoInstagram"
+    },
+    {
+      "url": "https://github.com/fachryafrz",
+      "icon": "logoGithub"
+    }
   ]
 }
