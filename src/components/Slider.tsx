@@ -17,9 +17,11 @@ type Game = {
 type Slider = {
   title: string;
   games: Game[];
+  min: number;
+  max: number;
 };
 
-export default function Slider({ title, games }: Slider) {
+export default function Slider({ title, games, min, max }: Slider) {
   return (
     <section id={title}>
       <h2 className={`sr-only`}>{title}</h2>
@@ -47,14 +49,10 @@ export default function Slider({ title, games }: Slider) {
         allowTouchMove={true}
         className={`relative pt-12`}
       >
-        {games.map((item: Game, i: number) => {
+        {games.slice(min, max).map((item: Game, i: number) => {
           return (
             <SwiperSlide key={i}>
-              <Card
-                cover={item.cover}
-                title={item.title}
-                company={item.company}
-              />
+              <Card game={item} />
             </SwiperSlide>
           );
         })}

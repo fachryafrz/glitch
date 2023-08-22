@@ -1,8 +1,7 @@
 import HomeFilters from "../components/HomeFilters";
 import HomeSlider from "../components/HomeSlider";
 import Slider from "../components/Slider";
-import data from "../json/slider.json";
-import data2 from "../json/slider2.json";
+import data from "../json/games.json";
 
 export default function Home() {
   return (
@@ -13,9 +12,9 @@ export default function Home() {
 
       <HomeSlider />
 
-      <Slider title={`New games`} games={data} />
+      <Slider title={`New games`} games={data} min={0} max={6} />
 
-      <Slider title={`Popular now`} games={data2} />
+      <Slider title={`Popular now`} games={data} min={6} max={12} />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./sections/Navbar";
 import Home from "./pages/Home";
 import Footer from "./sections/Footer";
 import Copyright from "./sections/Copyright";
+import Search from "./pages/Search";
 
 export default function App() {
   return (
@@ -10,12 +10,12 @@ export default function App() {
       {/* Navbar */}
       {/* <Navbar /> */}
 
-      <main>
+      <main className={`min-h-screen`}>
         <h1 className={`sr-only`}>GameCove</h1>
         <Routes>
           <Route path={`/`} element={<Home />} />
           <Route path={`/detail`} element={<h1>Detail</h1>} />
-          <Route path={`/search`} element={<h1>Search</h1>} />
+          <Route path={`/search`} element={<Search />} />
         </Routes>
       </main>
 
