@@ -62,7 +62,9 @@ export default function HomeFilters() {
               placeholder={`For example: Battlefield 5`}
               className={`w-full bg-transparent placeholder:text-white placeholder:opacity-25`}
             />
-            <IonIcon icon={searchOutline} className={`text-xl opacity-50`} />
+            <Link to={`/search`} className={`flex aspect-square`}>
+              <IonIcon icon={searchOutline} className={`text-xl opacity-50`} />
+            </Link>
           </div>
         </div>
       </div>
