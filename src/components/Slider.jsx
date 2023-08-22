@@ -8,20 +8,7 @@ import Card from "./Card";
 import { IonIcon } from "@ionic/react";
 import { arrowBack, arrowForward } from "ionicons/icons";
 
-type Game = {
-  title: string;
-  cover: string;
-  company: string;
-};
-
-type Slider = {
-  title: string;
-  games: Game[];
-  min: number;
-  max: number;
-};
-
-export default function Slider({ title, games, min, max }: Slider) {
+export default function Slider({ title, games, min, max }) {
   return (
     <section id={title}>
       <h2 className={`sr-only`}>{title}</h2>
@@ -49,7 +36,7 @@ export default function Slider({ title, games, min, max }: Slider) {
         allowTouchMove={true}
         className={`relative pt-12`}
       >
-        {games.slice(min, max).map((item: Game, i: number) => {
+        {games.slice(min, max).map((item, i) => {
           return (
             <SwiperSlide key={i}>
               <Card game={item} />

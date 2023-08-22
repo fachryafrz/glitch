@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
 
-type Game = {
-  game: any;
-};
-
-export default function Card({ game }: Game) {
+export default function Card({ game }) {
   return (
     <article>
       <Link to={"/"} className={`flex flex-col gap-2`}>

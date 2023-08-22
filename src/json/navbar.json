@@ -2,24 +2,19 @@
   "logo_path": "",
   "links": [
     {
-      "name": "Link",
-      "url": "/"
+      "name": "Catalog",
+      "url": "/",
+      "icon": "albumsOutline"
     },
     {
-      "name": "Link",
-      "url": "/"
+      "name": "New Releases",
+      "url": "/",
+      "icon": "flashOutline"
     },
     {
-      "name": "Link",
-      "url": "/"
-    },
-    {
-      "name": "Link",
-      "url": "/"
-    },
-    {
-      "name": "Link",
-      "url": "/"
+      "name": "Pre Orders",
+      "url": "/",
+      "icon": "pricetagsOutline"
     }
   ]
 }

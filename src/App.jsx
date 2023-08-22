@@ -3,12 +3,13 @@ import Home from "./pages/Home";
 import Footer from "./sections/Footer";
 import Copyright from "./sections/Copyright";
 import Search from "./pages/Search";
+import Navbar from "./sections/Navbar";
 
 export default function App() {
   return (
     <Router>
       {/* Navbar */}
-      {/* <Navbar /> */}
+      <Navbar />
 
       <main className={`min-h-screen`}>
         <h1 className={`sr-only`}>GameCove</h1>
