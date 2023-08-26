@@ -4,6 +4,7 @@ import Footer from "./sections/Footer";
 import Copyright from "./sections/Copyright";
 import Search from "./pages/Search";
 import Navbar from "./sections/Navbar";
+import Details from "./pages/Details";
 
 export default function App() {
   return (
@@ -15,7 +16,7 @@ export default function App() {
         <h1 className={`sr-only`}>GameCove</h1>
         <Routes>
           <Route path={`/`} element={<Home />} />
-          <Route path={`/detail`} element={<h1>Detail</h1>} />
+          <Route path={`/details`} element={<Details />} />
           <Route path={`/search`} element={<Search />} />
         </Routes>
       </main>

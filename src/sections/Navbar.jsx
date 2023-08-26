@@ -6,6 +6,7 @@ import { IonIcon } from "@ionic/react";
 
 export default function Navbar() {
   const [navIcons, setNavIcons] = useState([]);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [socialIcons, setSocialIcons] = useState([]);
   const [active, setActive] = useState(false);
 
@@ -15,12 +16,22 @@ export default function Navbar() {
       setSocialIcons(data.socials.map((item) => Icons[item.icon]));
     };
 
+    window.addEventListener("scroll", function () {
+      if (window.scrollY >= 25) {
+        setIsScrolled(true);
+      } else if (window.scrollY < 25) {
+        setIsScrolled(false);
+      }
+    });
+
     getIcons();
   }, []);
 
   return (
     <nav
-      className={`md:container mx-auto grid grid-cols-[1fr_auto_1fr] p-4 xl:px-24 gap-4 bg-primary-bg bg-opacity-90 backdrop-blur sticky top-0 z-50`}
+      className={`md:container mx-auto grid grid-cols-[1fr_auto_1fr] p-4 xl:px-24 gap-4 sticky top-0 z-50 transition-all duration-300 backdrop-blur ${
+        isScrolled && `bg-primary-bg bg-opacity-90`
+      }`}
     >
       <button
         onClick={() => setActive(!active)}
@@ -57,11 +68,11 @@ export default function Navbar() {
         {data.socials.map((item, i) => {
           return (
             <li key={i}>
-              <Link to={item.url} className={`flex`}>
-                <IonIcon
-                  icon={socialIcons[i]}
-                  className={`text-2xl opacity-50 hocus:opacity-100`}
-                />
+              <Link
+                to={item.url}
+                className={`flex opacity-50 hocus:opacity-100`}
+              >
+                <IonIcon icon={socialIcons[i]} className={`text-2xl`} />
               </Link>
             </li>
           );

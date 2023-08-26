@@ -1,0 +1,244 @@
+[
+  {
+    "id": 83728,
+    "age_ratings": [32047, 32048, 62553, 62554, 92969, 109421],
+    "aggregated_rating": 77.41176470588235,
+    "aggregated_rating_count": 20,
+    "alternative_names": [50334, 68700, 68701, 68702, 68703, 68704],
+    "artworks": [
+      {
+        "id": 4896,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "meerv4jrmm8orqlmk3dk",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/meerv4jrmm8orqlmk3dk.jpg",
+        "width": 1920,
+        "checksum": "082b692e-08ab-d3e4-623e-f8ef3569cf14"
+      },
+      {
+        "id": 4897,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "iddkiqyfckqwmpow4mjr",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/iddkiqyfckqwmpow4mjr.jpg",
+        "width": 1920,
+        "checksum": "f83e92cb-0b98-0bf4-9c85-f5293d8d50f8"
+      },
+      {
+        "id": 4949,
+        "game": 83728,
+        "height": 2160,
+        "image_id": "acgxgkco9k67c1zhdod7",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/acgxgkco9k67c1zhdod7.jpg",
+        "width": 3841,
+        "checksum": "6b050f8f-12ba-54ff-9d15-4e31a572f422"
+      }
+    ],
+    "category": 0,
+    "collection": 34,
+    "cover": [
+      {
+        "id": 89851,
+        "alpha_channel": false,
+        "animated": false,
+        "game": 83728,
+        "height": 1300,
+        "image_id": "co1xbv",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/co1xbv.jpg",
+        "width": 977,
+        "checksum": "1514d0ed-4b02-c816-4827-772af049131b"
+      }
+    ],
+    "created_at": 1516572855,
+    "external_games": [
+      269915, 306949, 576982, 1037537, 1184665, 1192624, 1928344, 1928700,
+      1929203, 1929238, 1929514, 1932301, 1934066, 1934188, 1934649, 1935180,
+      1935847, 1936244, 1936464, 1936920, 1937167, 1937415, 1937803, 1937869,
+      2031054, 2082661, 2084935, 2084966, 2175853, 2220377, 2220533, 2221826,
+      2221827, 2449964, 2452815, 2581471, 2586452, 2587975, 2633607, 2660067,
+      2660256
+    ],
+    "first_release_date": 1542672000,
+    "follows": 122,
+    "franchises": [1036],
+    "game_engines": [491],
+    "game_modes": [1, 2, 3],
+    "genres": [5],
+    "hypes": 31,
+    "involved_companies": [65040, 65041, 65042],
+    "keywords": [19, 449, 453, 466, 7016],
+    "multiplayer_modes": [13914],
+    "name": "Battlefield V",
+    "platforms": [
+      {
+        "platform": {
+          "id": 4,
+          "name": "PC",
+          "slug": "pc",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 515507,
+          "image_background": "https://media.rawg.io/media/games/4a0/4a0a1316102366260e6f38fd2a9cfdce.jpg"
+        },
+        "released_at": "2020-06-11",
+        "requirements": {
+          "minimum": "Minimum:\nRequires a 64-bit processor and operating system\nOS: 64-bit Windows 7, Windows 8.1 and Windows 10\nProcessor: AMD FX-8350/ Core i5 6600K\nMemory: 8 GB RAM\nGraphics: NVIDIA GeForce® GTX 1050 / NVIDIA GeForce® GTX 660 2GB or AMD Radeon™ RX 560 / HD 7850 2GB\nDirectX: Version 11\nStorage: 50 GB available space",
+          "recommended": "Recommended:\nRequires a 64-bit processor and operating system\nOS: 64-bit Windows 10 or later\nProcessor: AMD Ryzen 3 1300X/Intel Core i7 4790\nMemory: 12 GB RAM\nGraphics: NVIDIA GeForce® GTX 1060 6GB/AMD Radeon™ RX 580 8GB\nDirectX: Version 11\nStorage: 50 GB available space"
+        }
+      },
+      {
+        "platform": {
+          "id": 1,
+          "name": "Xbox One",
+          "slug": "xbox-one",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 5542,
+          "image_background": "https://media.rawg.io/media/games/73e/73eecb8909e0c39fb246f457b5d6cbbe.jpg"
+        },
+        "released_at": "2018-11-20",
+        "requirements": {}
+      },
+      {
+        "platform": {
+          "id": 18,
+          "name": "PlayStation 4",
+          "slug": "playstation4",
+          "image": null,
+          "year_end": null,
+          "year_start": null,
+          "games_count": 6694,
+          "image_background": "https://media.rawg.io/media/games/490/49016e06ae2103881ff6373248843069.jpg"
+        },
+        "released_at": "2018-11-20",
+        "requirements": {}
+      }
+    ],
+    "player_perspectives": [1],
+    "rating": 71.13012895509853,
+    "rating_count": 253,
+    "release_dates": [157807, 157808, 157809, 304314],
+    "screenshots": [
+      {
+        "id": 212813,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "rkp2kggnoid6bthpuv2n",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/rkp2kggnoid6bthpuv2n.jpg",
+        "width": 1920,
+        "checksum": "c0eed2ad-25d8-63ca-7646-1b191e37e9f6"
+      },
+      {
+        "id": 212814,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "oteswqhfmfxjcu41sug0",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/oteswqhfmfxjcu41sug0.jpg",
+        "width": 1920,
+        "checksum": "5e7a0b5e-8266-49c5-30fc-0dc8dfcb777a"
+      },
+      {
+        "id": 212815,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "xdjjufkmte3ntonkigs5",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/xdjjufkmte3ntonkigs5.jpg",
+        "width": 1920,
+        "checksum": "96540f7a-e2c6-12df-c5c2-2a0d45317c70"
+      },
+      {
+        "id": 212816,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "cdlqzmwub64eokzm7cdt",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/cdlqzmwub64eokzm7cdt.jpg",
+        "width": 1920,
+        "checksum": "c761cc0f-141d-afd9-e57b-a7ac844d00fb"
+      },
+      {
+        "id": 212817,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "lxeavjeryfvcj2jtzpu5",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/lxeavjeryfvcj2jtzpu5.jpg",
+        "width": 1920,
+        "checksum": "9a254312-22cc-f096-b992-9a8254e0480c"
+      },
+      {
+        "id": 212818,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "enrem5i1bj7kcgx0qx6n",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/enrem5i1bj7kcgx0qx6n.jpg",
+        "width": 1920,
+        "checksum": "c66e5ecb-8559-db4b-48fe-f6cf350ca457"
+      },
+      {
+        "id": 212819,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "pjqit6egebe8affgfxey",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/pjqit6egebe8affgfxey.jpg",
+        "width": 1920,
+        "checksum": "2611362b-66ca-e512-a5dc-9104f91c3476"
+      },
+      {
+        "id": 212820,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "b8aivuwxxtgojaguczad",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/b8aivuwxxtgojaguczad.jpg",
+        "width": 1920,
+        "checksum": "e61621f0-722e-0513-d6eb-a356c4c5d2d2"
+      },
+      {
+        "id": 212821,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "xokasjrbubfkqtnvy9p3",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/xokasjrbubfkqtnvy9p3.jpg",
+        "width": 1920,
+        "checksum": "ed666587-68fa-8089-c03a-3a51a388f4ea"
+      },
+      {
+        "id": 212822,
+        "game": 83728,
+        "height": 1080,
+        "image_id": "w3yuy5qbpbdhmbd4ggu1",
+        "url": "//images.igdb.com/igdb/image/upload/t_thumb/w3yuy5qbpbdhmbd4ggu1.jpg",
+        "width": 1920,
+        "checksum": "160bab17-f1f5-4e8d-fd67-e56f1bfe3d69"
+      }
+    ],
+    "similar_games": [
+      326, 17446, 19164, 19549, 28751, 38030, 83727, 103301, 106805, 119177
+    ],
+    "slug": "battlefield-v",
+    "summary": "The Battlefield series goes back to its roots in a never-before-seen portrayal of World War 2. Take on physical, all-out multiplayer with your squad in modes like the vast Grand Operations and the cooperative Combined Arms, or witness human drama set against global combat in the single player War Stories. As you fight in epic, unexpected locations across the globe, enjoy the richest and most immersive Battlefield yet.",
+    "tags": [
+      1, 22, 39, 268435461, 536870931, 536871361, 536871365, 536871378,
+      536877928
+    ],
+    "themes": [1, 22, 39],
+    "total_rating": 74.27094683049043,
+    "total_rating_count": 273,
+    "updated_at": 1692961341,
+    "url": "https://www.igdb.com/games/battlefield-v",
+    "videos": [20070, 20109, 20445, 21664, 21770, 22026, 22700, 23151],
+    "websites": [
+      79470, 79570, 79571, 79572, 79573, 79574, 80064, 146564, 287173, 522510
+    ],
+    "checksum": "e9a39ac4-6dd1-e617-fdc6-9a39aa26c226",
+    "language_supports": [
+      115033, 115035, 115037, 115038, 115039, 115040, 115041, 115042, 115043,
+      115044, 115045, 115046, 115047, 115048, 115049, 115050, 115051, 115052,
+      115053, 115054, 115055, 115056, 115057, 115058, 115059, 115060, 115061,
+      115062, 115063, 115064, 210955, 210960, 470209, 470210, 470211, 470213
+    ],
+    "game_localizations": [20560],
+    "description": "<p>Battlefield V is the sixteenth game in its franchise. </p>\n<h3>Plot</h3>\n<p>Like the original Battlefield, the game is based on the real events of World War II. The game focuses on the obscure battles of the war. It features storylines that tie the battles together and consist of episodes called “war stories”.</p>\n<h3>Gameplay</h3>\n<p>Battlefield V puts a strong emphasis on realism. The game avoids video game abstractions in favor of immersive experience of the war. For that goal, the game aims to increase the player&#39;s interaction with the environment, such as doors, vehicles, or ammo. The ammo and other resources in the game are scarce, forcing the player to use a tactical approach.<br />\nThe game gives a spotlight to women in the military who are among the main characters in the campaign. The player might also choose to play a female character in the multiplayer, as the gender is not tied to a class. The game also allows the players many customization options for costumes, vehicles, and weapons.</p>\n<h3>Modes</h3>\n<p>Battlefield V has many multiplayer modes, some of which are new to the series and some are reimagined versions of the modes from previous games. For example, The Grand Operations mode is based on the original Battlefield mode called Operations. This mode imitates a military campaign and consists of a series of battles with different objectives and non-linear progress options.</p>",
+    "description_raw": "Battlefield V is the sixteenth game in its franchise. \r\n\r\n###Plot\r\nLike the original Battlefield, the game is based on the real events of World War II. The game focuses on the obscure battles of the war. It features storylines that tie the battles together and consist of episodes called “war stories”.\r\n\r\n###Gameplay\r\nBattlefield V puts a strong emphasis on realism. The game avoids video game abstractions in favor of immersive experience of the war. For that goal, the game aims to increase the player's interaction with the environment, such as doors, vehicles, or ammo. The ammo and other resources in the game are scarce, forcing the player to use a tactical approach.\r\nThe game gives a spotlight to women in the military who are among the main characters in the campaign. The player might also choose to play a female character in the multiplayer, as the gender is not tied to a class. The game also allows the players many customization options for costumes, vehicles, and weapons.\r\n\r\n###Modes\r\nBattlefield V has many multiplayer modes, some of which are new to the series and some are reimagined versions of the modes from previous games. For example, The Grand Operations mode is based on the original Battlefield mode called Operations. This mode imitates a military campaign and consists of a series of battles with different objectives and non-linear progress options."
+  }
+]
