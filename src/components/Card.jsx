@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Card({ game }) {
   return (
     <article>
-      <Link to={"/"} className={`flex flex-col gap-2`}>
+      <Link to={"/detail"} className={`flex flex-col gap-2`}>
         <figure className={`aspect-cover`}>
           <img src={game.cover} alt={game.title} />
         </figure>

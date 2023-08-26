@@ -15,10 +15,8 @@ export default function Search() {
   };
 
   return (
-    <div
-      className={`md:container mx-auto px-4 xl:px-20 flex flex-col lg:flex-row`}
-    >
-      <div className={`flex flex-col gap-2`}>
+    <div className={`flex flex-col gap-4 lg:flex-row`}>
+      <div className={`flex flex-col gap-4`}>
         <button
           onClick={handleActive}
           className={`max-w-fit lg:hidden flex items-center gap-2 bg-white bg-opacity-10 hocus:bg-opacity-20 p-2 px-4 rounded-full`}
@@ -30,7 +28,7 @@ export default function Search() {
         <aside
           className={`${
             active ? `grid grid-cols-2` : `hidden`
-          } border-b-2 lg:border-b-0 lg:border-r-2 border-white border-opacity-10 py-4 lg:pr-4 lg:!flex lg:flex-col gap-4 lg:sticky lg:top-20`}
+          } border-b-2 lg:border-b-0 lg:border-r-2 border-white border-opacity-10 pb-4 lg:pr-4 lg:!flex lg:flex-col gap-4 lg:gap-8 lg:sticky lg:top-20`}
         >
           <section id={`Genres`} className={`flex flex-col gap-2`}>
             <h2 className={`text-xl font-bold`}>Genres</h2>
@@ -70,7 +68,7 @@ export default function Search() {
         </aside>
       </div>
 
-      <div className={`py-2 px-4 flex flex-col gap-4`}>
+      <div className={`flex flex-col gap-4 lg:py-4`}>
         <div
           id="searchBar"
           className={`flex items-center gap-2 px-6 bg-primary-secondary bg-opacity-75 backdrop-blur w-full sticky top-6`}

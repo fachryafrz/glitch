@@ -34,7 +34,7 @@ export default function Navbar() {
       <ul
         className={`${
           active ? `flex` : `hidden`
-        } lg:!flex gap-12 place-self-start absolute top-full left-0 flex-col lg:flex-row bg-primary-bg h-fit lg:static p-4 ml-4 lg:ml-0 lg:p-0 lg:h-full lg:items-center lg:bg-transparent`}
+        } lg:!flex gap-12 place-self-start absolute top-full left-0 flex-col lg:flex-row bg-primary-bg h-fit lg:static p-8 pl-4 ml-4 lg:ml-0 lg:p-0 lg:h-full lg:items-center lg:bg-transparent`}
       >
         {data.links.map((item, i) => {
           return (

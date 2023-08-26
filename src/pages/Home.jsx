@@ -5,9 +5,7 @@ import data from "../json/games.json";
 
 export default function Home() {
   return (
-    <div
-      className={`md:container mx-auto p-4 xl:px-24 flex flex-col gap-4 lg:gap-10`}
-    >
+    <div className={`flex flex-col gap-4 lg:gap-10`}>
       <HomeFilters />
 
       <HomeSlider />
