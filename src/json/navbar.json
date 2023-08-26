@@ -19,12 +19,20 @@
   ],
   "socials": [
     {
+      "url": "https://facebook.com/fachryafrz",
+      "icon": "logoFacebook"
+    },
+    {
+      "url": "https://twitter.com/fachryafrz",
+      "icon": "logoTwitter"
+    },
+    {
       "url": "https://instagram.com/fachryafrz",
       "icon": "logoInstagram"
     },
     {
-      "url": "https://github.com/fachryafrz",
-      "icon": "logoGithub"
+      "url": "https://youtube.com/@fachryafrz",
+      "icon": "logoYoutube"
     }
   ]
 }

@@ -53,7 +53,7 @@ export default function Navbar() {
       <Link to={"/"}>
         <img src={`/logo.svg`} alt={`GameCove`} className={`w-10`} />
       </Link>
-      <ul className={`flex items-center justify-end h-full gap-4`}>
+      <ul className={`hidden md:flex items-center justify-end h-full gap-4`}>
         {data.socials.map((item, i) => {
           return (
             <li key={i}>

@@ -23,15 +23,15 @@ export default function HomeFilters() {
 
       <div
         id={`filters`}
-        className={`${
-          active ? `grid` : `hidden`
-        } lg:!grid grid-cols-2 lg:grid-cols-3 gap-8`}
+        className={`grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8`}
       >
         {data.map((item, i) => {
           return (
             <div
               key={i}
-              className={`py-4 border-b border-white border-opacity-10`}
+              className={`${
+                active ? `block` : `hidden`
+              } lg:!block py-4 border-b border-white border-opacity-10`}
             >
               <h2 className={`opacity-50 mb-2`}>{item.section}</h2>
               <ul className={`flex flex-col md:flex-row gap-2 md:gap-4`}>

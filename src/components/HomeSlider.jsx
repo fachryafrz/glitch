@@ -40,7 +40,7 @@ export default function HomeSlider() {
                 />
               </figure>
               <div
-                className={`relative lg:w-[40%] xl:w-[30%] p-8 xl:p-10 bg-primary-secondary flex flex-col gap-4`}
+                className={`relative lg:w-[40%] xl:w-[30%] p-8 xl:p-10 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start`}
               >
                 <h2
                   className={`text-3xl sm:text-4xl font-bold line-clamp-2 leading-snug`}
