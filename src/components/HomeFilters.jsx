@@ -53,7 +53,7 @@ export default function HomeFilters() {
         })}
 
         <div
-          className={`py-4 border-b border-white border-opacity-10 col-span-2 lg:col-span-1`}
+          className={`py-2 border-b border-white border-opacity-10 col-span-2 lg:col-span-1`}
         >
           <h2 className={`opacity-50 mb-2`}>Search</h2>
           <div className={`flex items-center`}>
@@ -62,8 +62,11 @@ export default function HomeFilters() {
               placeholder={`For example: Battlefield 5`}
               className={`w-full bg-transparent placeholder:text-white placeholder:opacity-25`}
             />
-            <Link to={`/search`} className={`flex aspect-square`}>
-              <IonIcon icon={searchOutline} className={`text-xl opacity-50`} />
+            <Link
+              to={`/search`}
+              className={`flex aspect-square p-2 opacity-50 hocus:opacity-100`}
+            >
+              <IonIcon icon={searchOutline} className={`text-xl`} />
             </Link>
           </div>
         </div>
