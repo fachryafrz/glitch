@@ -49,7 +49,7 @@
       },
       {
         "name": "Contact",
-        "url": "/"
+        "url": "https://fachryafrz.vercel.app"
       }
     ]
   },
@@ -141,10 +141,6 @@
       {
         "name": "Settings",
         "url": "/"
-      },
-      {
-        "name": "Contact",
-        "url": "https://fachryafrz.vercel.app"
       }
     ]
   }
