@@ -1,5 +1,5 @@
 .swiper-button-disabled {
-  @apply text-neutral-600;
+  @apply !opacity-30 !cursor-not-allowed;
 }
 
 @tailwind base;

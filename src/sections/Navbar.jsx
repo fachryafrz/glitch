@@ -29,43 +29,45 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`md:container mx-auto grid grid-cols-3 lg:flex items-center p-4 xl:px-24 gap-4 lg:gap-8 sticky top-0 z-50 transition-all duration-300 backdrop-blur ${
+      className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur ${
         isScrolled && `bg-primary-bg bg-opacity-90`
       }`}
     >
-      <button
-        onClick={() => setActive(!active)}
-        className={`grid place-items-center max-w-fit aspect-square lg:hidden`}
+      <div
+        className={`md:container mx-auto grid grid-cols-3 lg:flex items-center p-4 xl:px-24 gap-4 lg:gap-8 `}
       >
-        <IonIcon
-          icon={active ? Icons.closeOutline : Icons.menuOutline}
-          className={`text-3xl`}
-        />
-      </button>
-
-      <Link to={"/"} className={`flex mx-auto lg:mx-0`}>
-        <img src={`/logo.svg`} alt={`GameCove`} className={`w-10`} />
-      </Link>
-
-      <ul
-        className={`${
-          active ? `flex` : `hidden`
-        } lg:!flex gap-12 place-self-start absolute top-full left-0 flex-col lg:flex-row bg-primary-bg h-fit lg:static p-8 pl-4 ml-4 lg:ml-0 lg:p-0 lg:place-self-auto lg:h-full lg:items-center lg:bg-transparent`}
-      >
-        {data.links.map((item, i) => {
-          return (
-            <li key={i}>
-              <Link
-                to={item.url}
-                className={`opacity-50 hocus:opacity-100 flex items-center gap-1`}
-              >
-                <IonIcon icon={navIcons[i]} />
-                <span>{item.name}</span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+        <button
+          onClick={() => setActive(!active)}
+          className={`grid place-items-center max-w-fit aspect-square lg:hidden`}
+        >
+          <IonIcon
+            icon={active ? Icons.closeOutline : Icons.menuOutline}
+            className={`text-3xl`}
+          />
+        </button>
+        <Link to={"/"} className={`flex mx-auto lg:mx-0`}>
+          <img src={`/logo.svg`} alt={`GameCove`} className={`w-10`} />
+        </Link>
+        <ul
+          className={`${
+            active ? `flex` : `hidden`
+          } lg:!flex gap-12 place-self-start absolute top-full left-0 flex-col lg:flex-row bg-primary-bg h-fit lg:static p-8 pl-4 ml-4 lg:ml-0 lg:p-0 lg:place-self-auto lg:h-full lg:items-center lg:bg-transparent`}
+        >
+          {data.links.map((item, i) => {
+            return (
+              <li key={i}>
+                <Link
+                  to={item.url}
+                  className={`opacity-50 hocus:opacity-100 flex items-center gap-1`}
+                >
+                  <IonIcon icon={navIcons[i]} />
+                  <span>{item.name}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </nav>
   );
 }

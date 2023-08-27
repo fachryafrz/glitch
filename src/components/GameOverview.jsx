@@ -82,8 +82,7 @@ export default function GameOverview({ game, stores }) {
       {/* Right */}
       <aside className={`lg:order-3`}>
         <div
-          style={{ maxHeight: `calc(100dvh - 100px)` }}
-          className={`sticky top-20 flex flex-col gap-4 overflow-y-auto`}
+          className={`lg:max-h-[calc(100dvh-100px)] sticky top-20 flex flex-col gap-4 lg:overflow-y-auto`}
         >
           <h2 className={`text-2xl lg:text-4xl font-bold`}>{game.name}</h2>
 
