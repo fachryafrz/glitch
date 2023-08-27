@@ -52,7 +52,7 @@ export default function HomeSlider() {
                   className={`mt-auto pt-4 flex flex-col gap-4 items-center xs:flex-row xs:items-end xs:justify-between`}
                 >
                   <Link
-                    to={`/`}
+                    to={`/details`}
                     className={`p-3 px-8 bg-white bg-opacity-10 rounded hocus:bg-opacity-20 text-center`}
                   >
                     View details

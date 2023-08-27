@@ -1,0 +1,29 @@
+[
+  {
+    "id": 4896,
+    "game": 83728,
+    "height": 1080,
+    "image_id": "meerv4jrmm8orqlmk3dk",
+    "url": "//images.igdb.com/igdb/image/upload/t_thumb/meerv4jrmm8orqlmk3dk.jpg",
+    "width": 1920,
+    "checksum": "082b692e-08ab-d3e4-623e-f8ef3569cf14"
+  },
+  {
+    "id": 4897,
+    "game": 83728,
+    "height": 1080,
+    "image_id": "iddkiqyfckqwmpow4mjr",
+    "url": "//images.igdb.com/igdb/image/upload/t_thumb/iddkiqyfckqwmpow4mjr.jpg",
+    "width": 1920,
+    "checksum": "f83e92cb-0b98-0bf4-9c85-f5293d8d50f8"
+  },
+  {
+    "id": 4949,
+    "game": 83728,
+    "height": 2160,
+    "image_id": "acgxgkco9k67c1zhdod7",
+    "url": "//images.igdb.com/igdb/image/upload/t_thumb/acgxgkco9k67c1zhdod7.jpg",
+    "width": 3841,
+    "checksum": "6b050f8f-12ba-54ff-9d15-4e31a572f422"
+  }
+]

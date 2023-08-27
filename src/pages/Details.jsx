@@ -3,22 +3,22 @@ import { chevronBackOutline } from "ionicons/icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import GameMedia from "../components/GameMedia";
-import data from "../json/gameDetails.json";
 import GameOverview from "../components/GameOverview";
 
-export default function Details() {
-  let game = data[0];
+import backdrop from "../json/gameDetailsIGDB.json";
+import game from "../json/gameDetailsRAWG.json";
+import images from "../json/gameScreenshotsRAWG.json";
 
+export default function Details() {
   return (
     <div className={`flex flex-col gap-4 py-4`}>
       <div
+        style={{
+          background: `url(https://images.igdb.com/igdb/image/upload/t_original/${backdrop[0].image_id}.jpg})`,
+          backgroundSize: `contain`,
+        }}
         className={`absolute aspect-video inset-0 -z-10 blur-3xl opacity-30`}
-      >
-        <img
-          src={`https://images.igdb.com/igdb/image/upload/t_original/${game.artworks[0].image_id}.jpg`}
-          alt={game.name}
-        />
-      </div>
+      ></div>
 
       <Link
         to={`/`}
@@ -28,9 +28,7 @@ export default function Details() {
         <span>Back to home</span>
       </Link>
 
-      <h2 className={`text-4xl font-bold`}>{game.name}</h2>
-
-      <GameMedia game={game} />
+      <GameMedia game={game} images={images} backdrop={backdrop[0].image_id} />
 
       <GameOverview game={game} />
     </div>
