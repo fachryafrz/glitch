@@ -14,14 +14,16 @@ export default function Slider({ title, games, min, max }) {
       <h2 className={`sr-only`}>{title}</h2>
 
       <Swiper
-        spaceBetween={16}
+        spaceBetween={8}
         slidesPerView={2}
         breakpoints={{
           768: {
             slidesPerView: 3,
+            spaceBetween: 16,
           },
           1024: {
             slidesPerView: 5,
+            spaceBetween: 16,
           },
         }}
         modules={[Navigation]}
