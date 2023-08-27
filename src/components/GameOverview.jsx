@@ -88,49 +88,48 @@ export default function GameOverview({ game, stores }) {
           <h2 className={`text-2xl lg:text-4xl font-bold`}>{game.name}</h2>
 
           <table
-            className={`first:[&_td]:whitespace-nowrap first:[&_td]:pr-1 [&_td]:align-top [&_td]:text-neutral-400`}
+            className={`first:[&_td]:whitespace-nowrap first:[&_td]:pr-4 [&_td]:align-top first:[&_td]:text-neutral-400`}
           >
             <tbody>
               <tr>
-                <td>Publishers:</td>
+                <td>Publishers</td>
                 <td className={`line-clamp-2`}>
                   {game.publishers.map((item) => item.name).join(", ")}
                 </td>
               </tr>
               <tr>
-                <td>Developers:</td>
+                <td>Developers</td>
                 <td className={`line-clamp-2`}>
                   {game.developers.map((dev) => dev.name).join(", ")}
                 </td>
               </tr>
+              <tr>
+                <td>Release Date</td>
+                <td className={`flex items-center gap-2`}>
+                  <IonIcon
+                    icon={Icons.calendarOutline}
+                    className={`text-xl hidden`}
+                  />
+                  {gameDate}
+                </td>
+              </tr>
+              <tr>
+                <td>Platforms</td>
+                <td className="flex items-center gap-2">
+                  {game.parent_platforms.map((item) => {
+                    return (
+                      <IonIcon
+                        key={item.platform.id}
+                        icon={platformIcon(item.platform.name)}
+                        title={item.platform.name}
+                        className={`text-xl`}
+                      />
+                    );
+                  })}
+                </td>
+              </tr>
             </tbody>
           </table>
-
-          <div>
-            <img
-              src={ageRating(game.esrb_rating.id)}
-              alt={game.esrb_rating.name}
-              className={`w-[75px]`}
-            />
-          </div>
-
-          <div className={`flex items-center gap-2`}>
-            <IonIcon icon={Icons.calendarOutline} className={`text-xl`} />
-            {gameDate}
-          </div>
-
-          <div className="flex items-center gap-2">
-            {game.parent_platforms.map((item) => {
-              return (
-                <IonIcon
-                  key={item.platform.id}
-                  icon={platformIcon(item.platform.name)}
-                  title={item.platform.name}
-                  className={`text-xl`}
-                />
-              );
-            })}
-          </div>
 
           <div className={`flex items-center gap-1 flex-wrap`}>
             {game.genres.map((genre) => {
@@ -144,6 +143,12 @@ export default function GameOverview({ game, stores }) {
               );
             })}
           </div>
+
+          <img
+            src={ageRating(game.esrb_rating.id)}
+            alt={game.esrb_rating.name}
+            className={`w-[75px]`}
+          />
 
           <hr className={`opacity-20 my-4`} />
 
@@ -162,11 +167,11 @@ export default function GameOverview({ game, stores }) {
                     style={{
                       backgroundColor: `${storeColor(store.store.name)}`,
                     }}
-                    className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg`}
+                    className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg hocus:!bg-white hocus:text-black transition-all`}
                   >
                     <IonIcon
                       icon={storeIcon(store.store.name)}
-                      className={`text-xl`}
+                      className={`text-2xl`}
                     />
                     {store.store.name}
                   </Link>
