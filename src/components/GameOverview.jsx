@@ -1,9 +1,10 @@
 import { IonIcon } from "@ionic/react";
 import * as Icons from "ionicons/icons";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Link } from "react-router-dom";
 import gfm from "remark-gfm";
 
-export default function GameOverview({ game }) {
+export default function GameOverview({ game, stores }) {
   const dateRaw = new Date(game.released);
   const options = {
     year: "numeric",
@@ -25,6 +26,49 @@ export default function GameOverview({ game }) {
     }
   };
 
+  const storeIcon = (storeName) => {
+    switch (storeName) {
+      case "Steam":
+        return Icons.logoSteam;
+      case "PlayStation Store":
+        return Icons.logoPlaystation;
+      case "Xbox Store":
+        return Icons.logoXbox;
+      default:
+        return `Icons.logo${storeName.toLowerCase()}`;
+    }
+  };
+
+  const storeColor = (storeName) => {
+    switch (storeName) {
+      case "Steam":
+        return `#000000`;
+      case "PlayStation Store":
+        return `#1e5ddb`;
+      case "Xbox Store":
+        return `#107c10`;
+      default:
+        return `#000000`;
+    }
+  };
+
+  const ageRating = (rating) => {
+    switch (rating) {
+      case 1:
+        return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/ESRB_Everyone.svg/1200px-ESRB_Everyone.svg.png";
+      case 2:
+        return "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/ESRB_Everyone_10%2B.svg/640px-ESRB_Everyone_10%2B.svg.png";
+      case 3:
+        return "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/ESRB_Teen.svg/1200px-ESRB_Teen.svg.png";
+      case 4:
+        return "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/ESRB_Mature_17%2B.svg/1200px-ESRB_Mature_17%2B.svg.png";
+      case 5:
+        return "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/ESRB_Adults_Only_18%2B.svg/1468px-ESRB_Adults_Only_18%2B.svg.png";
+      default:
+        return "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ESRB_RP.svg/1200px-ESRB_RP.svg.png";
+    }
+  };
+
   const minimum = game.platforms.find((platform) => platform.requirements)
     .requirements.minimum;
 
@@ -37,7 +81,10 @@ export default function GameOverview({ game }) {
     >
       {/* Right */}
       <aside className={`lg:order-3`}>
-        <div className={`sticky top-20 flex flex-col gap-4`}>
+        <div
+          style={{ maxHeight: `calc(100dvh - 100px)` }}
+          className={`sticky top-20 flex flex-col gap-4 overflow-y-auto`}
+        >
           <h2 className={`text-2xl lg:text-4xl font-bold`}>{game.name}</h2>
 
           <table
@@ -58,6 +105,14 @@ export default function GameOverview({ game }) {
               </tr>
             </tbody>
           </table>
+
+          <div>
+            <img
+              src={ageRating(game.esrb_rating.id)}
+              alt={game.esrb_rating.name}
+              className={`w-[75px]`}
+            />
+          </div>
 
           <div className={`flex items-center gap-2`}>
             <IonIcon icon={Icons.calendarOutline} className={`text-xl`} />
@@ -87,6 +142,36 @@ export default function GameOverview({ game }) {
                   {genre.name}
                 </span>
               );
+            })}
+          </div>
+
+          <hr className={`opacity-20 my-4`} />
+
+          <div className={`flex items-center gap-2 flex-wrap`}>
+            {game.stores.map((store) => {
+              const storeInfo = stores.find(
+                (i) => i.store_id === store.store.id
+              );
+
+              if (storeInfo) {
+                return (
+                  <Link
+                    key={store.store.id}
+                    to={storeInfo.url}
+                    target={`_blank`}
+                    style={{
+                      backgroundColor: `${storeColor(store.store.name)}`,
+                    }}
+                    className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg`}
+                  >
+                    <IonIcon
+                      icon={storeIcon(store.store.name)}
+                      className={`text-xl`}
+                    />
+                    {store.store.name}
+                  </Link>
+                );
+              }
             })}
           </div>
         </div>

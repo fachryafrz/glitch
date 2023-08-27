@@ -8,6 +8,7 @@ import GameOverview from "../components/GameOverview";
 import backdrop from "../json/gameDetailsIGDB.json";
 import game from "../json/gameDetailsRAWG.json";
 import images from "../json/gameScreenshotsRAWG.json";
+import stores from "../json/gameStoresRAWG.json";
 
 export default function Details() {
   return (
@@ -30,7 +31,7 @@ export default function Details() {
 
       <GameMedia game={game} images={images} backdrop={backdrop[0].image_id} />
 
-      <GameOverview game={game} />
+      <GameOverview game={game} stores={stores.results} />
     </div>
   );
 }

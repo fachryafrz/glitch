@@ -1,0 +1,25 @@
+{
+  "count": 3,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 446694,
+      "game_id": 58494,
+      "store_id": 1,
+      "url": "https://store.steampowered.com/app/1238810/Battlefield_V/"
+    },
+    {
+      "id": 48005,
+      "game_id": 58494,
+      "store_id": 3,
+      "url": "https://store.playstation.com/en-us/product/UP0006-CUSA08724_00-BATTLEFIELDV0000"
+    },
+    {
+      "id": 48015,
+      "game_id": 58494,
+      "store_id": 2,
+      "url": "https://www.microsoft.com/en-us/p/battlefield-v/bz2n7tq0xcf2?cid=msft_web_chart"
+    }
+  ]
+}
