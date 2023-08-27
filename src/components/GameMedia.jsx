@@ -70,13 +70,13 @@ export default function GameMedia({ game, images, backdrop }) {
             >
               <button
                 id="prevBig"
-                className={`!pointer-events-auto text-white mx-4`}
+                className={`!pointer-events-auto text-white px-4`}
               >
                 <IonIcon icon={chevronBackCircle} className={`text-3xl`} />
               </button>
               <button
                 id="nextBig"
-                className={`!pointer-events-auto text-white mx-4`}
+                className={`!pointer-events-auto text-white px-4`}
               >
                 <IonIcon icon={chevronForwardCircle} className={`text-3xl`} />
               </button>
