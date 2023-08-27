@@ -15,7 +15,7 @@ export default function HomeFilters() {
     <section>
       <button
         onClick={handleActive}
-        className={`lg:hidden flex items-center gap-2 bg-white bg-opacity-10 hocus:bg-opacity-20 p-2 px-4 rounded-full`}
+        className={`mb-2 lg:hidden flex items-center gap-2 bg-white bg-opacity-10 hocus:bg-opacity-20 p-2 px-4 rounded-full`}
       >
         <IonIcon icon={optionsOutline} className={`text-xl`} />
         <span>Filters</span>
