@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`md:container mx-auto flex items-center p-4 xl:px-24 gap-4 lg:gap-8 sticky top-0 z-50 transition-all duration-300 backdrop-blur ${
+      className={`md:container mx-auto grid grid-cols-3 lg:flex items-center p-4 xl:px-24 gap-4 lg:gap-8 sticky top-0 z-50 transition-all duration-300 backdrop-blur ${
         isScrolled && `bg-primary-bg bg-opacity-90`
       }`}
     >
@@ -43,7 +43,7 @@ export default function Navbar() {
         />
       </button>
 
-      <Link to={"/"}>
+      <Link to={"/"} className={`flex mx-auto lg:mx-0`}>
         <img src={`/logo.svg`} alt={`GameCove`} className={`w-10`} />
       </Link>
 
