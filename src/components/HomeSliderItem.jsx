@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 
 export default function HomeSliderItem({ game }) {
   const [details, setDetails] = useState();
+  const gameCreator =
+    details &&
+    details.developers &&
+    details.developers.length > 0 &&
+    details.developers[0].name;
 
   const fetchDetails = async () => {
     axios
@@ -24,7 +29,7 @@ export default function HomeSliderItem({ game }) {
 
   return (
     <>
-      <figure className={`aspect-video overflow-hidden`}>
+      <figure className={`aspect-video lg:aspect-auto overflow-hidden`}>
         <img src={game.background_image} alt={game.name} />
       </figure>
       <div
@@ -32,7 +37,7 @@ export default function HomeSliderItem({ game }) {
       >
         <h2
           title={game.name}
-          className={`text-4xl xl:text-5xl font-bold line-clamp-2 leading-snug`}
+          className={`text-2xl lg:text-4xl font-bold line-clamp-2 leading-snug`}
         >
           {game.name}
         </h2>
@@ -41,8 +46,13 @@ export default function HomeSliderItem({ game }) {
           className={`flex items-center justify-center lg:justify-start gap-1`}
         >
           <IonIcon icon={star} className={`text-primary-yellow`} />
-          <span>{game.rating.toFixed(1)} &bull; </span>
+          <span>{game.rating.toFixed(1)}</span>
+          {game.rating && game.released && <span>&bull;</span>}
           <span>{new Date(game.released).getFullYear()}</span>
+          {game.released && gameCreator && (
+            <span className={`hidden xs:inline`}>&bull;</span>
+          )}
+          <span className={`hidden xs:inline`}>{gameCreator}</span>
         </div>
 
         {game.genres && (
