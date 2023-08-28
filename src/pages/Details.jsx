@@ -1,7 +1,7 @@
 import { IonIcon } from "@ionic/react";
 import { chevronBackOutline } from "ionicons/icons";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import GameMedia from "../components/GameMedia";
 import GameOverview from "../components/GameOverview";
 
@@ -19,6 +19,11 @@ export default function Details() {
   const [game, setGame] = useState({});
   const [images, setImages] = useState([]);
   const [stores, setStores] = useState([]);
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   const fetchGame = async () => {
     axios
@@ -73,13 +78,13 @@ export default function Details() {
         className={`absolute aspect-video inset-0 -z-10 blur-3xl opacity-40`}
       ></div>
 
-      <Link
-        to={`/`}
+      <button
+        onClick={handleGoBack}
         className={`flex max-w-fit items-center gap-2 text-neutral-400 hocus:gap-3 hocus:text-white transition-all`}
       >
         <IonIcon icon={chevronBackOutline} />
-        <span>Back to home</span>
-      </Link>
+        <span>Back to previous page</span>
+      </button>
 
       {images.length > 0 && <GameMedia game={game} images={images} />}
 

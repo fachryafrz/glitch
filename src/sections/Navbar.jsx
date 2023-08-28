@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import data from "../json/navbar.json";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as Icons from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
 
@@ -9,6 +9,34 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [socialIcons, setSocialIcons] = useState([]);
   const [active, setActive] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const searchRef = useRef();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isSearchPage = location.pathname.startsWith(`/search`);
+
+  const handleSearchInput = (e) => {
+    e.preventDefault();
+
+    setSearchQuery(e.target.value);
+  };
+
+  const handleClearInput = (e) => {
+    e.preventDefault();
+
+    setSearchQuery("");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!searchQuery) {
+      return;
+    }
+
+    navigate(`/search?query=${searchQuery.replace(/\s+/g, "+")}`);
+  };
 
   useEffect(() => {
     const getIcons = () => {
@@ -67,6 +95,44 @@ export default function Navbar() {
             );
           })}
         </ul>
+
+        <Link
+          to={`/search`}
+          className={`flex max-w-fit aspect-square lg:hidden justify-self-end`}
+        >
+          <IonIcon icon={Icons.searchOutline} className={`text-2xl`} />
+        </Link>
+
+        {!isSearchPage && (
+          <form
+            onSubmit={handleSubmit}
+            className={`hidden lg:flex items-center ml-auto border-b-2 border-b-white border-opacity-10`}
+          >
+            <input
+              ref={searchRef}
+              onChange={handleSearchInput}
+              type="text"
+              placeholder={`Search games`}
+              value={searchQuery && searchQuery}
+              className={`w-full bg-transparent placeholder:text-white placeholder:opacity-25`}
+            />
+            {searchQuery && (
+              <button
+                type={`button`}
+                onClick={handleClearInput}
+                className={`flex aspect-square p-2 opacity-50 hocus:opacity-100`}
+              >
+                <IonIcon icon={Icons.closeOutline} className={`text-xl`} />
+              </button>
+            )}
+            <button
+              type={`submit`}
+              className={`flex aspect-square p-2 opacity-50 hocus:opacity-100`}
+            >
+              <IonIcon icon={Icons.searchOutline} className={`text-xl`} />
+            </button>
+          </form>
+        )}
       </div>
     </nav>
   );

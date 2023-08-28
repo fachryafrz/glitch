@@ -31,7 +31,7 @@ export default function Footer() {
       <section className={`col-span-full lg:col-span-2`}>
         <Link
           to={`/`}
-          className={`flex items-center justify-center lg:justify-start gap-4`}
+          className={`flex items-center justify-center lg:justify-start gap-4 max-w-fit`}
         >
           <figure
             style={{ background: `url(/logo.svg)` }}
@@ -69,7 +69,16 @@ export default function Footer() {
 
         <div className={`flex flex-col text-sm text-center lg:text-start`}>
           <span>GameCove &copy; {copyrightYear} all rights reserved</span>
-          <span>Powered by RAWG API</span>
+          <span>
+            Powered by{" "}
+            <Link
+              to={`http://rawg.io`}
+              target={`_blank`}
+              className={`hocus:text-primary-yellow`}
+            >
+              RAWG API
+            </Link>
+          </span>
         </div>
       </section>
       {footer.map((footer, i) => {

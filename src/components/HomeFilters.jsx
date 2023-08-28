@@ -37,10 +37,7 @@ export default function HomeFilters() {
         <span>Filters</span>
       </button>
 
-      <div
-        id={`filters`}
-        className={`grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8`}
-      >
+      <div id={`filters`} className={`grid grid-cols-2 gap-4 lg:gap-8`}>
         {data.map((item, i) => {
           return (
             <div
@@ -69,7 +66,7 @@ export default function HomeFilters() {
         })}
 
         <div
-          className={`py-2 border-b border-white border-opacity-10 col-span-2 lg:col-span-1`}
+          className={`hidden py-2 border-b border-white border-opacity-10 col-span-2 lg:col-span-1`}
         >
           <h2 className={`opacity-50 mb-2`}>Search</h2>
           <form onSubmit={handleSubmit} className={`flex items-center`}>
