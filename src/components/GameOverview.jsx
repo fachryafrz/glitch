@@ -47,6 +47,8 @@ export default function GameOverview({ game, stores }) {
         return `#1e5ddb`;
       case "Xbox Store":
         return `#107c10`;
+      case "Xbox 360 Store":
+        return `#107c10`;
       default:
         return `#000000`;
     }
@@ -161,6 +163,8 @@ export default function GameOverview({ game, stores }) {
 
           <hr className={`opacity-20 my-4`} />
 
+          <span>Available in</span>
+
           <div className={`flex items-center gap-2 flex-wrap`}>
             {game.stores &&
               game.stores.map((store) => {
@@ -179,10 +183,10 @@ export default function GameOverview({ game, stores }) {
                       }}
                       className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg hocus:!bg-white hocus:text-black transition-all`}
                     >
-                      <IonIcon
+                      {/* <IonIcon
                         icon={storeIcon(store.store.name)}
                         className={`text-2xl`}
-                      />
+                      /> */}
                       {store.store.name}
                     </Link>
                   );
@@ -199,40 +203,40 @@ export default function GameOverview({ game, stores }) {
 
       {/* Left */}
       <div className={`col-span-2 flex flex-col gap-8`}>
-        <section className={`flex flex-col gap-4`}>
-          <h2 className={`text-2xl lg:text-4xl font-bold`}>About the game</h2>
-          <div
-            className={`prose prose-invert max-w-none`}
-            dangerouslySetInnerHTML={{ __html: game.description }}
-          ></div>
-        </section>
-
-        {/* <section className={`flex flex-col gap-4`}>
-          <h2 className={`text-2xl lg:text-4xl font-bold`}>
-            System Requirements
-          </h2>
-          <div className={`prose prose-invert max-w-none flex flex-col`}>
-            <ul
-              className={`first:[&_li]:list-none first:[&_li]:font-bold first:[&_li]:text-xl`}
-            >
-              {minimum.split("\n").map((item, index) => (
-                <li key={index} className="mb-2">
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <ul
-              className={`first:[&_li]:list-none first:[&_li]:font-bold first:[&_li]:text-xl`}
-            >
-              {recommended.split("\n").map((item, index) => (
-                <li key={index} className="mb-2">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section> */}
+        <div className={`sticky top-20`}>
+          <section className={`flex flex-col gap-4`}>
+            <h2 className={`text-2xl lg:text-4xl font-bold`}>About the game</h2>
+            <div
+              className={`prose prose-invert max-w-none`}
+              dangerouslySetInnerHTML={{ __html: game.description }}
+            ></div>
+          </section>
+          {/* <section className={`flex flex-col gap-4`}>
+            <h2 className={`text-2xl lg:text-4xl font-bold`}>
+              System Requirements
+            </h2>
+            <div className={`prose prose-invert max-w-none flex flex-col`}>
+              <ul
+                className={`first:[&_li]:list-none first:[&_li]:font-bold first:[&_li]:text-xl`}
+              >
+                {minimum.split("\n").map((item, index) => (
+                  <li key={index} className="mb-2">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <ul
+                className={`first:[&_li]:list-none first:[&_li]:font-bold first:[&_li]:text-xl`}
+              >
+                {recommended.split("\n").map((item, index) => (
+                  <li key={index} className="mb-2">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section> */}
+        </div>
       </div>
     </div>
   );
