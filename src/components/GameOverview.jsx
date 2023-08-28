@@ -69,11 +69,17 @@ export default function GameOverview({ game, stores }) {
     }
   };
 
-  const minimum = game.platforms.find((platform) => platform.requirements)
-    .requirements.minimum;
+  // const platformWithRequirements = game.platforms.find(
+  //   (platform) =>
+  //     platform.requirements && Object.keys(platform.requirements).length > 0
+  // );
 
-  const recommended = game.platforms.find((platform) => platform.requirements)
-    .requirements.recommended;
+  // const minimum =
+  //   platformWithRequirements && platformWithRequirements.requirements.minimum;
+
+  // const recommended =
+  //   platformWithRequirements &&
+  //   platformWithRequirements.requirements.recommended;
 
   return (
     <div
@@ -93,13 +99,15 @@ export default function GameOverview({ game, stores }) {
               <tr>
                 <td>Publishers</td>
                 <td className={`line-clamp-2`}>
-                  {game.publishers.map((item) => item.name).join(", ")}
+                  {game.publishers &&
+                    game.publishers.map((item) => item.name).join(", ")}
                 </td>
               </tr>
               <tr>
                 <td>Developers</td>
                 <td className={`line-clamp-2`}>
-                  {game.developers.map((dev) => dev.name).join(", ")}
+                  {game.developers &&
+                    game.developers.map((dev) => dev.name).join(", ")}
                 </td>
               </tr>
               <tr>
@@ -115,68 +123,71 @@ export default function GameOverview({ game, stores }) {
               <tr>
                 <td>Platforms</td>
                 <td className="flex items-center gap-2">
-                  {game.parent_platforms.map((item) => {
-                    return (
-                      <IonIcon
-                        key={item.platform.id}
-                        icon={platformIcon(item.platform.name)}
-                        title={item.platform.name}
-                        className={`text-xl`}
-                      />
-                    );
-                  })}
+                  {game.parent_platforms &&
+                    game.parent_platforms.map((item) => {
+                      return (
+                        <IonIcon
+                          key={item.platform.id}
+                          icon={platformIcon(item.platform.name)}
+                          title={item.platform.name}
+                          className={`text-xl`}
+                        />
+                      );
+                    })}
                 </td>
               </tr>
             </tbody>
           </table>
 
           <div className={`flex items-center gap-1 flex-wrap`}>
-            {game.genres.map((genre) => {
-              return (
-                <span
-                  key={genre.id}
-                  className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full`}
-                >
-                  {genre.name}
-                </span>
-              );
-            })}
+            {game.genres &&
+              game.genres.map((genre) => {
+                return (
+                  <span
+                    key={genre.id}
+                    className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full`}
+                  >
+                    {genre.name}
+                  </span>
+                );
+              })}
           </div>
 
           <img
-            src={ageRating(game.esrb_rating.id)}
-            alt={game.esrb_rating.name}
+            src={ageRating(game.esrb_rating && game.esrb_rating.id)}
+            alt={game.esrb_rating && game.esrb_rating.name}
             className={`w-[75px]`}
           />
 
           <hr className={`opacity-20 my-4`} />
 
           <div className={`flex items-center gap-2 flex-wrap`}>
-            {game.stores.map((store) => {
-              const storeInfo = stores.find(
-                (i) => i.store_id === store.store.id
-              );
-
-              if (storeInfo) {
-                return (
-                  <Link
-                    key={store.store.id}
-                    to={storeInfo.url}
-                    target={`_blank`}
-                    style={{
-                      backgroundColor: `${storeColor(store.store.name)}`,
-                    }}
-                    className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg hocus:!bg-white hocus:text-black transition-all`}
-                  >
-                    <IonIcon
-                      icon={storeIcon(store.store.name)}
-                      className={`text-2xl`}
-                    />
-                    {store.store.name}
-                  </Link>
+            {game.stores &&
+              game.stores.map((store) => {
+                const storeInfo = stores.find(
+                  (i) => i.store_id === store.store.id
                 );
-              }
-            })}
+
+                if (storeInfo) {
+                  return (
+                    <Link
+                      key={store.store.id}
+                      to={storeInfo.url}
+                      target={`_blank`}
+                      style={{
+                        backgroundColor: `${storeColor(store.store.name)}`,
+                      }}
+                      className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg hocus:!bg-white hocus:text-black transition-all`}
+                    >
+                      <IonIcon
+                        icon={storeIcon(store.store.name)}
+                        className={`text-2xl`}
+                      />
+                      {store.store.name}
+                    </Link>
+                  );
+                }
+              })}
           </div>
         </div>
       </aside>
@@ -196,7 +207,7 @@ export default function GameOverview({ game, stores }) {
           ></div>
         </section>
 
-        <section className={`flex flex-col gap-4`}>
+        {/* <section className={`flex flex-col gap-4`}>
           <h2 className={`text-2xl lg:text-4xl font-bold`}>
             System Requirements
           </h2>
@@ -221,7 +232,7 @@ export default function GameOverview({ game, stores }) {
               ))}
             </ul>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );

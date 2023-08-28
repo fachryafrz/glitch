@@ -62,15 +62,15 @@ export default function Footer() {
             })}
         </ul>
       </section>
-      {footer.map((footer) => {
+      {footer.map((footer, i) => {
         return (
-          <section>
+          <section key={i}>
             <h2 className={`opacity-50 mb-2`}>{footer.section}</h2>
 
             <ul>
-              {footer.links.map((link) => {
+              {footer.links.map((link, i) => {
                 return (
-                  <li>
+                  <li key={i}>
                     <Link
                       to={link.url}
                       className={`hocus:tracking-wide hocus:text-primary-yellow transition-all`}

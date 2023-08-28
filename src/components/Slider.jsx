@@ -7,10 +7,34 @@ import "swiper/css/navigation";
 import Card from "./Card";
 import { IonIcon } from "@ionic/react";
 import { arrowBack, arrowForward } from "ionicons/icons";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function Slider({ title, games, min, max }) {
+export default function Slider({ title, apiUrl, dates, ordering }) {
+  const [data, setData] = useState([]);
+
+  const fetchGames = async () => {
+    let params = {
+      key: "7f7cb6556d15408eaeeb7b6e52579929",
+      dates: dates,
+      ordering: ordering,
+    };
+
+    axios
+      .get(`https://api.rawg.io/api/${apiUrl}`, {
+        params: {
+          ...params,
+        },
+      })
+      .then((res) => setData(res.data.results));
+  };
+
+  useEffect(() => {
+    fetchGames();
+  }, []);
+
   return (
-    <section id={title}>
+    <section id={title} className={`my-4 lg:my-0`}>
       <h2 className={`sr-only`}>{title}</h2>
 
       <Swiper
@@ -19,10 +43,12 @@ export default function Slider({ title, games, min, max }) {
         breakpoints={{
           768: {
             slidesPerView: 3,
+            slidesPerGroup: 3,
             spaceBetween: 16,
           },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 4,
+            slidesPerGroup: 4,
             spaceBetween: 16,
           },
         }}
@@ -38,10 +64,10 @@ export default function Slider({ title, games, min, max }) {
         allowTouchMove={true}
         className={`relative pt-12`}
       >
-        {games.slice(min, max).map((item, i) => {
+        {data.map((game) => {
           return (
-            <SwiperSlide key={i}>
-              <Card game={item} />
+            <SwiperSlide key={game.id}>
+              <Card game={game} />
             </SwiperSlide>
           );
         })}

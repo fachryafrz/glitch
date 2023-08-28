@@ -51,10 +51,7 @@ export default function GameMedia({ game, images, backdrop }) {
             effect={`fade`}
           >
             <SwiperSlide>
-              <img
-                src={`https://images.igdb.com/igdb/image/upload/t_original/${backdrop}.jpg`}
-                alt={game.name}
-              />
+              <img src={game.background_image} alt={game.name} />
             </SwiperSlide>
             {images.map((img) => {
               return (
@@ -111,10 +108,7 @@ export default function GameMedia({ game, images, backdrop }) {
             wrapperClass={`max-h-[300px]`}
           >
             <SwiperSlide className={`cursor-pointer hocus:opacity-50`}>
-              <img
-                src={`https://images.igdb.com/igdb/image/upload/t_original/${backdrop}.jpg`}
-                alt={game.name}
-              />
+              <img src={game.background_image} alt={game.name} />
             </SwiperSlide>
             {images.map((img) => {
               return (

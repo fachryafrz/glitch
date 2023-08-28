@@ -16,7 +16,7 @@ export default function App() {
         <h1 className={`sr-only`}>GameCove</h1>
         <Routes>
           <Route path={`/`} element={<Home />} />
-          <Route path={`/details`} element={<Details />} />
+          <Route path={`/games/:slug`} element={<Details />} />
           <Route path={`/search`} element={<Search />} />
         </Routes>
       </main>

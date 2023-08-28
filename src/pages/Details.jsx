@@ -1,24 +1,73 @@
 import { IonIcon } from "@ionic/react";
 import { chevronBackOutline } from "ionicons/icons";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import GameMedia from "../components/GameMedia";
 import GameOverview from "../components/GameOverview";
 
 import backdrop from "../json/gameDetailsIGDB.json";
-import game from "../json/gameDetailsRAWG.json";
 import images from "../json/gameScreenshotsRAWG.json";
 import stores from "../json/gameStoresRAWG.json";
+import axios from "axios";
 
 export default function Details() {
+  let { slug } = useParams();
+
+  const [game, setGame] = useState({});
+  const [images, setImages] = useState([]);
+  const [stores, setStores] = useState([]);
+
+  const fetchGame = async () => {
+    axios
+      .get(`https://api.rawg.io/api/games/${slug}`, {
+        params: {
+          key: "7f7cb6556d15408eaeeb7b6e52579929",
+        },
+      })
+      .then((res) => setGame(res.data));
+  };
+
+  useEffect(() => {
+    fetchGame();
+  }, []);
+
+  const fetchImages = async () => {
+    axios
+      .get(`https://api.rawg.io/api/games/${slug}/screenshots`, {
+        params: {
+          key: "7f7cb6556d15408eaeeb7b6e52579929",
+        },
+      })
+      .then((res) => setImages(res.data.results));
+  };
+
+  const fetchStores = async () => {
+    axios
+      .get(`https://api.rawg.io/api/games/${slug}/stores`, {
+        params: {
+          key: "7f7cb6556d15408eaeeb7b6e52579929",
+        },
+      })
+      .then((res) => setStores(res.data.results));
+  };
+
+  useEffect(() => {
+    fetchGame();
+    fetchImages();
+    fetchStores();
+  }, []);
+
+  // console.log(game);
+  // console.log(screenshots);
+
   return (
     <div className={`flex flex-col gap-4 py-4`}>
       <div
         style={{
-          background: `url(https://images.igdb.com/igdb/image/upload/t_original/${backdrop[0].image_id}.jpg})`,
+          background: `url(${game.background_image})`,
           backgroundSize: `contain`,
         }}
-        className={`absolute aspect-video inset-0 -z-10 blur-3xl opacity-30`}
+        className={`absolute aspect-video inset-0 -z-10 blur-3xl opacity-50`}
       ></div>
 
       <Link
@@ -29,9 +78,9 @@ export default function Details() {
         <span>Back to home</span>
       </Link>
 
-      <GameMedia game={game} images={images} backdrop={backdrop[0].image_id} />
+      <GameMedia game={game} images={images} />
 
-      <GameOverview game={game} stores={stores.results} />
+      <GameOverview game={game} stores={stores} />
     </div>
   );
 }

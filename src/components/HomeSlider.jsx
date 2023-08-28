@@ -11,8 +11,33 @@ import data from "../json/homeSlider.json";
 import { Link } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import { arrowBack, arrowForward } from "ionicons/icons";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import HomeSliderItem from "./HomeSliderItem";
 
-export default function HomeSlider() {
+export default function HomeSlider({ apiUrl, dates, ordering, min, max }) {
+  const [data, setData] = useState([]);
+
+  const fetchGames = async () => {
+    let params = {
+      key: "7f7cb6556d15408eaeeb7b6e52579929",
+      dates: dates,
+      ordering: ordering,
+    };
+
+    axios
+      .get(`https://api.rawg.io/api/${apiUrl}`, {
+        params: {
+          ...params,
+        },
+      })
+      .then((res) => setData(res.data.results));
+  };
+
+  useEffect(() => {
+    fetchGames();
+  }, []);
+
   return (
     <section id={`Home Slider`}>
       <Swiper
@@ -29,47 +54,27 @@ export default function HomeSlider() {
         allowSlidePrev={true}
         allowTouchMove={true}
       >
-        {data.map((item, i) => {
+        {data.slice(min, max).map((game) => {
           return (
-            <SwiperSlide key={i} className={`h-auto flex flex-col lg:flex-row`}>
-              <figure className={`flex-1`}>
-                <img
-                  src={item.backdrop}
-                  alt={item.title}
-                  className={`object-center`}
-                />
-              </figure>
-              <div
-                className={`relative lg:w-[40%] xl:w-[30%] p-8 xl:p-10 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start`}
-              >
-                <h2
-                  className={`text-3xl sm:text-4xl font-bold line-clamp-2 leading-snug`}
-                >
-                  {item.title}
-                </h2>
-                <p className={`line-clamp-4 opacity-50`}>{item.summary}</p>
-                <div
-                  className={`mt-auto pt-4 flex flex-col gap-4 items-center xs:flex-row xs:items-end xs:justify-between`}
-                >
-                  <Link
-                    to={`/details`}
-                    className={`p-3 px-8 bg-white bg-opacity-10 rounded hocus:bg-opacity-20 text-center`}
-                  >
-                    View details
-                  </Link>
-                  <div id={`navigation`} className={`text-2xl flex gap-4`}>
-                    <button id={`homePrev`}>
-                      <IonIcon icon={arrowBack} />
-                    </button>
-                    <button id={`homeNext`}>
-                      <IonIcon icon={arrowForward} />
-                    </button>
-                  </div>
-                </div>
-              </div>
+            <SwiperSlide
+              key={game.id}
+              className={`h-auto flex flex-col lg:flex-row`}
+            >
+              <HomeSliderItem game={game} />
             </SwiperSlide>
           );
         })}
+        <div
+          id={`navigation`}
+          className={`text-2xl flex items-center justify-between px-4 gap-4 absolute z-10 inset-x-0 bottom-8 xs:justify-start xs:px-0 xs:right-8 xs:inset-x-auto h-12`}
+        >
+          <button id={`homePrev`} className={`flex`}>
+            <IonIcon icon={arrowBack} />
+          </button>
+          <button id={`homeNext`} className={`flex`}>
+            <IonIcon icon={arrowForward} />
+          </button>
+        </div>
       </Swiper>
     </section>
   );
