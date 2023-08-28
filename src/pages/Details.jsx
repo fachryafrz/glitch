@@ -67,7 +67,7 @@ export default function Details() {
           background: `url(${game.background_image})`,
           backgroundSize: `contain`,
         }}
-        className={`absolute aspect-video inset-0 -z-10 blur-3xl opacity-50`}
+        className={`absolute aspect-video inset-0 -z-10 blur-3xl opacity-40`}
       ></div>
 
       <Link

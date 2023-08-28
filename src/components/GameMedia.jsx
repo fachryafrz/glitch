@@ -38,9 +38,7 @@ export default function GameMedia({ game, images, backdrop }) {
         className={`flex flex-col lg:grid lg:grid-cols-5 lg:grid-rows-3 gap-2 md:gap-4 [&_*]:h-full`}
       >
         {/* Big Image */}
-        <div
-          className={`lg:col-span-4 lg:row-span-full aspect-video lg:aspect-auto`}
-        >
+        <div className={`lg:col-span-4 lg:row-span-full`}>
           <Swiper
             spaceBetween={16}
             thumbs={{ swiper: isThumbsReady && thumbsSwiper }}
@@ -55,8 +53,12 @@ export default function GameMedia({ game, images, backdrop }) {
             {images.map((img) => {
               return (
                 <SwiperSlide key={img.id}>
-                  <figure className={`max-w-full`}>
-                    <img src={img.image} alt={game.name} />
+                  <figure className={`max-w-full aspect-video bg-black`}>
+                    <img
+                      src={img.image}
+                      alt={game.name}
+                      className={`object-contain`}
+                    />
                   </figure>
                 </SwiperSlide>
               );
