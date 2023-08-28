@@ -40,7 +40,7 @@
         "url": "/"
       },
       {
-        "name": "Press",
+        "name": "Blog",
         "url": "/"
       },
       {
@@ -56,10 +56,6 @@
   {
     "section": "Resources",
     "links": [
-      {
-        "name": "Blog",
-        "url": "/"
-      },
       {
         "name": "Newsletter",
         "url": "/"
@@ -136,10 +132,6 @@
       },
       {
         "name": "Lincenses",
-        "url": "/"
-      },
-      {
-        "name": "Settings",
         "url": "/"
       }
     ]
