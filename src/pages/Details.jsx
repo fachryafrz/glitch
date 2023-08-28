@@ -78,7 +78,7 @@ export default function Details() {
         <span>Back to home</span>
       </Link>
 
-      <GameMedia game={game} images={images} />
+      {images.length > 0 && <GameMedia game={game} images={images} />}
 
       <GameOverview game={game} stores={stores} />
     </div>

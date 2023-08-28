@@ -10,7 +10,7 @@ import { arrowBack, arrowForward } from "ionicons/icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Slider({ title, apiUrl, dates, ordering }) {
+export default function Slider({ title, apiUrl, dates, ordering, genres }) {
   const [data, setData] = useState([]);
 
   const fetchGames = async () => {
@@ -18,6 +18,7 @@ export default function Slider({ title, apiUrl, dates, ordering }) {
       key: "7f7cb6556d15408eaeeb7b6e52579929",
       dates: dates,
       ordering: ordering,
+      genres: genres,
     };
 
     axios
@@ -46,11 +47,11 @@ export default function Slider({ title, apiUrl, dates, ordering }) {
             slidesPerGroup: 3,
             spaceBetween: 16,
           },
-          1024: {
-            slidesPerView: 4,
-            slidesPerGroup: 4,
-            spaceBetween: 16,
-          },
+          // 1024: {
+          //   slidesPerView: 4,
+          //   slidesPerGroup: 4,
+          //   spaceBetween: 16,
+          // },
         }}
         modules={[Navigation]}
         effect={`fade`}

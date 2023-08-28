@@ -33,18 +33,38 @@ export default function Card({ game }) {
   return (
     <article>
       <Link to={`/games/${game.slug}`} className={`flex flex-col gap-2`}>
-        <figure className={`aspect-video overflow-hidden`}>
-          <img src={game.background_image} alt={game.name} />
+        <figure
+          className={`aspect-video overflow-hidden ${
+            game.background_image ? `bg-transparent` : `bg-black`
+          }`}
+        >
+          {game.background_image ? (
+            <img src={game.background_image} alt={game.name} />
+          ) : (
+            <img
+              src={`logo.svg`}
+              alt={game.name}
+              className={`object-contain w-[100px] mx-auto`}
+            />
+          )}
         </figure>
         <div>
-          <h3 className={`mb-1 sm:text-lg font-medium line-clamp-1`}>
+          <h3
+            title={game.name}
+            className={`mb-1 sm:text-lg font-medium line-clamp-1`}
+          >
             {game.name}
           </h3>
-          <div className={`flex items-center gap-1 text-xs sm:text-sm mt-1`}>
+          <div className={`flex items-center gap-1 text-xs sm:text-base mt-1`}>
             <span className={`opacity-50 line-clamp-1 whitespace-nowrap`}>
               {formattedDate}
             </span>
-            <span className={`opacity-50`}>&bull;</span>
+            {game.released !== null &&
+              details &&
+              details.developers &&
+              details.developers.length > 0 && (
+                <span className={`opacity-50`}>&bull;</span>
+              )}
             <span className={`line-clamp-1`}>{gameCreator}</span>
           </div>
         </div>

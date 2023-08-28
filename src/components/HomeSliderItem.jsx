@@ -1,4 +1,6 @@
+import { IonIcon } from "@ionic/react";
 import axios from "axios";
+import { star } from "ionicons/icons";
 import React, { useEffect, useState } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Link } from "react-router-dom";
@@ -38,6 +40,14 @@ export default function HomeSliderItem({ game }) {
         >
           {game.name}
         </h2>
+
+        <div className={`flex items-center gap-1`}>
+          <IonIcon icon={star} className={`text-primary-yellow`} />
+          <span>{game.rating.toFixed(1)} &bull; </span>
+          <span>{new Date(game.released).getFullYear()} &bull; </span>
+          <span>{game.genres[0].name}</span>
+        </div>
+
         <ReactMarkdown className={`line-clamp-5 opacity-50`}>
           {details && details.description_raw}
         </ReactMarkdown>
