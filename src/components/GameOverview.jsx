@@ -90,7 +90,7 @@ export default function GameOverview({ game, stores }) {
       {/* Right */}
       <aside className={`lg:order-3`}>
         <div
-          className={`lg:max-h-[calc(100dvh-100px)] sticky top-[5.5rem] flex flex-col gap-4 lg:overflow-y-auto lg:pr-4`}
+          className={`sticky top-[5.5rem] flex flex-col gap-4 lg:overflow-y-auto lg:pr-4`}
         >
           {game.background_image && (
             <figure className={`aspect-video`}>
