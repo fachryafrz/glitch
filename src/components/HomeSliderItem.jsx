@@ -12,7 +12,7 @@ export default function HomeSliderItem({ game }) {
     axios
       .get(`https://api.rawg.io/api/games/${game.id}`, {
         params: {
-          key: "7f7cb6556d15408eaeeb7b6e52579929",
+          key: import.meta.env.VITE_API_KEY,
         },
       })
       .then((res) => setDetails(res.data));

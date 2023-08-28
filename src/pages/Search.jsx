@@ -1,18 +1,62 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import genres from "../json/genres.json";
 import platforms from "../json/platforms.json";
 import games from "../json/games.json";
 import Card from "../components/Card";
 import { IonIcon } from "@ionic/react";
 import { optionsOutline, searchOutline } from "ionicons/icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Search() {
   const [active, setActive] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("query");
+  const navigate = useNavigate();
+  const [games, setGames] = useState([]);
 
   const handleActive = () => {
     setActive(!active);
   };
+
+  const handleSearchInput = (e) => {
+    e.preventDefault();
+
+    setSearchQuery(e.target.value);
+  };
+
+  const fetchSearchGames = async (query) => {
+    let params = {
+      key: import.meta.env.VITE_API_KEY,
+      search: query ? query : searchQuery,
+    };
+
+    axios
+      .get(`https://api.rawg.io/api/games`, {
+        params: {
+          ...params,
+        },
+      })
+      .then((res) => setGames(res.data.results));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    navigate(`/search?query=${searchQuery.replace(/\s+/g, "+")}`);
+
+    fetchSearchGames();
+
+    console.log(games);
+  };
+
+  useEffect(() => {
+    if (query) {
+      setSearchQuery(query);
+      fetchSearchGames(query);
+    }
+  }, [query]);
 
   return (
     <div className={`flex flex-col gap-4 lg:flex-row`}>
@@ -68,27 +112,28 @@ export default function Search() {
         </aside>
       </div>
 
-      <div className={`flex flex-col gap-4 lg:py-4`}>
-        <div
+      <div className={`flex flex-col gap-4 lg:py-4 w-full`}>
+        <form
+          onSubmit={handleSubmit}
           id="searchBar"
           className={`flex items-center gap-2 px-6 bg-primary-secondary bg-opacity-75 backdrop-blur w-full sticky top-6`}
         >
           <input
+            onChange={handleSearchInput}
             type="text"
             placeholder={`Search`}
+            value={searchQuery}
             className={`py-3 placeholder:text-neutral-400 bg-transparent w-full`}
           />
-          <button className={`flex aspect-square`}>
+          <button type={`submit`} className={`flex aspect-square`}>
             <IonIcon
               icon={searchOutline}
               className={`text-xl text-neutral-400`}
             />
           </button>
-        </div>
+        </form>
 
-        <ul
-          className={`grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-2 lg:gap-4`}
-        >
+        <ul className={`grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-4`}>
           {games.map((item, i) => {
             return (
               <li key={i}>

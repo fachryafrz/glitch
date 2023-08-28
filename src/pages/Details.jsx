@@ -12,6 +12,9 @@ import axios from "axios";
 
 export default function Details() {
   let { slug } = useParams();
+  let params = {
+    key: import.meta.env.VITE_API_KEY,
+  };
 
   const [game, setGame] = useState({});
   const [images, setImages] = useState([]);
@@ -21,7 +24,7 @@ export default function Details() {
     axios
       .get(`https://api.rawg.io/api/games/${slug}`, {
         params: {
-          key: "7f7cb6556d15408eaeeb7b6e52579929",
+          ...params,
         },
       })
       .then((res) => setGame(res.data));
@@ -35,7 +38,7 @@ export default function Details() {
     axios
       .get(`https://api.rawg.io/api/games/${slug}/screenshots`, {
         params: {
-          key: "7f7cb6556d15408eaeeb7b6e52579929",
+          ...params,
         },
       })
       .then((res) => setImages(res.data.results));
@@ -45,7 +48,7 @@ export default function Details() {
     axios
       .get(`https://api.rawg.io/api/games/${slug}/stores`, {
         params: {
-          key: "7f7cb6556d15408eaeeb7b6e52579929",
+          ...params,
         },
       })
       .then((res) => setStores(res.data.results));

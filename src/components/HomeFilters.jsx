@@ -1,11 +1,27 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import data from "../json/homeNav.json";
 import { IonIcon } from "@ionic/react";
 import { optionsOutline, searchOutline } from "ionicons/icons";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function HomeFilters() {
   const [active, setActive] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const searchRef = useRef();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleSearchInput = (e) => {
+    e.preventDefault();
+
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    navigate(`/search?query=${searchQuery.replace(/\s+/g, "+")}`);
+  };
 
   const handleActive = () => {
     setActive(!active);
@@ -56,19 +72,21 @@ export default function HomeFilters() {
           className={`py-2 border-b border-white border-opacity-10 col-span-2 lg:col-span-1`}
         >
           <h2 className={`opacity-50 mb-2`}>Search</h2>
-          <div className={`flex items-center`}>
+          <form onSubmit={handleSubmit} className={`flex items-center`}>
             <input
+              ref={searchRef}
+              onChange={handleSearchInput}
               type="text"
               placeholder={`For example: Battlefield 5`}
               className={`w-full bg-transparent placeholder:text-white placeholder:opacity-25`}
             />
-            <Link
-              to={`/search`}
+            <button
+              type={`submit`}
               className={`flex aspect-square p-2 opacity-50 hocus:opacity-100`}
             >
               <IonIcon icon={searchOutline} className={`text-xl`} />
-            </Link>
-          </div>
+            </button>
+          </form>
         </div>
       </div>
     </section>

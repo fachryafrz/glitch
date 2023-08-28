@@ -20,7 +20,7 @@ export default function HomeSlider({ apiUrl, dates, ordering, min, max }) {
 
   const fetchGames = async () => {
     let params = {
-      key: "7f7cb6556d15408eaeeb7b6e52579929",
+      key: import.meta.env.VITE_API_KEY,
       dates: dates,
       ordering: ordering,
     };

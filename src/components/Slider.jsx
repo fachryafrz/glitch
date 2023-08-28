@@ -15,7 +15,7 @@ export default function Slider({ title, apiUrl, dates, ordering, genres }) {
 
   const fetchGames = async () => {
     let params = {
-      key: "7f7cb6556d15408eaeeb7b6e52579929",
+      key: import.meta.env.VITE_API_KEY,
       dates: dates,
       ordering: ordering,
       genres: genres,
