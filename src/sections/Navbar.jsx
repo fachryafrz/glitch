@@ -34,7 +34,7 @@ export default function Navbar() {
       }`}
     >
       <div
-        className={`md:container mx-auto grid grid-cols-3 lg:flex items-center p-4 xl:px-24 gap-4 lg:gap-8 `}
+        className={`md:container mx-auto grid grid-cols-3 lg:flex items-center p-4 xl:px-36 gap-4 lg:gap-8 `}
       >
         <button
           onClick={() => setActive(!active)}

@@ -1,11 +1,12 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Navigation } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 import data from "../json/homeSlider.json";
 import { Link } from "react-router-dom";
@@ -43,7 +44,12 @@ export default function HomeSlider({ apiUrl, dates, ordering, min, max }) {
       <Swiper
         spaceBetween={16}
         slidesPerView={1}
-        modules={[EffectFade, Navigation]}
+        modules={[EffectFade, Navigation, Autoplay]}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: true,
+          pauseOnMouseEnter: true,
+        }}
         effect={`fade`}
         navigation={{
           enabled: true,

@@ -134,7 +134,7 @@ export default function GameOverview({ game, stores }) {
                 <tr>
                   <td>Platforms</td>
                   <td className="flex items-center gap-2">
-                    {game.parent_platforms.map((item) => {
+                    {/* {game.parent_platforms.map((item) => {
                       return (
                         <IonIcon
                           key={item.platform.id}
@@ -143,7 +143,11 @@ export default function GameOverview({ game, stores }) {
                           className={`text-xl`}
                         />
                       );
-                    })}
+                    })} */}
+
+                    {game.parent_platforms
+                      .map((item) => item.platform.name)
+                      .join(", ")}
                   </td>
                 </tr>
               )}

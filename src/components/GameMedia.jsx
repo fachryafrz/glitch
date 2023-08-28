@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
+  Autoplay,
   EffectFade,
   FreeMode,
   Mousewheel,
@@ -13,6 +14,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/effect-fade";
+import "swiper/css/autoplay";
 import { IonIcon } from "@ionic/react";
 import {
   chevronBackCircle,
@@ -42,7 +44,12 @@ export default function GameMedia({ game, images, backdrop }) {
           <Swiper
             spaceBetween={16}
             thumbs={{ swiper: isThumbsReady && thumbsSwiper }}
-            modules={[FreeMode, Navigation, Thumbs, EffectFade]}
+            modules={[FreeMode, Navigation, Thumbs, EffectFade, Autoplay]}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: true,
+              pauseOnMouseEnter: true,
+            }}
             navigation={{
               enabled: true,
               prevEl: `#prevBig`,

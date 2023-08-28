@@ -12,7 +12,7 @@ export default function App() {
       {/* Navbar */}
       <Navbar />
 
-      <main className={`min-h-[100dvh] md:container mx-auto px-4 xl:px-24`}>
+      <main className={`min-h-[100dvh] md:container mx-auto px-4 xl:px-36`}>
         <h1 className={`sr-only`}>GameCove</h1>
         <Routes>
           <Route path={`/`} element={<Home />} />

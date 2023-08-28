@@ -55,17 +55,33 @@ export default function Card({ game }) {
           >
             {game.name}
           </h3>
+
+          <span title={gameCreator} className={`line-clamp-1 opacity-50`}>
+            {gameCreator}
+          </span>
+
           <div className={`flex items-center gap-1 text-xs sm:text-base mt-1`}>
-            <span className={`opacity-50 line-clamp-1 whitespace-nowrap`}>
+            <span className={`opacity-50 whitespace-nowrap`}>
               {formattedDate}
             </span>
-            {game.released !== null &&
-              details &&
-              details.developers &&
-              details.developers.length > 0 && (
-                <span className={`opacity-50`}>&bull;</span>
-              )}
-            <span className={`line-clamp-1`}>{gameCreator}</span>
+            {game.released !== null && game.genres.length > 0 && (
+              <span className={`opacity-50`}>&bull;</span>
+            )}
+
+            {game.genres && (
+              <div className={`flex items-center gap-1 overflow-x-hidden`}>
+                {game.genres.map((genre) => {
+                  return (
+                    <span
+                      key={genre.id}
+                      className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full whitespace-nowrap`}
+                    >
+                      {genre.name}
+                    </span>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </Link>

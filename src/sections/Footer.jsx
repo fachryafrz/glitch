@@ -5,6 +5,11 @@ import * as Icons from "ionicons/icons";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  const createdYear = 2023;
+  const copyrightYear =
+    createdYear === currentYear ? createdYear : `${createdYear}-${currentYear}`;
+
   const [icons, setIcons] = useState([]);
 
   useEffect(() => {
@@ -21,7 +26,7 @@ export default function Footer() {
 
   return (
     <footer
-      className={`md:container mx-auto p-4 pt-[7rem] xl:px-24 grid grid-cols-2 lg:grid-cols-7 gap-8`}
+      className={`md:container mx-auto p-4 pb-0 pt-[7rem] xl:px-36 grid grid-cols-2 lg:grid-cols-7 gap-8`}
     >
       <section className={`col-span-full lg:col-span-2`}>
         <Link
@@ -41,7 +46,7 @@ export default function Footer() {
         </p>
 
         <ul
-          className={`mt-4 flex items-center justify-center lg:justify-start gap-4`}
+          className={`my-2 flex items-center justify-center lg:justify-start gap-4`}
         >
           {footer
             .find((footer) => footer.section === "Social")
@@ -61,6 +66,11 @@ export default function Footer() {
               );
             })}
         </ul>
+
+        <div className={`flex flex-col text-sm text-center lg:text-start`}>
+          <span>GameCove &copy; {copyrightYear} all rights reserved</span>
+          <span>Powered by RAWG API</span>
+        </div>
       </section>
       {footer.map((footer, i) => {
         return (

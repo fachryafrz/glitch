@@ -24,15 +24,11 @@ export default function HomeSliderItem({ game }) {
 
   return (
     <>
-      <figure className={`flex-1 xl:aspect-video`}>
-        <img
-          src={game.background_image}
-          alt={game.name}
-          className={`object-center`}
-        />
+      <figure className={`aspect-video overflow-hidden`}>
+        <img src={game.background_image} alt={game.name} />
       </figure>
       <div
-        className={`relative lg:w-[40%] xl:w-[35%] p-8 xl:p-10 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start`}
+        className={`relative lg:w-[50%] xl:w-[40%] p-8 xl:p-10 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start`}
       >
         <h2
           title={game.name}
@@ -41,12 +37,30 @@ export default function HomeSliderItem({ game }) {
           {game.name}
         </h2>
 
-        <div className={`flex items-center gap-1`}>
+        <div
+          className={`flex items-center justify-center lg:justify-start gap-1`}
+        >
           <IonIcon icon={star} className={`text-primary-yellow`} />
           <span>{game.rating.toFixed(1)} &bull; </span>
-          <span>{new Date(game.released).getFullYear()} &bull; </span>
-          <span>{game.genres[0].name}</span>
+          <span>{new Date(game.released).getFullYear()}</span>
         </div>
+
+        {game.genres && (
+          <div
+            className={`flex items-center justify-center lg:justify-start gap-1 flex-wrap`}
+          >
+            {game.genres.map((genre) => {
+              return (
+                <span
+                  key={genre.id}
+                  className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full`}
+                >
+                  {genre.name}
+                </span>
+              );
+            })}
+          </div>
+        )}
 
         <ReactMarkdown className={`line-clamp-5 opacity-50`}>
           {details && details.description_raw}
