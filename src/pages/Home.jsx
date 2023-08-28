@@ -44,14 +44,12 @@ export default function Home() {
         title={`New releases`}
         apiUrl={`games`}
         dates={`${thirtyDaysAgo},${today}`}
-        ordering={`-released`}
       />
 
       <Slider
         title={`Upcoming Games`}
         apiUrl={`games`}
         dates={`${tomorrow},${endOfYear}`}
-        ordering={`released`}
       />
 
       <Slider title={`Popular`} apiUrl={`games`} />
