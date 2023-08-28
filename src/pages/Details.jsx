@@ -61,7 +61,7 @@ export default function Details() {
   // console.log(screenshots);
 
   return (
-    <div className={`flex flex-col gap-4 py-4`}>
+    <div className={`flex flex-col gap-2 md:gap-4 py-4`}>
       <div
         style={{
           background: `url(${game.background_image})`,

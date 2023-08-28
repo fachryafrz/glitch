@@ -37,11 +37,13 @@ export default function Card({ game }) {
           <img src={game.background_image} alt={game.name} />
         </figure>
         <div>
-          <h3 className={`mb-1 text-lg font-medium line-clamp-1`}>
+          <h3 className={`mb-1 sm:text-lg font-medium line-clamp-1`}>
             {game.name}
           </h3>
-          <div className={`flex items-start gap-1`}>
-            <span className={`opacity-50`}>{formattedDate}</span>
+          <div className={`flex items-center gap-1 text-xs sm:text-sm mt-1`}>
+            <span className={`opacity-50 line-clamp-1 whitespace-nowrap`}>
+              {formattedDate}
+            </span>
             <span className={`opacity-50`}>&bull;</span>
             <span className={`line-clamp-1`}>{gameCreator}</span>
           </div>

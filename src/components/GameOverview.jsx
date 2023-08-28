@@ -85,48 +85,56 @@ export default function GameOverview({ game, stores }) {
 
   return (
     <div
-      className={`py-8 grid grid-cols-1 lg:grid-cols-[1fr_1fr_2px_1fr] gap-y-8 lg:gap-8`}
+      className={`pb-8 lg:py-8 grid grid-cols-1 lg:grid-cols-[1fr_1fr_2px_1fr] gap-y-8 lg:gap-8`}
     >
       {/* Right */}
       <aside className={`lg:order-3`}>
         <div
-          className={`lg:max-h-[calc(100dvh-100px)] sticky top-20 flex flex-col gap-4 lg:overflow-y-auto`}
+          className={`lg:max-h-[calc(100dvh-100px)] sticky top-20 flex flex-col gap-4 lg:overflow-y-auto pr-4`}
         >
+          <figure className={`aspect-video`}>
+            <img src={game.background_image} alt={game.name} />
+          </figure>
+
           <h2 className={`text-2xl lg:text-4xl font-bold`}>{game.name}</h2>
 
           <table
             className={`first:[&_td]:whitespace-nowrap first:[&_td]:pr-4 [&_td]:align-top first:[&_td]:text-neutral-400`}
           >
             <tbody>
-              <tr>
-                <td>Publishers</td>
-                <td className={`line-clamp-2`}>
-                  {game.publishers &&
-                    game.publishers.map((item) => item.name).join(", ")}
-                </td>
-              </tr>
-              <tr>
-                <td>Developers</td>
-                <td className={`line-clamp-2`}>
-                  {game.developers &&
-                    game.developers.map((dev) => dev.name).join(", ")}
-                </td>
-              </tr>
-              <tr>
-                <td>Release Date</td>
-                <td className={`flex items-center gap-2`}>
-                  <IonIcon
-                    icon={Icons.calendarOutline}
-                    className={`text-xl hidden`}
-                  />
-                  {gameDate}
-                </td>
-              </tr>
-              <tr>
-                <td>Platforms</td>
-                <td className="flex items-center gap-2">
-                  {game.parent_platforms &&
-                    game.parent_platforms.map((item) => {
+              {game.publishers && (
+                <tr>
+                  <td>Publishers</td>
+                  <td className={`line-clamp-2`}>
+                    {game.publishers.map((item) => item.name).join(", ")}
+                  </td>
+                </tr>
+              )}
+              {game.developers && (
+                <tr>
+                  <td>Developers</td>
+                  <td className={`line-clamp-2`}>
+                    {game.developers.map((dev) => dev.name).join(", ")}
+                  </td>
+                </tr>
+              )}
+              {game.released && (
+                <tr>
+                  <td>Release Date</td>
+                  <td className={`flex items-center gap-2`}>
+                    <IonIcon
+                      icon={Icons.calendarOutline}
+                      className={`text-xl hidden`}
+                    />
+                    {gameDate}
+                  </td>
+                </tr>
+              )}
+              {game.parent_platforms && (
+                <tr>
+                  <td>Platforms</td>
+                  <td className="flex items-center gap-2">
+                    {game.parent_platforms.map((item) => {
                       return (
                         <IonIcon
                           key={item.platform.id}
@@ -136,14 +144,15 @@ export default function GameOverview({ game, stores }) {
                         />
                       );
                     })}
-                </td>
-              </tr>
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
 
-          <div className={`flex items-center gap-1 flex-wrap`}>
-            {game.genres &&
-              game.genres.map((genre) => {
+          {game.genres && (
+            <div className={`flex items-center gap-1 flex-wrap`}>
+              {game.genres.map((genre) => {
                 return (
                   <span
                     key={genre.id}
@@ -153,7 +162,8 @@ export default function GameOverview({ game, stores }) {
                   </span>
                 );
               })}
-          </div>
+            </div>
+          )}
 
           <img
             src={ageRating(game.esrb_rating && game.esrb_rating.id)}
