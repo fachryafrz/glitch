@@ -16,7 +16,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import HomeSliderItem from "./HomeSliderItem";
 
-export default function HomeSlider({ apiUrl, dates, ordering, min, max }) {
+export default function HomeSlider({
+  apiUrl,
+  dates,
+  ordering,
+  min,
+  max,
+  error,
+  setError,
+}) {
   const [data, setData] = useState([]);
 
   const fetchGames = async () => {
@@ -32,7 +40,8 @@ export default function HomeSlider({ apiUrl, dates, ordering, min, max }) {
           ...params,
         },
       })
-      .then((res) => setData(res.data.results));
+      .then((res) => setData(res.data.results))
+      .catch((err) => setError(true));
   };
 
   useEffect(() => {

@@ -10,7 +10,7 @@ import images from "../json/gameScreenshotsRAWG.json";
 import stores from "../json/gameStoresRAWG.json";
 import axios from "axios";
 
-export default function Details() {
+export default function Details({ error, setError }) {
   let { slug } = useParams();
   let params = {
     key: import.meta.env.VITE_API_KEY,
@@ -32,7 +32,8 @@ export default function Details() {
           ...params,
         },
       })
-      .then((res) => setGame(res.data));
+      .then((res) => setGame(res.data))
+      .catch((err) => setError(true));
   };
 
   const fetchImages = async () => {

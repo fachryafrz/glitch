@@ -5,7 +5,7 @@ import Slider from "../components/Slider";
 import games from "../json/games.json";
 import axios from "axios";
 
-export default function Home() {
+export default function Home({ error, setError }) {
   const currentDate = new Date();
   const today = currentDate.toISOString().slice(0, 10);
 
@@ -38,7 +38,13 @@ export default function Home() {
     <div className={`flex flex-col gap-4 lg:gap-10`}>
       <HomeFilters />
 
-      <HomeSlider apiUrl={`games`} min={0} max={5} />
+      <HomeSlider
+        apiUrl={`games`}
+        min={0}
+        max={5}
+        error={error}
+        setError={setError}
+      />
 
       <Slider
         title={`New releases`}

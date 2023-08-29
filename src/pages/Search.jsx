@@ -8,7 +8,7 @@ import { optionsOutline, searchOutline } from "ionicons/icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Search() {
+export default function Search({ error, setError }) {
   const [active, setActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchParams] = useSearchParams();
@@ -38,7 +38,8 @@ export default function Search() {
           ...params,
         },
       })
-      .then((res) => setGames(res.data.results));
+      .then((res) => setGames(res.data.results))
+      .catch((err) => setError(true));
   };
 
   const handleSubmit = (e) => {
