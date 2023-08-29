@@ -47,7 +47,6 @@ export default function GameMedia({ game, images, backdrop }) {
             modules={[FreeMode, Navigation, Thumbs, EffectFade, Autoplay]}
             autoplay={{
               delay: 5000,
-              disableOnInteraction: true,
               pauseOnMouseEnter: true,
             }}
             navigation={{

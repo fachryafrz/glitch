@@ -47,7 +47,6 @@ export default function HomeSlider({ apiUrl, dates, ordering, min, max }) {
         modules={[EffectFade, Navigation, Autoplay]}
         autoplay={{
           delay: 5000,
-          disableOnInteraction: true,
           pauseOnMouseEnter: true,
         }}
         effect={`fade`}
