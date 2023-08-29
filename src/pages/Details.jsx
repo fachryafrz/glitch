@@ -35,10 +35,6 @@ export default function Details() {
       .then((res) => setGame(res.data));
   };
 
-  useEffect(() => {
-    fetchGame();
-  }, []);
-
   const fetchImages = async () => {
     axios
       .get(`https://api.rawg.io/api/games/${slug}/screenshots`, {
