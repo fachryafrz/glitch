@@ -29,11 +29,15 @@ export default function HomeSliderItem({ game }) {
 
   return (
     <>
-      <figure className={`aspect-video lg:aspect-auto overflow-hidden`}>
-        <img src={game.background_image} alt={game.name} />
+      <figure className={`lg:col-span-2`}>
+        <img
+          src={game.background_image}
+          alt={game.name}
+          className={`aspect-[4/3] lg:aspect-video`}
+        />
       </figure>
       <div
-        className={`relative lg:w-[50%] xl:w-[40%] p-8 xl:p-10 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start`}
+        className={`relative h-full p-8 xl:p-10 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start`}
       >
         <h2
           title={game.name}

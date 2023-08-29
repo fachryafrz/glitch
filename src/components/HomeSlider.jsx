@@ -64,7 +64,7 @@ export default function HomeSlider({ apiUrl, dates, ordering, min, max }) {
           return (
             <SwiperSlide
               key={game.id}
-              className={`h-auto flex flex-col lg:flex-row`}
+              className={`h-auto flex flex-col lg:grid lg:grid-cols-3`}
             >
               <HomeSliderItem game={game} />
             </SwiperSlide>
