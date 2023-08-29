@@ -5,10 +5,14 @@ import Copyright from "./sections/Copyright";
 import Search from "./pages/Search";
 import Navbar from "./sections/Navbar";
 import Details from "./pages/Details";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setError(false);
+  }, []);
 
   return (
     <Router>
