@@ -111,7 +111,7 @@ export default function GameOverview({ game, stores }) {
             className={`first:[&_td]:whitespace-nowrap [&_td]:align-top first:[&_td]:text-neutral-400 first:[&_td]:w-[110px]`}
           >
             <tbody>
-              {game.publishers && (
+              {game.publishers && game.publishers.length > 0 && (
                 <tr>
                   <td>Publishers</td>
                   <td className={`line-clamp-2`}>
@@ -119,7 +119,7 @@ export default function GameOverview({ game, stores }) {
                   </td>
                 </tr>
               )}
-              {game.developers && (
+              {game.developers && game.developers.length > 0 && (
                 <tr>
                   <td>Developers</td>
                   <td className={`line-clamp-2`}>
@@ -127,7 +127,7 @@ export default function GameOverview({ game, stores }) {
                   </td>
                 </tr>
               )}
-              {game.released && (
+              {game.released && game.released !== null && (
                 <tr>
                   <td>Release Date</td>
                   <td className={`flex items-center gap-2`}>
@@ -139,7 +139,7 @@ export default function GameOverview({ game, stores }) {
                   </td>
                 </tr>
               )}
-              {game.parent_platforms && (
+              {game.parent_platforms && game.parent_platforms.length > 0 && (
                 <tr>
                   <td>Platforms</td>
                   <td className="flex items-center gap-2">
@@ -163,7 +163,7 @@ export default function GameOverview({ game, stores }) {
             </tbody>
           </table>
 
-          {game.genres && (
+          {game.genres && game.genres.length > 0 && (
             <div className={`flex items-center gap-1 flex-wrap`}>
               {game.genres.map((genre) => {
                 return (
@@ -184,7 +184,7 @@ export default function GameOverview({ game, stores }) {
             className={`w-[75px]`}
           />
 
-          <hr className={`opacity-20 my-4`} />
+          <hr className={`opacity-20`} />
 
           <span>Available in</span>
 
