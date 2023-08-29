@@ -29,13 +29,21 @@ export default function GameOverview({ game, stores }) {
   const storeIcon = (storeName) => {
     switch (storeName) {
       case "Steam":
-        return Icons.logoSteam;
+        return `https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/512px-Steam_icon_logo.svg.png`;
       case "PlayStation Store":
-        return Icons.logoPlaystation;
+        return `https://ww1.freelogovectors.net/wp-content/uploads/2022/01/playstation-store-logo-freelogovectors.net_.png`;
       case "Xbox Store":
-        return Icons.logoXbox;
-      default:
-        return `Icons.logo${storeName.toLowerCase()}`;
+        return `https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Microsoft_Store.svg/1200px-Microsoft_Store.svg.png`;
+      case "Xbox 360 Store":
+        return `https://seeklogo.com/images/X/xbox-360-logo-CD2D4483E4-seeklogo.com.png?v=638133562380000000`;
+      case "Epic Games":
+        return `https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Epic_Games_logo.svg/516px-Epic_Games_logo.svg.png`;
+      case "Google Play":
+        return `https://static.vecteezy.com/system/resources/previews/022/613/026/original/google-play-store-icon-logo-symbol-free-png.png`;
+      case "App Store":
+        return `https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/App_Store_%28iOS%29.svg/2048px-App_Store_%28iOS%29.svg.png`;
+      case "Nintendo Store":
+        return `https://cdn.iconscout.com/icon/free/png-256/free-nintendo-2296041-1912000.png?f=webp`;
     }
   };
 
@@ -180,7 +188,7 @@ export default function GameOverview({ game, stores }) {
 
           <span>Available in</span>
 
-          <div className={`flex items-center gap-2 flex-wrap`}>
+          <div className={`flex items-center gap-1 flex-wrap`}>
             {game.stores &&
               game.stores.map((store) => {
                 const storeInfo = stores.find(
@@ -189,21 +197,33 @@ export default function GameOverview({ game, stores }) {
 
                 if (storeInfo) {
                   return (
-                    <Link
-                      key={store.store.id}
-                      to={storeInfo.url}
-                      target={`_blank`}
-                      style={{
-                        backgroundColor: `${storeColor(store.store.name)}`,
-                      }}
-                      className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg hocus:!bg-white hocus:text-black transition-all`}
-                    >
-                      {/* <IonIcon
-                        icon={storeIcon(store.store.name)}
-                        className={`text-2xl`}
-                      /> */}
-                      {store.store.name}
-                    </Link>
+                    <>
+                      {/* <Link
+                        key={store.store.id}
+                        to={storeInfo.url}
+                        target={`_blank`}
+                        style={{
+                          backgroundColor: `${storeColor(store.store.name)}`,
+                        }}
+                        className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg hocus:!bg-white hocus:text-black transition-all`}
+                      >
+                        {store.store.name}
+                      </Link> */}
+
+                      <Link
+                        key={store.store.id}
+                        to={storeInfo.url}
+                        target={`_blank`}
+                        className={`flex items-center max-w-fit p-1 rounded-lg hocus:text-black transition-all`}
+                        title={store.store.name}
+                      >
+                        <img
+                          src={storeIcon(store.store.name)}
+                          alt={store.store.name}
+                          className={`h-[50px]`}
+                        />
+                      </Link>
+                    </>
                   );
                 }
               })}
