@@ -44,6 +44,8 @@ export default function GameOverview({ game, stores }) {
         return `https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/App_Store_%28iOS%29.svg/2048px-App_Store_%28iOS%29.svg.png`;
       case "Nintendo Store":
         return `https://cdn.iconscout.com/icon/free/png-256/free-nintendo-2296041-1912000.png?f=webp`;
+      case "itch.io":
+        return `https://pbs.twimg.com/profile_images/1212846124945428480/w1htiJ0v_400x400.png`;
     }
   };
 
@@ -184,20 +186,21 @@ export default function GameOverview({ game, stores }) {
             className={`w-[75px]`}
           />
 
-          <hr className={`opacity-20`} />
+          {game.stores && game.stores.length > 0 && (
+            <>
+              <hr className={`opacity-20`} />
 
-          <div className={`flex flex-col gap-1`}>
-            <span>Available in</span>
-            <div className={`flex items-center gap-1 flex-wrap`}>
-              {game.stores &&
-                game.stores.map((store) => {
-                  const storeInfo = stores.find(
-                    (i) => i.store_id === store.store.id
-                  );
-                  if (storeInfo) {
-                    return (
-                      <>
-                        {/* <Link
+              <div className={`flex flex-col gap-1`}>
+                <span>Available in</span>
+                <div className={`flex items-center gap-1 flex-wrap`}>
+                  {game.stores.map((store) => {
+                    const storeInfo = stores.find(
+                      (i) => i.store_id === store.store.id
+                    );
+                    if (storeInfo) {
+                      return (
+                        <>
+                          {/* <Link
                           key={store.store.id}
                           to={storeInfo.url}
                           target={`_blank`}
@@ -208,25 +211,27 @@ export default function GameOverview({ game, stores }) {
                         >
                           {store.store.name}
                         </Link> */}
-                        <Link
-                          key={store.store.id}
-                          to={storeInfo.url}
-                          target={`_blank`}
-                          className={`flex items-center max-w-fit p-1 rounded-lg hocus:text-black transition-all`}
-                          title={store.store.name}
-                        >
-                          <img
-                            src={storeIcon(store.store.name)}
-                            alt={store.store.name}
-                            className={`h-[50px]`}
-                          />
-                        </Link>
-                      </>
-                    );
-                  }
-                })}
-            </div>
-          </div>
+                          <Link
+                            key={store.store.id}
+                            to={storeInfo.url}
+                            target={`_blank`}
+                            className={`flex items-center max-w-fit p-1 rounded-lg hocus:text-black transition-all`}
+                            title={store.store.name}
+                          >
+                            <img
+                              src={storeIcon(store.store.name)}
+                              alt={store.store.name}
+                              className={`h-[50px]`}
+                            />
+                          </Link>
+                        </>
+                      );
+                    }
+                  })}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </aside>
 
