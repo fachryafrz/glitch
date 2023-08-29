@@ -71,17 +71,18 @@ export default function GameOverview({ game, stores }) {
     }
   };
 
-  // const platformWithRequirements = game.platforms.find(
-  //   (platform) =>
-  //     platform.requirements && Object.keys(platform.requirements).length > 0
-  // );
+  const platformPC =
+    game.platforms && game.platforms.find((i) => i.platform.id === 4);
 
-  // const minimum =
-  //   platformWithRequirements && platformWithRequirements.requirements.minimum;
+  const minimum =
+    platformPC &&
+    Object.keys(platformPC.requirements).length > 0 &&
+    platformPC.requirements.minimum;
 
-  // const recommended =
-  //   platformWithRequirements &&
-  //   platformWithRequirements.requirements.recommended;
+  const recommended =
+    platformPC &&
+    Object.keys(platformPC.requirements).length > 0 &&
+    platformPC.requirements.recommended;
 
   return (
     <div
@@ -216,8 +217,8 @@ export default function GameOverview({ game, stores }) {
       ></span>
 
       {/* Left */}
-      <div className={`col-span-2 flex flex-col gap-8`}>
-        <div className={`sticky top-[5.5rem]`}>
+      <div className={`col-span-2`}>
+        <div className={`sticky top-[5.5rem] flex flex-col gap-8`}>
           <section className={`flex flex-col gap-4`}>
             <h2 className={`text-2xl lg:text-4xl font-bold`}>{game.name}</h2>
             <div
@@ -225,31 +226,35 @@ export default function GameOverview({ game, stores }) {
               dangerouslySetInnerHTML={{ __html: game.description }}
             ></div>
           </section>
-          {/* <section className={`flex flex-col gap-4`}>
-            <h2 className={`text-2xl lg:text-4xl font-bold`}>
-              System Requirements
-            </h2>
-            <div className={`prose prose-invert max-w-none flex flex-col`}>
-              <ul
-                className={`first:[&_li]:list-none first:[&_li]:font-bold first:[&_li]:text-xl`}
-              >
-                {minimum.split("\n").map((item, index) => (
-                  <li key={index} className="mb-2">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <ul
-                className={`first:[&_li]:list-none first:[&_li]:font-bold first:[&_li]:text-xl`}
-              >
-                {recommended.split("\n").map((item, index) => (
-                  <li key={index} className="mb-2">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section> */}
+          {platformPC && Object.keys(platformPC.requirements).length > 0 && (
+            <section className={`flex flex-col gap-4`}>
+              <h2 className={`text-2xl lg:text-4xl font-bold`}>
+                System Requirements
+              </h2>
+              <div className={`prose prose-invert max-w-none flex flex-col`}>
+                <ul
+                  className={`first:[&_li]:list-none first:[&_li]:font-bold first:[&_li]:text-xl`}
+                >
+                  {minimum &&
+                    minimum.split("\n").map((item, index) => (
+                      <li key={index} className="mb-2">
+                        {item}
+                      </li>
+                    ))}
+                </ul>
+                <ul
+                  className={`first:[&_li]:list-none first:[&_li]:font-bold first:[&_li]:text-xl`}
+                >
+                  {recommended &&
+                    recommended.split("\n").map((item, index) => (
+                      <li key={index} className="mb-2">
+                        {item}
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </section>
+          )}
         </div>
       </div>
     </div>

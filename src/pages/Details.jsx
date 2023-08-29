@@ -70,13 +70,11 @@ export default function Details() {
 
   return (
     <div className={`flex flex-col gap-2 md:gap-4 py-4`}>
-      <div
-        style={{
-          background: `url(${game.background_image})`,
-          backgroundSize: `contain`,
-        }}
+      <figure
         className={`absolute aspect-video inset-0 -z-10 blur-3xl opacity-40`}
-      ></div>
+      >
+        <img src={game.background_image} alt={game.name} />
+      </figure>
 
       <button
         onClick={handleGoBack}
