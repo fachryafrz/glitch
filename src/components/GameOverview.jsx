@@ -186,47 +186,46 @@ export default function GameOverview({ game, stores }) {
 
           <hr className={`opacity-20`} />
 
-          <span>Available in</span>
-
-          <div className={`flex items-center gap-1 flex-wrap`}>
-            {game.stores &&
-              game.stores.map((store) => {
-                const storeInfo = stores.find(
-                  (i) => i.store_id === store.store.id
-                );
-
-                if (storeInfo) {
-                  return (
-                    <>
-                      {/* <Link
-                        key={store.store.id}
-                        to={storeInfo.url}
-                        target={`_blank`}
-                        style={{
-                          backgroundColor: `${storeColor(store.store.name)}`,
-                        }}
-                        className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg hocus:!bg-white hocus:text-black transition-all`}
-                      >
-                        {store.store.name}
-                      </Link> */}
-
-                      <Link
-                        key={store.store.id}
-                        to={storeInfo.url}
-                        target={`_blank`}
-                        className={`flex items-center max-w-fit p-1 rounded-lg hocus:text-black transition-all`}
-                        title={store.store.name}
-                      >
-                        <img
-                          src={storeIcon(store.store.name)}
-                          alt={store.store.name}
-                          className={`h-[50px]`}
-                        />
-                      </Link>
-                    </>
+          <div className={`flex flex-col gap-1`}>
+            <span>Available in</span>
+            <div className={`flex items-center gap-1 flex-wrap`}>
+              {game.stores &&
+                game.stores.map((store) => {
+                  const storeInfo = stores.find(
+                    (i) => i.store_id === store.store.id
                   );
-                }
-              })}
+                  if (storeInfo) {
+                    return (
+                      <>
+                        {/* <Link
+                          key={store.store.id}
+                          to={storeInfo.url}
+                          target={`_blank`}
+                          style={{
+                            backgroundColor: `${storeColor(store.store.name)}`,
+                          }}
+                          className={`flex items-center gap-2 max-w-fit p-2 px-3 rounded-lg hocus:!bg-white hocus:text-black transition-all`}
+                        >
+                          {store.store.name}
+                        </Link> */}
+                        <Link
+                          key={store.store.id}
+                          to={storeInfo.url}
+                          target={`_blank`}
+                          className={`flex items-center max-w-fit p-1 rounded-lg hocus:text-black transition-all`}
+                          title={store.store.name}
+                        >
+                          <img
+                            src={storeIcon(store.store.name)}
+                            alt={store.store.name}
+                            className={`h-[50px]`}
+                          />
+                        </Link>
+                      </>
+                    );
+                  }
+                })}
+            </div>
           </div>
         </div>
       </aside>
