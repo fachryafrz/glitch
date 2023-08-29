@@ -63,7 +63,7 @@ export default function HomeSliderItem({ game }) {
           <div
             className={`flex items-center justify-center lg:justify-start gap-1 flex-wrap`}
           >
-            {game.genres.map((genre) => {
+            {game.genres.slice(0, 3).map((genre) => {
               return (
                 <span
                   key={genre.id}
