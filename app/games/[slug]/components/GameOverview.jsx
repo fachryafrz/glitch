@@ -47,6 +47,8 @@ export default function GameOverview({ game, stores }) {
         return `https://cdn.iconscout.com/icon/free/png-256/free-nintendo-2296041-1912000.png?f=webp`;
       case "itch.io":
         return `https://pbs.twimg.com/profile_images/1212846124945428480/w1htiJ0v_400x400.png`;
+      case "GOG":
+        return `https://cdn.icon-icons.com/icons2/3053/PNG/512/gog_galaxy_alt_macos_bigsur_icon_190150.png`;
     }
   };
 
@@ -204,7 +206,7 @@ export default function GameOverview({ game, stores }) {
                           key={store.store.id}
                           href={storeInfo.url}
                           target={`_blank`}
-                          className={`flex items-center max-w-fit p-1 rounded-lg hocus:text-black transition-all`}
+                          className={`flex items-center max-w-fit p-1 rounded-lg transition-all`}
                           title={store.store.name}
                         >
                           <img
