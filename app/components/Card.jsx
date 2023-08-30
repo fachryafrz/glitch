@@ -1,5 +1,4 @@
 import axios from "axios";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -40,12 +39,7 @@ export default function Card({ game }) {
           }`}
         >
           {game.background_image ? (
-            <Image
-              src={game.background_image}
-              alt={game.name}
-              width={500}
-              height={500}
-            />
+            <img src={game.background_image} alt={game.name} />
           ) : (
             <img
               src={`logo.svg`}

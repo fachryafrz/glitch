@@ -1,7 +1,6 @@
 import { IonIcon } from "@ionic/react";
 import axios from "axios";
 import { star } from "ionicons/icons";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -31,12 +30,10 @@ export default function HomeSliderItem({ game }) {
   return (
     <>
       <figure className={`lg:col-span-2`}>
-        <Image
+        <img
           src={game.background_image}
           alt={game.name}
           className={`aspect-[4/3] lg:aspect-video`}
-          width={1000}
-          height={1000}
         />
       </figure>
       <div
