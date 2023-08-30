@@ -1,0 +1,40 @@
+[
+  {
+    "section": "Platforms",
+    "filters": [
+      {
+        "name": "Windows",
+        "url": "/"
+      },
+      {
+        "name": "Xbox One",
+        "url": "/"
+      },
+      {
+        "name": "PS4",
+        "url": "/"
+      }
+    ]
+  },
+  {
+    "section": "Category",
+    "filters": [
+      {
+        "name": "New",
+        "url": "/"
+      },
+      {
+        "name": "On Sale",
+        "url": "/"
+      },
+      {
+        "name": "Pre-Order",
+        "url": "/"
+      },
+      {
+        "name": "Discounts",
+        "url": "/"
+      }
+    ]
+  }
+]

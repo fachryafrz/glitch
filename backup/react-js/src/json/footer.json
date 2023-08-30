@@ -1,0 +1,139 @@
+[
+  {
+    "section": "Services",
+    "links": [
+      {
+        "name": "Overview",
+        "url": "/"
+      },
+      {
+        "name": "Features",
+        "url": "/"
+      },
+      {
+        "name": "Solution",
+        "url": "/"
+      },
+      {
+        "name": "Tutorials",
+        "url": "/"
+      },
+      {
+        "name": "Pricing",
+        "url": "/"
+      },
+      {
+        "name": "Releases",
+        "url": "/"
+      }
+    ]
+  },
+  {
+    "section": "Company",
+    "links": [
+      {
+        "name": "About us",
+        "url": "/"
+      },
+      {
+        "name": "Careers",
+        "url": "/"
+      },
+      {
+        "name": "Blog",
+        "url": "/"
+      },
+      {
+        "name": "News",
+        "url": "/"
+      },
+      {
+        "name": "Contact",
+        "url": "https://fachryafrz.vercel.app"
+      }
+    ]
+  },
+  {
+    "section": "Resources",
+    "links": [
+      {
+        "name": "Newsletter",
+        "url": "/"
+      },
+      {
+        "name": "Events",
+        "url": "/"
+      },
+      {
+        "name": "Help centre",
+        "url": "/"
+      },
+      {
+        "name": "Support",
+        "url": "/"
+      }
+    ]
+  },
+  {
+    "section": "Social",
+    "links": [
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/fachryafrz",
+        "icon": "logoTwitter",
+        "color": "#1DA1F2"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/fachryafrz",
+        "icon": "logoLinkedin",
+        "color": "#0077b5"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://facebook.com/fachryafrz",
+        "icon": "logoFacebook",
+        "color": "#4267B2"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/fachryafrz",
+        "icon": "logoGithub",
+        "color": "#ffffff"
+      },
+      {
+        "name": "Dribbble",
+        "url": "https://dribbble.com/fachryafrz",
+        "icon": "logoDribbble",
+        "color": "#ea4c89"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://github.com/fachryafrz",
+        "icon": "logoInstagram",
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "section": "Legal",
+    "links": [
+      {
+        "name": "Terms",
+        "url": "/"
+      },
+      {
+        "name": "Privacy",
+        "url": "/"
+      },
+      {
+        "name": "Cookies",
+        "url": "/"
+      },
+      {
+        "name": "Lincenses",
+        "url": "/"
+      }
+    ]
+  }
+]

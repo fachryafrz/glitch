@@ -1,0 +1,481 @@
+{
+  "id": 58494,
+  "slug": "battlefield-v",
+  "name": "Battlefield V",
+  "name_original": "Battlefield V",
+  "description": "<p>Battlefield V is the sixteenth game in its franchise. </p>\n<h3>Plot</h3>\n<p>Like the original Battlefield, the game is based on the real events of World War II. The game focuses on the obscure battles of the war. It features storylines that tie the battles together and consist of episodes called “war stories”.</p>\n<h3>Gameplay</h3>\n<p>Battlefield V puts a strong emphasis on realism. The game avoids video game abstractions in favor of immersive experience of the war. For that goal, the game aims to increase the player&#39;s interaction with the environment, such as doors, vehicles, or ammo. The ammo and other resources in the game are scarce, forcing the player to use a tactical approach.<br />\nThe game gives a spotlight to women in the military who are among the main characters in the campaign. The player might also choose to play a female character in the multiplayer, as the gender is not tied to a class. The game also allows the players many customization options for costumes, vehicles, and weapons.</p>\n<h3>Modes</h3>\n<p>Battlefield V has many multiplayer modes, some of which are new to the series and some are reimagined versions of the modes from previous games. For example, The Grand Operations mode is based on the original Battlefield mode called Operations. This mode imitates a military campaign and consists of a series of battles with different objectives and non-linear progress options.</p>",
+  "metacritic": 77,
+  "metacritic_platforms": [
+    {
+      "metascore": 78,
+      "url": "https://www.metacritic.com/game/xbox-one/battlefield-v",
+      "platform": {
+        "platform": 1,
+        "name": "Xbox One",
+        "slug": "xbox-one"
+      }
+    },
+    {
+      "metascore": 73,
+      "url": "https://www.metacritic.com/game/playstation-4/battlefield-v",
+      "platform": {
+        "platform": 18,
+        "name": "PlayStation 4",
+        "slug": "playstation4"
+      }
+    },
+    {
+      "metascore": 81,
+      "url": "https://www.metacritic.com/game/pc/battlefield-v",
+      "platform": {
+        "platform": 4,
+        "name": "PC",
+        "slug": "pc"
+      }
+    }
+  ],
+  "released": "2018-11-20",
+  "tba": false,
+  "updated": "2023-08-23T22:51:40",
+  "background_image": "https://media.rawg.io/media/games/45b/45b57ed59de4b84effd8f6bc4b7bf515.jpg",
+  "background_image_additional": "https://media.rawg.io/media/screenshots/c03/c0344e7d5efe6642c11d18fc75a02ad1.jpg",
+  "website": "https://www.battlefield.com/games/battlefield-5",
+  "rating": 3.5,
+  "rating_top": 4,
+  "ratings": [
+    {
+      "id": 4,
+      "title": "recommended",
+      "count": 469,
+      "percent": 50.38
+    },
+    {
+      "id": 3,
+      "title": "meh",
+      "count": 283,
+      "percent": 30.4
+    },
+    {
+      "id": 1,
+      "title": "skip",
+      "count": 90,
+      "percent": 9.67
+    },
+    {
+      "id": 5,
+      "title": "exceptional",
+      "count": 89,
+      "percent": 9.56
+    }
+  ],
+  "reactions": {
+    "3": 2,
+    "5": 1,
+    "7": 1,
+    "8": 2,
+    "9": 2,
+    "12": 1,
+    "13": 1,
+    "14": 2,
+    "16": 2,
+    "19": 2,
+    "20": 1
+  },
+  "added": 4429,
+  "added_by_status": {
+    "yet": 194,
+    "owned": 2983,
+    "beaten": 496,
+    "toplay": 206,
+    "dropped": 423,
+    "playing": 127
+  },
+  "playtime": 5,
+  "screenshots_count": 11,
+  "movies_count": 0,
+  "creators_count": 17,
+  "achievements_count": 108,
+  "parent_achievements_count": 22,
+  "reddit_url": "https://www.reddit.com/r/bf5/",
+  "reddit_name": "Battlefield 5",
+  "reddit_description": "Battlefield 5",
+  "reddit_logo": "",
+  "reddit_count": 204,
+  "twitch_count": 113,
+  "youtube_count": 1000000,
+  "reviews_text_count": 13,
+  "ratings_count": 918,
+  "suggestions_count": 586,
+  "alternative_names": ["BF 5", "BF5", "Battlefield 5"],
+  "metacritic_url": "https://www.metacritic.com/game/pc/battlefield-v",
+  "parents_count": 0,
+  "additions_count": 0,
+  "game_series_count": 16,
+  "user_game": null,
+  "reviews_count": 931,
+  "saturated_color": "0f0f0f",
+  "dominant_color": "0f0f0f",
+  "parent_platforms": [
+    {
+      "platform": {
+        "id": 1,
+        "name": "PC",
+        "slug": "pc"
+      }
+    },
+    {
+      "platform": {
+        "id": 2,
+        "name": "PlayStation",
+        "slug": "playstation"
+      }
+    },
+    {
+      "platform": {
+        "id": 3,
+        "name": "Xbox",
+        "slug": "xbox"
+      }
+    }
+  ],
+  "platforms": [
+    {
+      "platform": {
+        "id": 4,
+        "name": "PC",
+        "slug": "pc",
+        "image": null,
+        "year_end": null,
+        "year_start": null,
+        "games_count": 515507,
+        "image_background": "https://media.rawg.io/media/games/4a0/4a0a1316102366260e6f38fd2a9cfdce.jpg"
+      },
+      "released_at": "2020-06-11",
+      "requirements": {
+        "minimum": "Minimum:\nRequires a 64-bit processor and operating system\nOS: 64-bit Windows 7, Windows 8.1 and Windows 10\nProcessor: AMD FX-8350/ Core i5 6600K\nMemory: 8 GB RAM\nGraphics: NVIDIA GeForce® GTX 1050 / NVIDIA GeForce® GTX 660 2GB or AMD Radeon™ RX 560 / HD 7850 2GB\nDirectX: Version 11\nStorage: 50 GB available space",
+        "recommended": "Recommended:\nRequires a 64-bit processor and operating system\nOS: 64-bit Windows 10 or later\nProcessor: AMD Ryzen 3 1300X/Intel Core i7 4790\nMemory: 12 GB RAM\nGraphics: NVIDIA GeForce® GTX 1060 6GB/AMD Radeon™ RX 580 8GB\nDirectX: Version 11\nStorage: 50 GB available space"
+      }
+    },
+    {
+      "platform": {
+        "id": 1,
+        "name": "Xbox One",
+        "slug": "xbox-one",
+        "image": null,
+        "year_end": null,
+        "year_start": null,
+        "games_count": 5542,
+        "image_background": "https://media.rawg.io/media/games/73e/73eecb8909e0c39fb246f457b5d6cbbe.jpg"
+      },
+      "released_at": "2018-11-20",
+      "requirements": {}
+    },
+    {
+      "platform": {
+        "id": 18,
+        "name": "PlayStation 4",
+        "slug": "playstation4",
+        "image": null,
+        "year_end": null,
+        "year_start": null,
+        "games_count": 6694,
+        "image_background": "https://media.rawg.io/media/games/490/49016e06ae2103881ff6373248843069.jpg"
+      },
+      "released_at": "2018-11-20",
+      "requirements": {}
+    }
+  ],
+  "stores": [
+    {
+      "id": 446694,
+      "url": "",
+      "store": {
+        "id": 1,
+        "name": "Steam",
+        "slug": "steam",
+        "domain": "store.steampowered.com",
+        "games_count": 78370,
+        "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+      }
+    },
+    {
+      "id": 48005,
+      "url": "",
+      "store": {
+        "id": 3,
+        "name": "PlayStation Store",
+        "slug": "playstation-store",
+        "domain": "store.playstation.com",
+        "games_count": 7834,
+        "image_background": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+      }
+    },
+    {
+      "id": 48015,
+      "url": "",
+      "store": {
+        "id": 2,
+        "name": "Xbox Store",
+        "slug": "xbox-store",
+        "domain": "microsoft.com",
+        "games_count": 4767,
+        "image_background": "https://media.rawg.io/media/games/310/3106b0e012271c5ffb16497b070be739.jpg"
+      }
+    }
+  ],
+  "developers": [
+    {
+      "id": 109,
+      "name": "Electronic Arts",
+      "slug": "electronic-arts",
+      "games_count": 325,
+      "image_background": "https://media.rawg.io/media/games/d2b/d2b33b26e0d61aca35d434c8a69e3711.jpg"
+    },
+    {
+      "id": 18111,
+      "name": "Electronic Arts DICE",
+      "slug": "ea-dice",
+      "games_count": 39,
+      "image_background": "https://media.rawg.io/media/games/f0e/f0ec103fb02562f9eafbcd73f124deb0.jpg"
+    },
+    {
+      "id": 19733,
+      "name": "Uprise",
+      "slug": "uprise",
+      "games_count": 2,
+      "image_background": "https://media.rawg.io/media/games/45b/45b57ed59de4b84effd8f6bc4b7bf515.jpg"
+    }
+  ],
+  "genres": [
+    {
+      "id": 4,
+      "name": "Action",
+      "slug": "action",
+      "games_count": 173935,
+      "image_background": "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Shooter",
+      "slug": "shooter",
+      "games_count": 59346,
+      "image_background": "https://media.rawg.io/media/games/490/49016e06ae2103881ff6373248843069.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Adventure",
+      "slug": "adventure",
+      "games_count": 133648,
+      "image_background": "https://media.rawg.io/media/games/48c/48cb04ca483be865e3a83119c94e6097.jpg"
+    },
+    {
+      "id": 59,
+      "name": "Massively Multiplayer",
+      "slug": "massively-multiplayer",
+      "games_count": 3306,
+      "image_background": "https://media.rawg.io/media/screenshots/d68/d684c5ec81b8ea46bfd4b5c3bae4007f.jpg"
+    }
+  ],
+  "tags": [
+    {
+      "id": 31,
+      "name": "Singleplayer",
+      "slug": "singleplayer",
+      "language": "eng",
+      "games_count": 208048,
+      "image_background": "https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg"
+    },
+    {
+      "id": 40847,
+      "name": "Steam Achievements",
+      "slug": "steam-achievements",
+      "language": "eng",
+      "games_count": 31466,
+      "image_background": "https://media.rawg.io/media/games/4cf/4cfc6b7f1850590a4634b08bfab308ab.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Multiplayer",
+      "slug": "multiplayer",
+      "language": "eng",
+      "games_count": 35376,
+      "image_background": "https://media.rawg.io/media/games/f87/f87457e8347484033cb34cde6101d08d.jpg"
+    },
+    {
+      "id": 40836,
+      "name": "Full controller support",
+      "slug": "full-controller-support",
+      "language": "eng",
+      "games_count": 14779,
+      "image_background": "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Atmospheric",
+      "slug": "atmospheric",
+      "language": "eng",
+      "games_count": 29971,
+      "image_background": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+    },
+    {
+      "id": 36,
+      "name": "Open World",
+      "slug": "open-world",
+      "language": "eng",
+      "games_count": 6421,
+      "image_background": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"
+    },
+    {
+      "id": 8,
+      "name": "First-Person",
+      "slug": "first-person",
+      "language": "eng",
+      "games_count": 28955,
+      "image_background": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+    },
+    {
+      "id": 30,
+      "name": "FPS",
+      "slug": "fps",
+      "language": "eng",
+      "games_count": 12252,
+      "image_background": "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg"
+    },
+    {
+      "id": 189,
+      "name": "Female Protagonist",
+      "slug": "female-protagonist",
+      "language": "eng",
+      "games_count": 10807,
+      "image_background": "https://media.rawg.io/media/games/10d/10d19e52e5e8415d16a4d344fe711874.jpg"
+    },
+    {
+      "id": 34,
+      "name": "Violent",
+      "slug": "violent",
+      "language": "eng",
+      "games_count": 5993,
+      "image_background": "https://media.rawg.io/media/games/5fa/5fae5fec3c943179e09da67a4427d68f.jpg"
+    },
+    {
+      "id": 69,
+      "name": "Action-Adventure",
+      "slug": "action-adventure",
+      "language": "eng",
+      "games_count": 13870,
+      "image_background": "https://media.rawg.io/media/games/8d4/8d46786ca86b1d95f3dc7e700e2dc4dd.jpg"
+    },
+    {
+      "id": 157,
+      "name": "PvP",
+      "slug": "pvp",
+      "language": "eng",
+      "games_count": 7501,
+      "image_background": "https://media.rawg.io/media/games/095/0953bf01cd4e4dd204aba85489ac9868.jpg"
+    },
+    {
+      "id": 70,
+      "name": "War",
+      "slug": "war",
+      "language": "eng",
+      "games_count": 8749,
+      "image_background": "https://media.rawg.io/media/games/997/997ab4d67e96fb20a4092383477d4463.jpg"
+    },
+    {
+      "id": 89,
+      "name": "Historical",
+      "slug": "historical",
+      "language": "eng",
+      "games_count": 2649,
+      "image_background": "https://media.rawg.io/media/games/c80/c80bcf321da44d69b18a06c04d942662.jpg"
+    },
+    {
+      "id": 81,
+      "name": "Military",
+      "slug": "military",
+      "language": "eng",
+      "games_count": 1440,
+      "image_background": "https://media.rawg.io/media/games/0fa/0fadc446fd1e9ae9e23a32793d9a5406.jpg"
+    },
+    {
+      "id": 1465,
+      "name": "combat",
+      "slug": "combat",
+      "language": "eng",
+      "games_count": 9786,
+      "image_background": "https://media.rawg.io/media/games/569/56978b5a77f13aa2ec5d09ec81d01cad.jpg"
+    },
+    {
+      "id": 45878,
+      "name": "Online PvP",
+      "slug": "online-pvp",
+      "language": "eng",
+      "games_count": 3349,
+      "image_background": "https://media.rawg.io/media/games/b19/b191ff2b8ccb646d1d2d9297ed5c7e89.jpg"
+    },
+    {
+      "id": 40937,
+      "name": "Steam Trading Cards",
+      "slug": "steam-trading-cards-2",
+      "language": "eng",
+      "games_count": 445,
+      "image_background": "https://media.rawg.io/media/games/19a/19a512a8c1293c22894b7364e1405ec1.jpg"
+    },
+    {
+      "id": 105,
+      "name": "World War II",
+      "slug": "world-war-ii",
+      "language": "eng",
+      "games_count": 851,
+      "image_background": "https://media.rawg.io/media/games/45b/45b57ed59de4b84effd8f6bc4b7bf515.jpg"
+    },
+    {
+      "id": 51,
+      "name": "Destruction",
+      "slug": "destruction",
+      "language": "eng",
+      "games_count": 3382,
+      "image_background": "https://media.rawg.io/media/games/02a/02a7f96f5a1156642bc0f827fd1b63f0.jpg"
+    },
+    {
+      "id": 42410,
+      "name": "LGBTQ+",
+      "slug": "lgbtq-2",
+      "language": "eng",
+      "games_count": 1300,
+      "image_background": "https://media.rawg.io/media/games/96f/96f0c07b6c156f05cb76b2ffba32bffc.jpg"
+    },
+    {
+      "id": 35162,
+      "name": "Battle Royale",
+      "slug": "battle-royale-2",
+      "language": "eng",
+      "games_count": 494,
+      "image_background": "https://media.rawg.io/media/games/45b/45b57ed59de4b84effd8f6bc4b7bf515.jpg"
+    },
+    {
+      "id": 7316,
+      "name": "ww2",
+      "slug": "ww2",
+      "language": "eng",
+      "games_count": 79,
+      "image_background": "https://media.rawg.io/media/screenshots/f7b/f7bebbd45ea447dfc5670783d167125c.jpg"
+    }
+  ],
+  "publishers": [
+    {
+      "id": 354,
+      "name": "Electronic Arts",
+      "slug": "electronic-arts",
+      "games_count": 1309,
+      "image_background": "https://media.rawg.io/media/games/473/473bd9a5e9522629d6cb28b701fb836a.jpg"
+    }
+  ],
+  "esrb_rating": {
+    "id": 4,
+    "name": "Mature",
+    "slug": "mature"
+  },
+  "clip": null,
+  "description_raw": "Battlefield V is the sixteenth game in its franchise. \r\n\r\n###Plot\r\nLike the original Battlefield, the game is based on the real events of World War II. The game focuses on the obscure battles of the war. It features storylines that tie the battles together and consist of episodes called “war stories”.\r\n\r\n###Gameplay\r\nBattlefield V puts a strong emphasis on realism. The game avoids video game abstractions in favor of immersive experience of the war. For that goal, the game aims to increase the player's interaction with the environment, such as doors, vehicles, or ammo. The ammo and other resources in the game are scarce, forcing the player to use a tactical approach.\r\nThe game gives a spotlight to women in the military who are among the main characters in the campaign. The player might also choose to play a female character in the multiplayer, as the gender is not tied to a class. The game also allows the players many customization options for costumes, vehicles, and weapons.\r\n\r\n###Modes\r\nBattlefield V has many multiplayer modes, some of which are new to the series and some are reimagined versions of the modes from previous games. For example, The Grand Operations mode is based on the original Battlefield mode called Operations. This mode imitates a military campaign and consists of a series of battles with different objectives and non-linear progress options."
+}

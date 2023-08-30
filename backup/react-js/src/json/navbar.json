@@ -1,0 +1,38 @@
+{
+  "logo_path": "",
+  "links": [
+    {
+      "name": "Catalog",
+      "url": "/",
+      "icon": "albumsOutline"
+    },
+    {
+      "name": "New Releases",
+      "url": "/",
+      "icon": "flashOutline"
+    },
+    {
+      "name": "Pre Orders",
+      "url": "/",
+      "icon": "pricetagsOutline"
+    }
+  ],
+  "socials": [
+    {
+      "url": "https://facebook.com/fachryafrz",
+      "icon": "logoFacebook"
+    },
+    {
+      "url": "https://twitter.com/fachryafrz",
+      "icon": "logoTwitter"
+    },
+    {
+      "url": "https://instagram.com/fachryafrz",
+      "icon": "logoInstagram"
+    },
+    {
+      "url": "https://youtube.com/@fachryafrz",
+      "icon": "logoYoutube"
+    }
+  ]
+}
