@@ -25,6 +25,7 @@ import {
   chevronForwardOutline,
 } from "ionicons/icons";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function GameMedia({ game, images, backdrop }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -77,10 +78,12 @@ export default function GameMedia({ game, images, backdrop }) {
               return (
                 <SwiperSlide key={img.id}>
                   <figure className={`max-w-full aspect-video bg-black`}>
-                    <img
+                    <Image
                       src={img.image}
                       alt={game.name}
                       className={`object-contain`}
+                      width={1000}
+                      height={1000}
                     />
                   </figure>
                 </SwiperSlide>
@@ -138,7 +141,12 @@ export default function GameMedia({ game, images, backdrop }) {
                   className={`cursor-pointer hocus:opacity-50`}
                 >
                   <figure className={`max-w-full`}>
-                    <img src={img.image} alt={game.name} />
+                    <Image
+                      src={img.image}
+                      alt={game.name}
+                      width={500}
+                      height={500}
+                    />
                   </figure>
                 </SwiperSlide>
               );

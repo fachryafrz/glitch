@@ -2,6 +2,7 @@
 
 import { IonIcon } from "@ionic/react";
 import * as Icons from "ionicons/icons";
+import Image from "next/image";
 import Link from "next/link";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
@@ -108,7 +109,12 @@ export default function GameOverview({ game, stores }) {
         >
           {game.background_image && (
             <figure className={`aspect-video`}>
-              <img src={game.background_image} alt={game.name} />
+              <Image
+                src={game.background_image}
+                alt={game.name}
+                width={500}
+                height={500}
+              />
             </figure>
           )}
 
@@ -148,17 +154,6 @@ export default function GameOverview({ game, stores }) {
                 <tr>
                   <td>Platforms</td>
                   <td className="flex items-center gap-2">
-                    {/* {game.parent_platforms.map((item) => {
-                      return (
-                        <IonIcon
-                          key={item.platform.id}
-                          icon={platformIcon(item.platform.name)}
-                          title={item.platform.name}
-                          className={`text-xl`}
-                        />
-                      );
-                    })} */}
-
                     {game.parent_platforms
                       .map((item) => item.platform.name)
                       .join(", ")}
