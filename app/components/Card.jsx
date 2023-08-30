@@ -23,7 +23,7 @@ export default function Card({ game }) {
     };
 
     fetchDetails();
-  }, []);
+  }, [game]);
 
   const gameCreator =
     details &&
