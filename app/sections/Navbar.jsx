@@ -16,6 +16,7 @@ export default function Navbar() {
   const searchRef = useRef();
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams().get("query");
 
   const isSearchPage = pathname.startsWith(`/search`);
 
@@ -47,6 +48,10 @@ export default function Navbar() {
       setSocialIcons(data.socials.map((item) => Icons[item.icon]));
     };
 
+    if (searchParams) {
+      setSearchQuery(searchParams);
+    }
+
     window.addEventListener("scroll", function () {
       if (window.scrollY >= 25) {
         setIsScrolled(true);
@@ -56,7 +61,7 @@ export default function Navbar() {
     });
 
     getIcons();
-  }, []);
+  }, [searchParams]);
 
   return (
     <nav
