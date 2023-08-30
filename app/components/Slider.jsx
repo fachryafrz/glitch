@@ -12,7 +12,18 @@ import { arrowBack, arrowForward } from "ionicons/icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Slider({ title, games }) {
+export default function Slider({ title, games, sort = "DESC" }) {
+  const sortedGames = [...games].sort((a, b) => {
+    const dateA = new Date(a.released);
+    const dateB = new Date(b.released);
+
+    if (sort === "ASC") {
+      return dateA - dateB;
+    } else if (sort === "DESC") {
+      return dateB - dateA;
+    }
+  });
+
   return (
     <section id={title} className={`my-4 lg:my-0`}>
       <h2 className={`sr-only`}>{title}</h2>
@@ -44,7 +55,7 @@ export default function Slider({ title, games }) {
         allowTouchMove={true}
         className={`relative !pt-12`}
       >
-        {games.map((game) => {
+        {sortedGames.map((game) => {
           return (
             <SwiperSlide key={game.id}>
               <Card game={game} />
