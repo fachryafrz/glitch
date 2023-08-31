@@ -6,7 +6,7 @@ import games from "../json/games.json";
 import Card from "../components/Card";
 import { IonIcon } from "@ionic/react";
 import { optionsOutline, searchOutline } from "ionicons/icons";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -18,6 +18,7 @@ export default function Search() {
   const query = searchParams.get("query");
   const router = useRouter();
   const [games, setGames] = useState([]);
+  const searchRef = useRef();
 
   const handleActive = () => {
     setActive(!active);
@@ -49,6 +50,7 @@ export default function Search() {
 
     router.replace(`/search?query=${searchQuery.replace(/\s+/g, "+")}`);
 
+    searchRef.current.blur();
     fetchSearchGames();
   };
 
@@ -120,6 +122,8 @@ export default function Search() {
           className={`flex items-center gap-2 px-6 bg-primary-secondary bg-opacity-75 backdrop-blur w-full sticky top-6`}
         >
           <input
+            ref={searchRef}
+            autoFocus={true}
             onChange={handleSearchInput}
             type="text"
             placeholder={`Search`}
