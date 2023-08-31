@@ -37,11 +37,6 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
-  icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/apple-touch-icon.png",
-  },
   themeColor: "#202735",
   manifest: "/manifest.json",
   twitter: {
