@@ -11,7 +11,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function Search({ error, setError }) {
+export default function Search() {
   const [active, setActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const searchParams = useSearchParams();
@@ -31,7 +31,7 @@ export default function Search({ error, setError }) {
 
   const fetchSearchGames = async (query) => {
     let params = {
-      key: "a38e9622914345288a1e518be755b1b7",
+      key: "04f7065e0c1e49f5baeeb11ee1cde48c",
       search: query ? query : searchQuery,
     };
 
@@ -41,8 +41,7 @@ export default function Search({ error, setError }) {
           ...params,
         },
       })
-      .then((res) => setGames(res.data.results))
-      .catch((err) => setError(true));
+      .then((res) => setGames(res.data.results));
   };
 
   const handleSubmit = (e) => {

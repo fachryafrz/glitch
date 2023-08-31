@@ -18,7 +18,7 @@ export default function HomeSliderItem({ game }) {
       axios
         .get(`https://api.rawg.io/api/games/${game.slug}`, {
           params: {
-            key: "a38e9622914345288a1e518be755b1b7",
+            key: "04f7065e0c1e49f5baeeb11ee1cde48c",
           },
         })
         .then((res) => setDetails(res.data));

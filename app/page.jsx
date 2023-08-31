@@ -6,7 +6,7 @@ import Slider from "./components/Slider";
 async function fetchGames(dates, ordering, genres, stores, dev) {
   const res = await axios.get(`https://api.rawg.io/api/games`, {
     params: {
-      key: "a38e9622914345288a1e518be755b1b7",
+      key: "04f7065e0c1e49f5baeeb11ee1cde48c",
       dates: dates,
       ordering: ordering,
       genres: genres,
@@ -21,7 +21,7 @@ async function fetchGames(dates, ordering, genres, stores, dev) {
 async function fetchAdditional(path) {
   const res = await axios.get(`https://api.rawg.io/api/${path}`, {
     params: {
-      key: "a38e9622914345288a1e518be755b1b7",
+      key: "04f7065e0c1e49f5baeeb11ee1cde48c",
     },
   });
 
