@@ -40,17 +40,14 @@ export default function HomeSlider({ games, min, max }) {
       >
         {games.slice(min, max).map((game) => {
           return (
-            <SwiperSlide
-              key={game.id}
-              className={`!h-auto flex flex-col lg:!grid lg:!grid-cols-3`}
-            >
+            <SwiperSlide key={game.id} className={`!h-auto`}>
               <HomeSliderItem game={game} />
             </SwiperSlide>
           );
         })}
         <div
           id={`navigation`}
-          className={`text-2xl flex items-center justify-between px-4 gap-4 absolute z-10 inset-x-0 bottom-8 xs:justify-start xs:px-0 xs:right-8 xs:inset-x-auto h-12`}
+          className={`text-2xl flex items-center justify-between px-4 gap-4 absolute z-10 inset-x-0 bottom-4 sm:bottom-8 xs:justify-start xs:px-0 xs:right-8 xs:inset-x-auto h-12`}
         >
           <button id={`homePrev`} className={`flex`}>
             <IonIcon icon={arrowBack} />

@@ -1,3 +1,5 @@
+export const revalidate = 86400; // revalidate at most every 1 day
+
 import axios from "axios";
 import HomeFilters from "./components/HomeFilters";
 import HomeSlider from "./components/HomeSlider";
@@ -60,6 +62,8 @@ export default async function Home() {
   const currentYear = currentDate.getFullYear();
   const startOfYear = new Date(currentYear, 0, 2).toISOString().slice(0, 10);
   const endOfYear = new Date(currentYear, 11, 32).toISOString().slice(0, 10);
+
+  console.log(await fetchGames(`${startOfYear},${endOfYear}`));
 
   return (
     <>

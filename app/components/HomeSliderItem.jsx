@@ -28,7 +28,7 @@ export default function HomeSliderItem({ game }) {
   }, [game]);
 
   return (
-    <>
+    <article className={`h-full flex flex-col lg:!grid lg:!grid-cols-3`}>
       <figure className={`lg:col-span-2`}>
         <img
           src={game.background_image}
@@ -37,11 +37,11 @@ export default function HomeSliderItem({ game }) {
         />
       </figure>
       <div
-        className={`relative h-full p-8 xl:p-10 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start`}
+        className={`relative h-full p-4 sm:p-8 xl:p-10 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start`}
       >
         <h2
           title={game.name}
-          className={`text-2xl lg:text-4xl font-bold line-clamp-2 leading-snug`}
+          className={`text-2xl lg:text-3xl xl:text-4xl font-bold line-clamp-2 leading-snug`}
         >
           {game.name}
         </h2>
@@ -76,9 +76,16 @@ export default function HomeSliderItem({ game }) {
           </div>
         )}
 
-        <ReactMarkdown className={`line-clamp-5 opacity-50`}>
+        {details && (
+          <div
+            dangerouslySetInnerHTML={{ __html: details.description }}
+            className={`line-clamp-5 opacity-50`}
+          ></div>
+        )}
+
+        {/* <ReactMarkdown className={`line-clamp-5 opacity-50`}>
           {details && details.description_raw}
-        </ReactMarkdown>
+        </ReactMarkdown> */}
         <div
           className={`mt-auto pt-4 flex flex-col gap-4 items-center xs:flex-row xs:items-end xs:justify-between`}
         >
@@ -90,6 +97,6 @@ export default function HomeSliderItem({ game }) {
           </Link>
         </div>
       </div>
-    </>
+    </article>
   );
 }
