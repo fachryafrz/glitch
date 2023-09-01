@@ -63,8 +63,6 @@ export default async function Home() {
   const startOfYear = new Date(currentYear, 0, 2).toISOString().slice(0, 10);
   const endOfYear = new Date(currentYear, 11, 32).toISOString().slice(0, 10);
 
-  console.log(await fetchGames(`${startOfYear},${endOfYear}`));
-
   return (
     <>
       <h1 className={`sr-only`}>{process.env.APP_NAME}</h1>
