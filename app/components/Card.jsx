@@ -8,27 +8,27 @@ export default function Card({ game }) {
   const options = { year: "numeric", month: "short" };
   const formattedDate = date.toLocaleString("en-US", options);
 
-  const [details, setDetails] = useState();
+  // const [details, setDetails] = useState();
 
-  useEffect(() => {
-    const fetchDetails = async () => {
-      axios
-        .get(`https://api.rawg.io/api/games/${game.slug}`, {
-          params: {
-            key: "04f7065e0c1e49f5baeeb11ee1cde48c",
-          },
-        })
-        .then((res) => setDetails(res.data));
-    };
+  // useEffect(() => {
+  //   const fetchDetails = async () => {
+  //     axios
+  //       .get(`https://api.rawg.io/api/games/${game.slug}`, {
+  //         params: {
+  //           key: "04f7065e0c1e49f5baeeb11ee1cde48c",
+  //         },
+  //       })
+  //       .then((res) => setDetails(res.data));
+  //   };
 
-    fetchDetails();
-  }, [game]);
+  //   fetchDetails();
+  // }, [game]);
 
-  const gameCreator =
-    details &&
-    details.developers &&
-    details.developers.length > 0 &&
-    details.developers[0].name;
+  // const gameCreator =
+  //   details &&
+  //   details.developers &&
+  //   details.developers.length > 0 &&
+  //   details.developers[0].name;
 
   return (
     <article>
@@ -56,9 +56,9 @@ export default function Card({ game }) {
             {game.name}
           </h3>
 
-          <span title={gameCreator} className={`line-clamp-1 opacity-50`}>
+          {/* <span title={gameCreator} className={`line-clamp-1 opacity-50`}>
             {gameCreator}
-          </span>
+          </span> */}
 
           <div className={`flex items-center gap-1 text-xs sm:text-base mt-1`}>
             <span className={`opacity-50 whitespace-nowrap`}>

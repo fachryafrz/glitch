@@ -42,7 +42,7 @@ export default function HomeSlider({ games, min, max }) {
           return (
             <SwiperSlide
               key={game.id}
-              className={`h-auto flex flex-col lg:!grid lg:!grid-cols-3`}
+              className={`!h-auto flex flex-col lg:!grid lg:!grid-cols-3`}
             >
               <HomeSliderItem game={game} />
             </SwiperSlide>

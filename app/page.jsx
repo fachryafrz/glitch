@@ -58,6 +58,7 @@ export default async function Home() {
     .toISOString()
     .slice(0, 10);
   const currentYear = currentDate.getFullYear();
+  const startOfYear = new Date(currentYear, 0, 2).toISOString().slice(0, 10);
   const endOfYear = new Date(currentYear, 11, 32).toISOString().slice(0, 10);
 
   return (
@@ -67,20 +68,28 @@ export default async function Home() {
       <div className={`flex flex-col gap-4 lg:gap-10`}>
         <HomeFilters />
 
-        <HomeSlider games={await fetchGames()} min={0} max={5} />
+        <HomeSlider
+          games={await fetchGames(`${startOfYear},${endOfYear}`)}
+          min={0}
+          max={5}
+        />
 
         <Slider
           title={`New releases`}
           games={await fetchGames(`${thirtyDaysAgo},${today}`)}
+          min={0}
+          max={10}
         />
 
         <Slider
           title={`Upcoming Games`}
           games={await fetchGames(`${tomorrow},${endOfYear}`)}
           sort={`ASC`}
+          min={0}
+          max={10}
         />
 
-        <Slider title={`Popular`} games={await fetchGames()} />
+        {/* <Slider title={`Popular`} games={await fetchGames()} />
 
         <HomeSlider games={await fetchGames()} min={5} max={10} />
 
@@ -104,7 +113,7 @@ export default async function Home() {
               games={await fetchGames(null, null, genre.id)}
             />
           );
-        })}
+        })} */}
       </div>
     </>
   );

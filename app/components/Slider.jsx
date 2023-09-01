@@ -12,7 +12,7 @@ import { arrowBack, arrowForward } from "ionicons/icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Slider({ title, games, sort = "DESC" }) {
+export default function Slider({ title, games, sort = "DESC", min, max }) {
   const sortedGames = [...games].sort((a, b) => {
     const dateA = new Date(a.released);
     const dateB = new Date(b.released);
@@ -55,7 +55,7 @@ export default function Slider({ title, games, sort = "DESC" }) {
         allowTouchMove={true}
         className={`relative !pt-12`}
       >
-        {sortedGames.map((game) => {
+        {sortedGames.slice(min, max).map((game) => {
           return (
             <SwiperSlide key={game.id}>
               <Card game={game} />
