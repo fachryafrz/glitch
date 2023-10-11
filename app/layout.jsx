@@ -70,6 +70,10 @@ export const metadata = {
   },
 };
 
+export async function generateMetadata() {
+  return metadata;
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -89,7 +93,7 @@ export default function RootLayout({ children }) {
         {/* Navbar */}
         <Navbar />
 
-        <main className={`min-h-[100dvh] md:container mx-auto px-4 xl:px-36`}>
+        <main className={`min-h-[100dvh] mx-auto px-4 max-w-7xl`}>
           {children}
         </main>
 
