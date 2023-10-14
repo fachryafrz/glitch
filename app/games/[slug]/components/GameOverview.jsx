@@ -30,25 +30,25 @@ export default function GameOverview({ game, stores }) {
   const storeIcon = (storeName) => {
     switch (storeName) {
       case "Steam":
-        return `https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/512px-Steam_icon_logo.svg.png`;
+        return `/store_icons/steam.png`;
       case "PlayStation Store":
-        return `https://ww1.freelogovectors.net/wp-content/uploads/2022/01/playstation-store-logo-freelogovectors.net_.png`;
+        return `/store_icons/playstation-store.png`;
       case "Xbox Store":
-        return `https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Microsoft_Store.svg/1200px-Microsoft_Store.svg.png`;
+        return `/store_icons/microsoft-store.png`;
       case "Xbox 360 Store":
-        return `https://seeklogo.com/images/X/xbox-360-logo-CD2D4483E4-seeklogo.com.png?v=638133562380000000`;
+        return `/store_icons/xbox-360.png`;
       case "Epic Games":
-        return `https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Epic_Games_logo.svg/516px-Epic_Games_logo.svg.png`;
+        return `/store_icons/epic-games.png`;
       case "Google Play":
-        return `https://static.vecteezy.com/system/resources/previews/022/613/026/original/google-play-store-icon-logo-symbol-free-png.png`;
+        return `/store_icons/google-play.png`;
       case "App Store":
-        return `https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/App_Store_%28iOS%29.svg/2048px-App_Store_%28iOS%29.svg.png`;
+        return `/store_icons/app-store.png`;
       case "Nintendo Store":
-        return `https://cdn.iconscout.com/icon/free/png-256/free-nintendo-2296041-1912000.png?f=webp`;
+        return `/store_icons/nintendo-store.png`;
       case "itch.io":
-        return `https://pbs.twimg.com/profile_images/1212846124945428480/w1htiJ0v_400x400.png`;
+        return `/store_icons/itch-io.png`;
       case "GOG":
-        return `https://cdn.icon-icons.com/icons2/3053/PNG/512/gog_galaxy_alt_macos_bigsur_icon_190150.png`;
+        return `/store_icons/gog.png`;
     }
   };
 
