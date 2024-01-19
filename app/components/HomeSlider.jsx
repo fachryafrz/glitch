@@ -2,7 +2,7 @@
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation } from "swiper/modules";
+import { Autoplay, EffectFade, Keyboard, Navigation } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,10 +12,10 @@ import "swiper/css/autoplay";
 
 import data from "../json/homeSlider.json";
 import { IonIcon } from "@ionic/react";
-import { arrowBack, arrowForward } from "ionicons/icons";
+import { arrowBack, arrowForward, star } from "ionicons/icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import HomeSliderItem from "./HomeSliderItem";
+import Link from "next/link";
 
 export default function HomeSlider({ games, min, max }) {
   return (
@@ -23,7 +23,8 @@ export default function HomeSlider({ games, min, max }) {
       <Swiper
         spaceBetween={16}
         slidesPerView={1}
-        modules={[EffectFade, Navigation, Autoplay]}
+        modules={[EffectFade, Navigation, Autoplay, Keyboard]}
+        keyboard={true}
         autoplay={{
           delay: 5000,
           pauseOnMouseEnter: true,
@@ -41,7 +42,7 @@ export default function HomeSlider({ games, min, max }) {
         {games.slice(min, max).map((game) => {
           return (
             <SwiperSlide key={game.id} className={`!h-auto`}>
-              <HomeSliderItem game={game} />
+              <HomeGame game={game} />
             </SwiperSlide>
           );
         })}
@@ -58,5 +59,69 @@ export default function HomeSlider({ games, min, max }) {
         </div>
       </Swiper>
     </section>
+  );
+}
+
+function HomeGame({ game }) {
+  return (
+    <article className={`h-full flex flex-col lg:flex-row`}>
+      <figure className={`aspect-[4/3] lg:aspect-video lg:w-[70%]`}>
+        <img
+          src={`https://images.igdb.com/igdb/image/upload/t_original/${game.artworks[0].image_id}.jpg`}
+          alt={game.name}
+          className={``}
+        />
+      </figure>
+
+      <div
+        className={`relative h-full p-4 sm:p-8 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start lg:w-[30%]`}
+      >
+        <h2
+          title={game.name}
+          className={`text-2xl lg:text-3xl font-bold line-clamp-2 leading-snug`}
+          style={{ textWrap: `balance` }}
+        >
+          {game.name}
+        </h2>
+
+        <ul
+          className={`flex flex-wrap items-center justify-center lg:justify-start gap-1`}
+        >
+          <li
+            className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full flex items-center gap-1`}
+          >
+            <IonIcon icon={star} className={`text-primary-yellow `} />
+            <span className={`font-medium`}>
+              {(game.rating / 10).toFixed(1)}
+            </span>
+          </li>
+          <li
+            className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full flex items-center gap-1`}
+          >
+            <span className={`font-medium`}>
+              {new Date(game.first_release_date * 1000).getFullYear()}
+            </span>
+          </li>
+          <li
+            className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full flex items-center gap-1`}
+          >
+            <span className={`font-medium`}>{game.genres[0].name}</span>
+          </li>
+        </ul>
+
+        <p className={`line-clamp-5 opacity-50`}>{game.summary}</p>
+
+        <div
+          className={`mt-auto pt-4 flex flex-col gap-4 items-center xs:flex-row xs:items-end xs:justify-between`}
+        >
+          <Link
+            href={`/games/${game.slug}`}
+            className={`p-3 px-8 bg-white bg-opacity-10 rounded hocus:bg-opacity-20 text-center`}
+          >
+            View details
+          </Link>
+        </div>
+      </div>
+    </article>
   );
 }

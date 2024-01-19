@@ -1,67 +1,13 @@
-export const revalidate = 86400; // revalidate at most every 1 day
+export const revalidate = 3600; // revalidate at most every 1 hour
 
 import axios from "axios";
 import HomeFilters from "./components/HomeFilters";
 import HomeSlider from "./components/HomeSlider";
 import Slider from "./components/Slider";
-
-async function fetchGames(dates, ordering, genres, stores, dev) {
-  const res = await axios.get(`https://api.rawg.io/api/games`, {
-    params: {
-      key: "04f7065e0c1e49f5baeeb11ee1cde48c",
-      dates: dates,
-      ordering: ordering,
-      genres: genres,
-      stores: stores,
-      developers: dev,
-    },
-  });
-
-  return res.data.results;
-}
-
-async function fetchAdditional(path) {
-  const res = await axios.get(`https://api.rawg.io/api/${path}`, {
-    params: {
-      key: "04f7065e0c1e49f5baeeb11ee1cde48c",
-    },
-  });
-
-  return res.data.results;
-}
+import { fetchData } from "./lib/fetchData";
 
 export default async function Home() {
-  const genres = await fetchAdditional(`genres`);
-  const developers = await fetchAdditional(`developers`);
-
-  const currentDate = new Date();
-  const today = currentDate.toISOString().slice(0, 10);
-
-  const tomorrow = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    currentDate.getDate() + 2
-  )
-    .toISOString()
-    .slice(0, 10);
-
-  const firstDate = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    2
-  )
-    .toISOString()
-    .slice(0, 10);
-  const thirtyDaysAgo = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth() - 1,
-    2
-  )
-    .toISOString()
-    .slice(0, 10);
-  const currentYear = currentDate.getFullYear();
-  const startOfYear = new Date(currentYear, 0, 2).toISOString().slice(0, 10);
-  const endOfYear = new Date(currentYear, 11, 32).toISOString().slice(0, 10);
+  const today = Math.floor(Date.now() / 1000);
 
   return (
     <>
@@ -71,12 +17,20 @@ export default async function Home() {
         <HomeFilters />
 
         <HomeSlider
-          games={await fetchGames(`${startOfYear},${endOfYear}`)}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+            fields *, artworks.*, screenshots.*, genres.*, first_release_date;
+            where cover != null & artworks != null & rating != null & first_release_date <= ${today};
+            sort first_release_date desc;
+            limit 20;
+            `,
+          })}
           min={0}
           max={5}
         />
 
-        <Slider
+        {/* <Slider
           title={`New releases`}
           games={await fetchGames(`${thirtyDaysAgo},${today}`)}
           min={0}
@@ -89,7 +43,7 @@ export default async function Home() {
           sort={`ASC`}
           min={0}
           max={10}
-        />
+        /> */}
 
         {/* <Slider title={`Popular`} games={await fetchGames()} />
 

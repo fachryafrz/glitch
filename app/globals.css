@@ -1,5 +1,5 @@
 .swiper-button-disabled {
-  @apply !opacity-30 !cursor-not-allowed;
+  @apply !opacity-30;
 }
 
 @tailwind base;
@@ -12,6 +12,6 @@
   }
 
   img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full object-cover italic;
   }
 }
