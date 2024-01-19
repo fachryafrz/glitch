@@ -91,7 +91,7 @@ export default function RootLayout({ children }) {
         {/* Navbar */}
         <Navbar />
 
-        <main className={`min-h-[100dvh] mx-auto px-4 max-w-7xl`}>
+        <main className={`min-h-[100dvh] mx-auto p-4 max-w-none`}>
           {children}
         </main>
 

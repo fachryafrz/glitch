@@ -14,13 +14,13 @@ export default async function Home() {
       <h1 className={`sr-only`}>{process.env.APP_NAME}</h1>
 
       <div className={`flex flex-col gap-4 lg:gap-10`}>
-        <HomeFilters />
+        {/* <HomeFilters /> */}
 
         <HomeSlider
           games={await fetchData({
             path: `/games`,
             fields: `
-            fields *, artworks.*, screenshots.*, genres.*, first_release_date;
+            fields *, cover.*, artworks.*, screenshots.*, genres.*, first_release_date;
             where cover != null & artworks != null & rating != null & first_release_date <= ${today};
             sort first_release_date desc;
             limit 20;

@@ -65,27 +65,32 @@ export default function HomeSlider({ games, min, max }) {
 function HomeGame({ game }) {
   return (
     <article className={`h-full flex flex-col lg:flex-row`}>
-      <figure className={`aspect-[4/3] lg:aspect-video lg:w-[70%]`}>
+      <figure className={`lg:w-[70%]`}>
+        {/* <img
+          src={`https://images.igdb.com/igdb/image/upload/t_original/${game.cover.image_id}.jpg`}
+          alt={game.name}
+          className={`aspect-cover object-top`}
+        /> */}
         <img
           src={`https://images.igdb.com/igdb/image/upload/t_original/${game.artworks[0].image_id}.jpg`}
           alt={game.name}
-          className={``}
+          className={`aspect-video`}
         />
       </figure>
 
       <div
-        className={`relative h-full p-4 sm:p-8 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start lg:w-[30%]`}
+        className={`relative h-[300px] lg:h-full p-4 sm:p-8 pb-12 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start lg:w-[30%]`}
       >
         <h2
           title={game.name}
-          className={`text-2xl lg:text-3xl font-bold line-clamp-2 leading-snug`}
+          className={`text-2xl lg:text-3xl xl:text-4xl font-bold line-clamp-2 !leading-snug`}
           style={{ textWrap: `balance` }}
         >
           {game.name}
         </h2>
 
         <ul
-          className={`flex flex-wrap items-center justify-center lg:justify-start gap-1`}
+          className={`flex sm:flex-wrap items-center justify-center lg:justify-start gap-1 text-xs sm:text-base`}
         >
           <li
             className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full flex items-center gap-1`}
@@ -105,22 +110,18 @@ function HomeGame({ game }) {
           <li
             className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full flex items-center gap-1`}
           >
-            <span className={`font-medium`}>{game.genres[0].name}</span>
+            <span className={`font-medium line-clamp-1 text-left`}>{game.genres[0].name}</span>
           </li>
         </ul>
 
-        <p className={`line-clamp-5 opacity-50`}>{game.summary}</p>
+        <p className={`line-clamp-3 text-left opacity-50`}>{game.summary}</p>
 
-        <div
-          className={`mt-auto pt-4 flex flex-col gap-4 items-center xs:flex-row xs:items-end xs:justify-between`}
+        <Link
+          href={`/games/${game.slug}`}
+          className={`p-3 px-8 bg-white bg-opacity-10 rounded hocus:bg-opacity-20 text-center absolute bottom-4 sm:bottom-8`}
         >
-          <Link
-            href={`/games/${game.slug}`}
-            className={`p-3 px-8 bg-white bg-opacity-10 rounded hocus:bg-opacity-20 text-center`}
-          >
-            View details
-          </Link>
-        </div>
+          View details
+        </Link>
       </div>
     </article>
   );
