@@ -44,23 +44,25 @@ export default function GameMedia({ game, images, backdrop }) {
 
   return (
     <section>
-      <button
+      {/* <button
         onClick={handleGoBack}
         className={`flex max-w-fit items-center gap-2 text-neutral-400 hocus:gap-3 hocus:text-white transition-all mb-4`}
       >
         <IonIcon icon={chevronBackOutline} />
         <span>Back to previous page</span>
-      </button>
+      </button> */}
 
       {/* Media */}
       <div
-        className={`flex flex-col lg:grid lg:grid-cols-5 lg:grid-rows-3 gap-2 md:gap-4 [&_*]:h-full`}
+        className={`flex flex-col lg:grid lg:grid-cols-5 lg:grid-rows-3 gap-2 lg:gap-4 [&_*]:h-full max-w-7xl mx-auto`}
       >
         {/* Big Image */}
         <div className={`lg:col-span-4 lg:row-span-full`}>
           <Swiper
             spaceBetween={16}
-            thumbs={{ swiper: isThumbsReady && thumbsSwiper }}
+            thumbs={{
+              swiper: thumbsSwiper && !thumbsSwiper.destroyed && thumbsSwiper,
+            }}
             modules={[FreeMode, Navigation, Thumbs, EffectFade, Autoplay]}
             autoplay={{
               delay: 5000,
@@ -78,7 +80,7 @@ export default function GameMedia({ game, images, backdrop }) {
                 <SwiperSlide key={img.id}>
                   <figure className={`max-w-full aspect-video bg-black`}>
                     <img
-                      src={img.image}
+                      src={`https://images.igdb.com/igdb/image/upload/t_original/${img.image_id}.jpg`}
                       alt={game.name}
                       className={`object-contain`}
                     />
@@ -138,7 +140,10 @@ export default function GameMedia({ game, images, backdrop }) {
                   className={`cursor-pointer hocus:opacity-50`}
                 >
                   <figure className={`max-w-full`}>
-                    <img src={img.image} alt={game.name} />
+                    <img
+                      src={`https://images.igdb.com/igdb/image/upload/t_screenshot_med/${img.image_id}.jpg`}
+                      alt={game.name}
+                    />
                   </figure>
                 </SwiperSlide>
               );

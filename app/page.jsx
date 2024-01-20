@@ -1,101 +1,126 @@
-export const revalidate = 86400; // revalidate at most every 1 day
+export const revalidate = 3600; // revalidate at most every 1 hour
 
 import axios from "axios";
 import HomeFilters from "./components/HomeFilters";
 import HomeSlider from "./components/HomeSlider";
 import Slider from "./components/Slider";
-
-async function fetchGames(dates, ordering, genres, stores, dev) {
-  const res = await axios.get(`https://api.rawg.io/api/games`, {
-    params: {
-      key: "04f7065e0c1e49f5baeeb11ee1cde48c",
-      dates: dates,
-      ordering: ordering,
-      genres: genres,
-      stores: stores,
-      developers: dev,
-    },
-  });
-
-  return res.data.results;
-}
-
-async function fetchAdditional(path) {
-  const res = await axios.get(`https://api.rawg.io/api/${path}`, {
-    params: {
-      key: "04f7065e0c1e49f5baeeb11ee1cde48c",
-    },
-  });
-
-  return res.data.results;
-}
+import { fetchData } from "./lib/fetchData";
 
 export default async function Home() {
-  const genres = await fetchAdditional(`genres`);
-  const developers = await fetchAdditional(`developers`);
-
-  const currentDate = new Date();
-  const today = currentDate.toISOString().slice(0, 10);
-
-  const tomorrow = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    currentDate.getDate() + 2
-  )
-    .toISOString()
-    .slice(0, 10);
-
-  const firstDate = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    2
-  )
-    .toISOString()
-    .slice(0, 10);
-  const thirtyDaysAgo = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth() - 1,
-    2
-  )
-    .toISOString()
-    .slice(0, 10);
-  const currentYear = currentDate.getFullYear();
-  const startOfYear = new Date(currentYear, 0, 2).toISOString().slice(0, 10);
-  const endOfYear = new Date(currentYear, 11, 32).toISOString().slice(0, 10);
+  const today = Math.floor(Date.now() / 1000);
 
   return (
     <>
       <h1 className={`sr-only`}>{process.env.APP_NAME}</h1>
 
       <div className={`flex flex-col gap-4 lg:gap-10`}>
-        <HomeFilters />
+        {/* <HomeFilters /> */}
 
         <HomeSlider
-          games={await fetchGames(`${startOfYear},${endOfYear}`)}
-          min={0}
-          max={5}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+            f *, artworks.*, genres.*, involved_companies.*;
+            w cover != null & artworks != null & rating != null & first_release_date <= ${today} & genres = (12,31);
+            s first_release_date desc;
+            l 5;
+            `,
+          })}
+          keyboard={true}
         />
 
         <Slider
           title={`New releases`}
-          games={await fetchGames(`${thirtyDaysAgo},${today}`)}
-          min={0}
-          max={10}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+            f *, cover.*;
+            w cover != null & rating != null & first_release_date <= ${today} & genres = (12,31);
+            s first_release_date desc;
+            l 20;
+            `,
+          })}
         />
 
         <Slider
-          title={`Upcoming Games`}
-          games={await fetchGames(`${tomorrow},${endOfYear}`)}
-          sort={`ASC`}
-          min={0}
-          max={10}
+          title={`Upcoming`}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+            f *, cover.*;
+            w cover != null & first_release_date > ${today} & genres = (12,31);
+            s first_release_date desc;
+            l 20;
+            `,
+          })}
         />
 
-        {/* <Slider title={`Popular`} games={await fetchGames()} />
+        <Slider
+          title={`Popular`}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+            f *, cover.*;
+            w cover != null & genres = (12,31);
+            s total_rating_count desc;
+            l 20;
+            `,
+          })}
+        />
 
-        <HomeSlider games={await fetchGames()} min={5} max={10} />
+        <HomeSlider
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+            f *, artworks.*, genres.*, involved_companies.*;
+            w cover != null & artworks != null & rating != null & first_release_date <= ${today} & genres = (12,31);
+            s first_release_date desc;
+            l 5;
+            o 5;
+            `,
+          })}
+        />
 
-        {developers.slice(0, 3).map(async (dev) => {
+        <Slider
+          title={`Rockstar Games`}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+                f *, cover.*;
+                w cover != null & involved_companies.company = 29 & parent_game = null & version_title = null & category = 0;
+                s first_release_date desc;
+                l 20;
+                  `,
+          })}
+        />
+
+        <Slider
+          title={`Electronic Arts`}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+                f *, cover.*;
+                w cover != null & involved_companies.company = 1 & parent_game = null & version_title = null & category = 0;
+                s first_release_date desc;
+                l 20;
+                  `,
+          })}
+        />
+
+        <Slider
+          title={`Ubisoft Montreal`}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+                f *, cover.*;
+                w cover != null & involved_companies.company = 38 & parent_game = null & version_title = null & category = 0;
+                s first_release_date desc;
+                l 20;
+                  `,
+          })}
+        />
+
+        {/* {developers.slice(0, 3).map(async (dev) => {
           return (
             <Slider
               key={dev.id}
@@ -103,11 +128,11 @@ export default async function Home() {
               games={await fetchGames(null, null, null, null, dev.id)}
             />
           );
-        })}
+        })} */}
 
-        <HomeSlider games={await fetchGames()} min={10} max={15} />
+        {/* <HomeSlider games={await fetchGames()} min={10} max={15} /> */}
 
-        {genres.slice(0, 3).map(async (genre) => {
+        {/* {genres.slice(0, 3).map(async (genre) => {
           return (
             <Slider
               key={genre.id}

@@ -32,14 +32,17 @@ export default function Card({ game }) {
 
   return (
     <article>
-      <Link href={`/games/${game.slug}`} className={`flex flex-col gap-2`}>
+      <Link href={`/games/${game.id}`} className={`flex flex-col gap-2`}>
         <figure
-          className={`aspect-video overflow-hidden ${
-            game.background_image ? `bg-transparent` : `bg-black`
+          className={`aspect-cover overflow-hidden ${
+            game.cover.image_id ? `bg-transparent` : `bg-black`
           }`}
         >
-          {game.background_image ? (
-            <img src={game.background_image} alt={game.name} />
+          {game.cover.image_id ? (
+            <img
+              src={`https://images.igdb.com/igdb/image/upload/t_cover_big/${game.cover.image_id}.jpg`}
+              alt={game.name}
+            />
           ) : (
             <img
               src={`logo.svg`}
@@ -48,7 +51,8 @@ export default function Card({ game }) {
             />
           )}
         </figure>
-        <div>
+
+        {/* <div>
           <h3
             title={game.name}
             className={`mb-1 sm:text-lg font-medium line-clamp-1`}
@@ -56,9 +60,9 @@ export default function Card({ game }) {
             {game.name}
           </h3>
 
-          {/* <span title={gameCreator} className={`line-clamp-1 opacity-50`}>
+          <span title={gameCreator} className={`line-clamp-1 opacity-50`}>
             {gameCreator}
-          </span> */}
+          </span>
 
           <div className={`flex items-center gap-1 text-xs sm:text-base mt-1`}>
             <span className={`opacity-50 whitespace-nowrap`}>
@@ -85,7 +89,7 @@ export default function Card({ game }) {
               </div>
             )}
           </div>
-        </div>
+        </div> */}
       </Link>
     </article>
   );

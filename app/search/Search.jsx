@@ -5,65 +5,64 @@ import platforms from "../json/platforms.json";
 import games from "../json/games.json";
 import Card from "../components/Card";
 import { IonIcon } from "@ionic/react";
-import { optionsOutline, searchOutline } from "ionicons/icons";
+import { close, optionsOutline, searchOutline } from "ionicons/icons";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { fetchData } from "../lib/fetchData";
 
 export default function Search() {
   const [active, setActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const searchParams = useSearchParams();
-  const query = searchParams.get("query");
-  const router = useRouter();
   const [games, setGames] = useState([]);
+
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const searchRef = useRef();
 
   const handleActive = () => {
     setActive(!active);
   };
 
-  const handleSearchInput = (e) => {
-    e.preventDefault();
+  const fetchSearchGames = async () => {
+    const query = searchParams.get("query");
 
-    setSearchQuery(e.target.value);
-  };
-
-  const fetchSearchGames = async (query) => {
-    let params = {
-      key: "04f7065e0c1e49f5baeeb11ee1cde48c",
-      search: query ? query : searchQuery,
-    };
-
-    axios
-      .get(`https://api.rawg.io/api/games`, {
-        params: {
-          ...params,
-        },
-      })
-      .then((res) => setGames(res.data.results));
+    await fetchData({
+      path: "/games",
+      fields: `
+        f *, cover.*;
+        w cover != null;
+        search "${query}";
+        l 20;
+      `,
+    }).then((res) => setGames(res));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (searchQuery === "") {
+      return;
+    }
+
     router.replace(`/search?query=${searchQuery.replace(/\s+/g, "+")}`);
 
     searchRef.current.blur();
+
     fetchSearchGames();
   };
 
   useEffect(() => {
-    if (query) {
-      setSearchQuery(query);
-      fetchSearchGames(query);
+    if (searchParams.get("query")) {
+      setSearchQuery(searchParams.get("query"));
+      fetchSearchGames();
     }
-  }, [query]);
+  }, [searchParams]);
 
   return (
     <div className={`flex flex-col gap-4 lg:flex-row`}>
-      <div className={`flex flex-col gap-4`}>
+      {/* <div className={`flex flex-col gap-4`}>
         <button
           onClick={handleActive}
           className={`max-w-fit lg:hidden flex items-center gap-2 bg-white bg-opacity-10 hocus:bg-opacity-20 p-2 px-4 rounded-full`}
@@ -113,36 +112,50 @@ export default function Search() {
             </ul>
           </section>
         </aside>
-      </div>
+      </div> */}
 
       <div className={`flex flex-col gap-4 lg:py-4 w-full`}>
         <form
           onSubmit={handleSubmit}
           id="searchBar"
-          className={`flex items-center gap-2 px-6 bg-primary-secondary bg-opacity-75 backdrop-blur w-full sticky top-6`}
+          className={`flex items-center gap-2 bg-primary-secondary bg-opacity-75 backdrop-blur w-full sticky top-6`}
         >
+          <IonIcon
+            icon={searchOutline}
+            className={`text-xl pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400`}
+          />
+
           <input
             ref={searchRef}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            name={`search`}
             autoFocus={true}
-            onChange={handleSearchInput}
             type="text"
             placeholder={`Search`}
             value={searchQuery}
-            className={`py-3 placeholder:text-neutral-400 bg-transparent w-full`}
+            className={`pl-12 py-3 placeholder:text-neutral-400 bg-transparent w-full`}
           />
-          <button type={`submit`} className={`flex aspect-square`}>
-            <IonIcon
-              icon={searchOutline}
-              className={`text-xl text-neutral-400`}
-            />
-          </button>
+
+          {searchParams.get("query") && (
+            <button
+              type={`button`}
+              className={`flex aspect-square absolute right-4 top-1/2 -translate-y-1/2`}
+              onClick={() => {
+                router.replace(`/search`);
+              }}
+            >
+              <IonIcon icon={close} className={`text-2xl text-neutral-400`} />
+            </button>
+          )}
         </form>
 
-        <ul className={`grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-4`}>
-          {games.map((item, i) => {
+        <ul
+          className={`grid gap-2 lg:gap-4 grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6`}
+        >
+          {games.map((game) => {
             return (
-              <li key={i}>
-                <Card game={item} />
+              <li key={game.id}>
+                <Card game={game} />
               </li>
             );
           })}

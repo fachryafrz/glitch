@@ -70,7 +70,7 @@ export default function Navbar() {
       }`}
     >
       <div
-        className={`max-w-7xl mx-auto grid grid-cols-3 lg:flex items-center p-4 gap-4 lg:gap-8 `}
+        className={`max-w-none mx-auto grid grid-cols-3 lg:flex items-center p-4 gap-4 lg:gap-8 `}
       >
         <button
           onClick={() => setActive(!active)}
