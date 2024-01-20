@@ -129,9 +129,9 @@ export default function GameOverview({ game }) {
     (item) => item.developer === true && item.publisher === false
   );
 
-  console.log(gameDevelopers);
-
   useEffect(() => {
+    if (gamePublishers.length === 0 && gameDevelopers.length === 0) return;
+
     const fetchCompanies = async () => {
       await fetchData({
         path: `/multiquery`,
