@@ -105,11 +105,13 @@ function HomeGame({ game }) {
       <div
         className={`relative sm:h-[300px] lg:h-full p-8 pt-12 pb-20 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start lg:w-[30%]`}
       >
-        <span
-          className={`opacity-50 bg-neutral-700 text-sm w-fit p-2 absolute top-0 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-8 whitespace-nowrap`}
-        >
-          {publisher}
-        </span>
+        {publisher && (
+          <span
+            className={`opacity-50 bg-neutral-700 text-sm w-fit p-2 absolute top-0 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-8 whitespace-nowrap`}
+          >
+            {publisher}
+          </span>
+        )}
 
         <h2
           title={game.name}
@@ -146,7 +148,9 @@ function HomeGame({ game }) {
           </li>
         </ul>
 
-        <p className={`hidden sm:line-clamp-3 xl:line-clamp-5 text-left opacity-50`}>
+        <p
+          className={`hidden sm:line-clamp-3 xl:line-clamp-5 text-left opacity-50`}
+        >
           {game.summary}
         </p>
 
