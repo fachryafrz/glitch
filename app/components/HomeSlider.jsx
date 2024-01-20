@@ -16,6 +16,7 @@ import { arrowBack, arrowForward, star } from "ionicons/icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import { fetchData } from "../lib/fetchData";
 
 export default function HomeSlider({ games, min, max }) {
   return (
@@ -38,6 +39,7 @@ export default function HomeSlider({ games, min, max }) {
         allowSlideNext={true}
         allowSlidePrev={true}
         allowTouchMove={true}
+        className={`max-w-md lg:max-w-7xl`}
       >
         {games.slice(min, max).map((game) => {
           return (
@@ -63,6 +65,28 @@ export default function HomeSlider({ games, min, max }) {
 }
 
 function HomeGame({ game }) {
+  const [publisher, setPublisher] = useState();
+
+  const publisherID = game.involved_companies.find(
+    (company) => company.publisher
+  ).company;
+
+  useEffect(() => {
+    const fetchCompany = async () => {
+      await fetchData({
+        path: `/companies`,
+        fields: `
+          fields name, logo.*;
+          where id = ${publisherID};
+        `,
+      }).then((res) => {
+        setPublisher(res[0].name);
+      });
+    };
+
+    fetchCompany();
+  }, [game]);
+
   return (
     <article className={`h-full flex flex-col lg:flex-row`}>
       <figure className={`lg:w-[70%]`}>
@@ -79,18 +103,24 @@ function HomeGame({ game }) {
       </figure>
 
       <div
-        className={`relative h-[300px] lg:h-full p-4 sm:p-8 pb-12 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start lg:w-[30%]`}
+        className={`relative sm:h-[300px] lg:h-full p-8 pt-12 pb-20 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start lg:w-[30%]`}
       >
+        <span
+          className={`opacity-50 bg-neutral-700 text-sm w-fit p-2 absolute top-0 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-8 whitespace-nowrap`}
+        >
+          {publisher}
+        </span>
+
         <h2
           title={game.name}
-          className={`text-2xl lg:text-3xl xl:text-4xl font-bold line-clamp-2 !leading-snug`}
+          className={`text-2xl lg:text-3xl font-bold line-clamp-2 !leading-snug`}
           style={{ textWrap: `balance` }}
         >
           {game.name}
         </h2>
 
         <ul
-          className={`flex sm:flex-wrap items-center justify-center lg:justify-start gap-1 text-xs sm:text-base`}
+          className={`flex sm:flex-wrap items-center justify-center lg:justify-start gap-1 text-xs sm:text-sm`}
         >
           <li
             className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full flex items-center gap-1`}
@@ -110,11 +140,15 @@ function HomeGame({ game }) {
           <li
             className={`p-1 px-3 bg-neutral-600 bg-opacity-50 rounded-full flex items-center gap-1`}
           >
-            <span className={`font-medium line-clamp-1 text-left`}>{game.genres[0].name}</span>
+            <span className={`font-medium line-clamp-1 text-left`}>
+              {game.genres[0].name}
+            </span>
           </li>
         </ul>
 
-        <p className={`line-clamp-3 text-left opacity-50`}>{game.summary}</p>
+        <p className={`hidden sm:line-clamp-3 xl:line-clamp-5 text-left opacity-50`}>
+          {game.summary}
+        </p>
 
         <Link
           href={`/games/${game.slug}`}

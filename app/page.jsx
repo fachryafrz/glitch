@@ -20,10 +20,10 @@ export default async function Home() {
           games={await fetchData({
             path: `/games`,
             fields: `
-            fields *, cover.*, artworks.*, screenshots.*, genres.*, first_release_date;
+            fields *, cover.*, artworks.*, screenshots.*, genres.*, involved_companies.*;
             where cover != null & artworks != null & rating != null & first_release_date <= ${today};
             sort first_release_date desc;
-            limit 20;
+            limit 5;
             `,
           })}
           min={0}
