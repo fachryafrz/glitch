@@ -52,18 +52,18 @@ export default async function Details({ params }) {
   const game = gameData[0];
 
   return (
-    <div className={`flex flex-col gap-2 md:gap-4 py-4`}>
-      <figure
-        className={`absolute aspect-video inset-0 -z-10 blur-3xl opacity-40`}
-      >
-        <img
-          src={`https://images.igdb.com/igdb/image/upload/t_original/${game.screenshots[0].image_id}.jpg`}
-          alt={game.name}
-        />
-      </figure>
-      {game.screenshots.length > 0 && (
-        <GameMedia game={game} images={game.screenshots} />
+    <div className={`flex flex-col gap-2 md:gap-4`}>
+      {game.screenshots && (
+        <figure
+          className={`absolute aspect-video inset-0 -z-10 blur-3xl opacity-40`}
+        >
+          <img
+            src={`https://images.igdb.com/igdb/image/upload/t_original/${game.screenshots[0].image_id}.jpg`}
+            alt={game.name}
+          />
+        </figure>
       )}
+      {game.screenshots && <GameMedia game={game} images={game.screenshots} />}
       <GameOverview game={game} />
     </div>
   );

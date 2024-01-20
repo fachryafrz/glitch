@@ -34,6 +34,7 @@ export default function Search() {
         f *, cover.*;
         w cover != null;
         search "${query}";
+        l 20;
       `,
     }).then((res) => setGames(res));
   };
@@ -54,6 +55,7 @@ export default function Search() {
 
   useEffect(() => {
     if (searchParams.get("query")) {
+      setSearchQuery(searchParams.get("query"));
       fetchSearchGames();
     }
   }, [searchParams]);

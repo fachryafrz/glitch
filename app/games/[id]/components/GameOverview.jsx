@@ -35,7 +35,7 @@ export default function GameOverview({ game }) {
   //   }
   // };
 
-  const stores = game.external_games.filter(
+  const stores = game.external_games?.filter(
     (item) =>
       item.category === 1 ||
       item.category === 5 ||
@@ -87,7 +87,7 @@ export default function GameOverview({ game }) {
   //   }
   // };
 
-  const ESRBCategory = game.age_ratings.find((i) => i.category === 1);
+  const ESRBCategory = game.age_ratings?.find((i) => i.category === 1);
 
   const ageRating = (rating) => {
     switch (rating) {
@@ -123,11 +123,13 @@ export default function GameOverview({ game }) {
   const [developers, setDevelopers] = useState();
 
   const gamePublishers = game.involved_companies.filter(
-    (item) => (item.publisher = true)
+    (item) => item.publisher === true && item.developer === false
   );
   const gameDevelopers = game.involved_companies.filter(
-    (item) => (item.developer = true)
+    (item) => item.developer === true && item.publisher === false
   );
+
+  console.log(gameDevelopers);
 
   useEffect(() => {
     const fetchCompanies = async () => {
@@ -165,7 +167,7 @@ export default function GameOverview({ game }) {
         <div
           className={`sticky top-[5.5rem] flex flex-col gap-4 lg:overflow-y-auto lg:pr-4`}
         >
-          {game.artworks.length > 0 && (
+          {game.artworks && (
             <figure className={`aspect-video`}>
               <img
                 src={`https://images.igdb.com/igdb/image/upload/t_original/${game.artworks[0].image_id}.jpg`}
@@ -178,7 +180,7 @@ export default function GameOverview({ game }) {
             className={`first:[&_td]:whitespace-nowrap [&_td]:align-top first:[&_td]:text-neutral-400 first:[&_td]:w-[110px]`}
           >
             <tbody>
-              {publishers && publishers.length > 0 && (
+              {publishers?.length > 0 && (
                 <tr>
                   <td>Publishers</td>
                   <td className={`line-clamp-2`}>
@@ -186,7 +188,7 @@ export default function GameOverview({ game }) {
                   </td>
                 </tr>
               )}
-              {developers && developers.length > 0 && (
+              {developers?.length > 0 && (
                 <tr>
                   <td>Developers</td>
                   <td className={`line-clamp-2`}>
@@ -206,7 +208,7 @@ export default function GameOverview({ game }) {
                   </td>
                 </tr>
               )}
-              {game.platforms.length > 0 && (
+              {game.platforms?.length > 0 && (
                 <tr>
                   <td>Platforms</td>
                   <td className="flex items-center gap-2">
@@ -228,7 +230,7 @@ export default function GameOverview({ game }) {
             </tbody>
           </table>
 
-          {game.genres.length > 0 && (
+          {game.genres?.length > 0 && (
             <div className={`flex items-center gap-1 flex-wrap`}>
               {game.genres.map((genre) => {
                 return (
@@ -243,13 +245,15 @@ export default function GameOverview({ game }) {
             </div>
           )}
 
-          <img
-            src={ageRating(ESRBCategory.rating)}
-            alt={game.name}
-            className={`w-[75px]`}
-          />
+          {game.age_ratings?.length > 0 && (
+            <img
+              src={ageRating(ESRBCategory.rating)}
+              alt={game.name}
+              className={`w-[75px]`}
+            />
+          )}
 
-          {stores.length > 0 && (
+          {stores?.length > 0 && (
             <>
               <hr className={`opacity-20`} />
 
@@ -276,7 +280,6 @@ export default function GameOverview({ game }) {
                             href={store.url}
                             target={`_blank`}
                             className={`flex items-center max-w-fit p-1 rounded-lg transition-all`}
-                            title={store.category}
                           >
                             <img
                               src={storeIcon(store.category)}
