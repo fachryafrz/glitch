@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
   const gameData = await fetchData({
     path: `/games`,
     fields: `
-    f *, screenshots.*, artworks.*, cover.*, genres.*, involved_companies.*, platforms.*, videos.*, age_ratings.*, external_games.*;
+    f *, screenshots.*, artworks.*, cover.*;
     w id = ${id};
     `,
   });
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
       description: game.summary,
       url: `https://gamecove.vercel.app/games/${game.id}`,
       siteName: `GameCove`,
-      images: `https://images.igdb.com/igdb/image/upload/t_cover_big/${game.cover.image_id}.jpg`,
+      images: `https://images.igdb.com/igdb/image/upload/t_original/${game.artworks[0].image_id}.jpg`,
       locale: "en_US",
       type: "website",
     },
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
       title: `${game.name} (${gameReleaseDate}) - GameCove`,
       description: game.summary,
       creator: "@fachryafrz",
-      images: `https://images.igdb.com/igdb/image/upload/t_cover_big/${game.cover.image_id}.jpg`,
+      images: `https://images.igdb.com/igdb/image/upload/t_original/${game.artworks[0].image_id}.jpg`,
     },
   };
 }
