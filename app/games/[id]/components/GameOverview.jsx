@@ -126,36 +126,49 @@ export default function GameOverview({ game }) {
     (item) => item.publisher === true && item.developer === false
   );
   const gameDevelopers = game.involved_companies.filter(
-    (item) => item.developer === true && item.publisher === false
+    (item) => item.developer === true
   );
 
   useEffect(() => {
-    if (gamePublishers.length === 0 && gameDevelopers.length === 0) return;
-
-    const fetchCompanies = async () => {
+    const fetchPublishers = async () => {
       await fetchData({
-        path: `/multiquery`,
+        path: `/companies`,
         fields: `
-        query companies "Publishers" {
           fields name;
           where id = (${gamePublishers.map((item) => item.company).join(",")});
-        };
-        
-        query companies "Developers" {
-          fields name;
-          where id = (${gameDevelopers.map((item) => item.company).join(",")});
-        };
         `,
       }).then((res) => {
         const publishers = res.find((i) => i.name === "Publishers");
-        const developers = res.find((i) => i.name === "Developers");
 
-        setPublishers(publishers.result);
-        setDevelopers(developers.result);
+        setPublishers(res);
       });
     };
 
-    fetchCompanies();
+    const fetchDevelopers = async () => {
+      await fetchData({
+        path: `/companies`,
+        fields: `
+          fields name;
+          where id = (${gameDevelopers.map((item) => item.company).join(",")});
+        `,
+      }).then((res) => {
+        const developers = res.find((i) => i.name === "Developers");
+
+        setDevelopers(res);
+      });
+    };
+
+    if (gamePublishers.length === 0) {
+      return;
+    } else {
+      fetchPublishers();
+    }
+
+    if (gameDevelopers.length === 0) {
+      return;
+    } else {
+      fetchDevelopers();
+    }
   }, [game]);
 
   return (
