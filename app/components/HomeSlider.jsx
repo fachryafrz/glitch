@@ -18,16 +18,16 @@ import axios from "axios";
 import Link from "next/link";
 import { fetchData } from "../lib/fetchData";
 
-export default function HomeSlider({ games }) {
+export default function HomeSlider({ games, keyboard = false }) {
   return (
     <section id={`Home Slider`}>
       <Swiper
         spaceBetween={16}
         slidesPerView={1}
         modules={[EffectFade, Navigation, Autoplay, Keyboard]}
-        keyboard={true}
+        keyboard={keyboard}
         autoplay={{
-          delay: 5000,
+          delay: 10000,
           pauseOnMouseEnter: true,
         }}
         effect={`fade`}
@@ -159,7 +159,7 @@ function HomeGame({ game }) {
         </p>
 
         <Link
-          href={`/games/${game.slug}`}
+          href={`/games/${game.id}`}
           className={`p-3 px-8 bg-white bg-opacity-10 rounded hocus:bg-opacity-20 text-center absolute bottom-4 sm:bottom-8`}
         >
           View details

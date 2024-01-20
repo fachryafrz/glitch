@@ -32,7 +32,7 @@ export default function Card({ game }) {
 
   return (
     <article>
-      <Link href={`/games/${game.slug}`} className={`flex flex-col gap-2`}>
+      <Link href={`/games/${game.id}`} className={`flex flex-col gap-2`}>
         <figure
           className={`aspect-cover overflow-hidden ${
             game.cover.image_id ? `bg-transparent` : `bg-black`

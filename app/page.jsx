@@ -9,16 +9,6 @@ import { fetchData } from "./lib/fetchData";
 export default async function Home() {
   const today = Math.floor(Date.now() / 1000);
 
-  const publishers = await fetchData({
-    path: `/companies`,
-    fields: `
-    f name;
-    w country = 840 & (published >= 10 | developed >= 10);
-    l 3;
-    s start_date_category asc;
-    `,
-  });
-
   return (
     <>
       <h1 className={`sr-only`}>{process.env.APP_NAME}</h1>
@@ -36,6 +26,7 @@ export default async function Home() {
             l 5;
             `,
           })}
+          keyboard={true}
         />
 
         <Slider
@@ -90,23 +81,44 @@ export default async function Home() {
           })}
         />
 
-        {publishers.map(async (item) => {
-          return (
-            <Slider
-              key={item.id}
-              title={item.name}
-              games={await fetchData({
-                path: `/games`,
-                fields: `
+        <Slider
+          title={`Rockstar Games`}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
                 f *, cover.*;
-                w cover != null & involved_companies.company = ${item.id} & parent_game = null;
+                w cover != null & involved_companies.company = 29 & parent_game = null & version_title = null & category = 0;
                 s first_release_date desc;
                 l 20;
                   `,
-              })}
-            />
-          );
-        })}
+          })}
+        />
+
+        <Slider
+          title={`Electronic Arts`}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+                f *, cover.*;
+                w cover != null & involved_companies.company = 1 & parent_game = null & version_title = null & category = 0;
+                s first_release_date desc;
+                l 20;
+                  `,
+          })}
+        />
+
+        <Slider
+          title={`Ubisoft Montreal`}
+          games={await fetchData({
+            path: `/games`,
+            fields: `
+                f *, cover.*;
+                w cover != null & involved_companies.company = 38 & parent_game = null & version_title = null & category = 0;
+                s first_release_date desc;
+                l 20;
+                  `,
+          })}
+        />
 
         {/* {developers.slice(0, 3).map(async (dev) => {
           return (
