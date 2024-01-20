@@ -1,8 +1,8 @@
 import React from "react";
 import GameOverview from "./components/GameOverview";
 import GameMedia from "./components/GameMedia";
-import axios from "axios";
 import { fetchData } from "@/app/lib/fetchData";
+import Grid from "@/app/components/Grid";
 
 export async function generateMetadata({ params }) {
   const { id } = params;
@@ -51,11 +51,48 @@ export default async function Details({ params }) {
   const gameData = await fetchData({
     path: `/games`,
     fields: `
-    f *, screenshots.*, artworks.*, cover.*, genres.*, involved_companies.*, platforms.*, videos.*, age_ratings.*, external_games.*;
+    f *, screenshots.*, artworks.*, cover.*, genres.*, involved_companies.*, platforms.*, videos.*, age_ratings.*, external_games.*, similar_games.*;
     w id = ${id};
     `,
   });
   const game = gameData[0];
+
+  const gamePublishers = game.involved_companies.filter(
+    (item) => item.publisher === true && item.developer === false
+  );
+  const gameDevelopers = game.involved_companies.filter(
+    (item) => item.developer === true
+  );
+
+  let publishers, developers;
+
+  if (gamePublishers.length > 0) {
+    publishers = await fetchData({
+      path: `/companies`,
+      fields: `
+        fields name;
+        where id = (${gamePublishers.map((item) => item.company).join(",")});
+      `,
+    });
+  }
+
+  if (gameDevelopers.length > 0) {
+    developers = await fetchData({
+      path: `/companies`,
+      fields: `
+        fields name;
+        where id = (${gameDevelopers.map((item) => item.company).join(",")});
+      `,
+    });
+  }
+
+  const similarGames = await fetchData({
+    path: `/games`,
+    fields: `
+      f *, cover.*; 
+      where id = (${game.similar_games.map((item) => item.id).join(",")});
+    `,
+  });
 
   return (
     <div className={`flex flex-col gap-2 md:gap-4`}>
@@ -70,7 +107,15 @@ export default async function Details({ params }) {
         </figure>
       )}
       {game.screenshots && <GameMedia game={game} images={game.screenshots} />}
-      <GameOverview game={game} />
+      <GameOverview
+        game={game}
+        publishers={publishers}
+        developers={developers}
+      />
+
+      {game.similar_games && (
+        <Grid title={`Similar Games`} games={similarGames} />
+      )}
     </div>
   );
 }

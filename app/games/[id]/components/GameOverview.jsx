@@ -13,7 +13,12 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { EffectFade, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function GameOverview({ game }) {
+export default function GameOverview({
+  game,
+  publishers,
+  developers,
+  similarGames,
+}) {
   const dateRaw = new Date(game.first_release_date * 1000);
   const options = {
     year: "numeric",
@@ -119,57 +124,57 @@ export default function GameOverview({ game }) {
   //   Object.keys(platformPC.requirements).length > 0 &&
   //   platformPC.requirements.recommended;
 
-  const [publishers, setPublishers] = useState();
-  const [developers, setDevelopers] = useState();
+  // const [publishers, setPublishers] = useState();
+  // const [developers, setDevelopers] = useState();
 
-  const gamePublishers = game.involved_companies.filter(
-    (item) => item.publisher === true && item.developer === false
-  );
-  const gameDevelopers = game.involved_companies.filter(
-    (item) => item.developer === true
-  );
+  // const gamePublishers = game.involved_companies.filter(
+  //   (item) => item.publisher === true && item.developer === false
+  // );
+  // const gameDevelopers = game.involved_companies.filter(
+  //   (item) => item.developer === true
+  // );
 
-  useEffect(() => {
-    const fetchPublishers = async () => {
-      await fetchData({
-        path: `/companies`,
-        fields: `
-          fields name;
-          where id = (${gamePublishers.map((item) => item.company).join(",")});
-        `,
-      }).then((res) => {
-        const publishers = res.find((i) => i.name === "Publishers");
+  // useEffect(() => {
+  //   const fetchPublishers = async () => {
+  //     await fetchData({
+  //       path: `/companies`,
+  //       fields: `
+  //         fields name;
+  //         where id = (${gamePublishers.map((item) => item.company).join(",")});
+  //       `,
+  //     }).then((res) => {
+  //       const publishers = res.find((i) => i.name === "Publishers");
 
-        setPublishers(res);
-      });
-    };
+  //       setPublishers(res);
+  //     });
+  //   };
 
-    const fetchDevelopers = async () => {
-      await fetchData({
-        path: `/companies`,
-        fields: `
-          fields name;
-          where id = (${gameDevelopers.map((item) => item.company).join(",")});
-        `,
-      }).then((res) => {
-        const developers = res.find((i) => i.name === "Developers");
+  //   const fetchDevelopers = async () => {
+  //     await fetchData({
+  //       path: `/companies`,
+  //       fields: `
+  //         fields name;
+  //         where id = (${gameDevelopers.map((item) => item.company).join(",")});
+  //       `,
+  //     }).then((res) => {
+  //       const developers = res.find((i) => i.name === "Developers");
 
-        setDevelopers(res);
-      });
-    };
+  //       setDevelopers(res);
+  //     });
+  //   };
 
-    if (gamePublishers.length === 0) {
-      return;
-    } else {
-      fetchPublishers();
-    }
+  //   if (gamePublishers.length === 0) {
+  //     return;
+  //   } else {
+  //     fetchPublishers();
+  //   }
 
-    if (gameDevelopers.length === 0) {
-      return;
-    } else {
-      fetchDevelopers();
-    }
-  }, [game]);
+  //   if (gameDevelopers.length === 0) {
+  //     return;
+  //   } else {
+  //     fetchDevelopers();
+  //   }
+  // }, [game]);
 
   return (
     <div
