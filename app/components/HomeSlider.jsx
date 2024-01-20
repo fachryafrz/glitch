@@ -18,7 +18,7 @@ import axios from "axios";
 import Link from "next/link";
 import { fetchData } from "../lib/fetchData";
 
-export default function HomeSlider({ games, min, max }) {
+export default function HomeSlider({ games }) {
   return (
     <section id={`Home Slider`}>
       <Swiper
@@ -41,7 +41,7 @@ export default function HomeSlider({ games, min, max }) {
         allowTouchMove={true}
         className={`max-w-md lg:max-w-7xl`}
       >
-        {games.slice(min, max).map((game) => {
+        {games.map((game) => {
           return (
             <SwiperSlide key={game.id} className={`!h-auto`}>
               <HomeGame game={game} />
@@ -66,9 +66,13 @@ export default function HomeSlider({ games, min, max }) {
 
 function HomeGame({ game }) {
   const [publisher, setPublisher] = useState();
+  const [developer, setDeveloper] = useState();
 
   const publisherID = game.involved_companies.find(
     (company) => company.publisher
+  ).company;
+  const developerID = game.involved_companies.find(
+    (company) => (company.developer = true)
   ).company;
 
   useEffect(() => {
