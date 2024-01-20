@@ -107,7 +107,7 @@ function HomeGame({ game }) {
       </figure>
 
       <div
-        className={`relative sm:h-[300px] lg:h-full p-8 pt-12 pb-20 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start lg:w-[30%]`}
+        className={`relative h-full sm:h-[300px] lg:h-full p-8 pt-12 pb-20 bg-primary-secondary flex flex-col gap-4 text-center lg:text-start lg:w-[30%]`}
       >
         {publisher && (
           <span
